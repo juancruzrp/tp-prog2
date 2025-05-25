@@ -4,7 +4,7 @@
 using namespace std;
 
 
-    /// PENSAR SI AGREGAR VALIDACIONES
+    /// PENSAR VALIDACIONES
 void FerreteriaManager::cargarProducto(){
     int codProducto, stock;
     string nombreProducto, tipoProducto;
@@ -28,6 +28,5 @@ void FerreteriaManager::cargarProducto(){
     cin >> stock;
 
     producto = Producto(codProducto, nombreProducto, tipoProducto, precioUnitario, stock);
-
 
 }
