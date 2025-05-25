@@ -5,7 +5,7 @@ class Producto{
 private:
     int _codProducto;
     char _nombreProducto[30];
-    char _tipoProducto[20];
+    char _tipoProducto[30];
     float _precioUnitario;
     int _stock;
 

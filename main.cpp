@@ -3,6 +3,7 @@
 #include "MenuProveedor.h"
 #include "MenuCompra.h"
 #include "MenuVenta.h"
+#include "FerreteriaManager.h"
 using namespace std;
 
 int main()
@@ -13,7 +14,6 @@ int main()
     MenuCompra menucompra;
     MenuVenta menuventa;
 
-    ///123
 
     do{
     cout << "======================================" << endl;

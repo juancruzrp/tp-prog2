@@ -7,6 +7,7 @@ private:
 
 public:
 
+    void cargarProducto();
 
 
 };

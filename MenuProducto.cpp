@@ -1,10 +1,12 @@
 #include <iostream>
 #include "MenuProducto.h"
+#include "FerreteriaManager.h"
 using namespace std;
 
 void MenuProducto::mostrar(){
 
     int opcion;
+    FerreteriaManager manager;
 
     do{
     cout << "======================================" << endl;
@@ -24,25 +26,71 @@ void MenuProducto::mostrar(){
 
     switch(opcion) {
             case 1:
-
+                system("cls");
+                cout << "======================================" << endl;
+                cout << "       CARGAR NUEVO PRODUCTO" << endl ;
+                cout << "======================================" << endl;
+                manager.cargarProducto();
+                system("cls");
+                cout << "======================================" << endl;
+                cout << "    PRODUCTO CARGADO CORRECTAMENTE" << endl ;
+                cout << "======================================" << endl;
+                system("pause");
+                system("cls");
                 break;
             case 2:
-
+                system("cls");
+                cout << "======================================" << endl;
+                cout << "           LISTAR PRODUCTOS" << endl ;
+                cout << "======================================" << endl;
+                ///
+                system("pause");
+                system("cls");
                 break;
             case 3:
-
+                system("cls");
+                cout << "======================================" << endl;
+                cout << "      BUSCAR PRODUCTO POR CODIGO" << endl ;
+                cout << "======================================" << endl;
+                ///
+                system("pause");
+                system("cls");
                 break;
             case 4:
-
+                system("cls");
+                cout << "======================================" << endl;
+                cout << "       BUSCAR PRODUCTO POR NOMBRE" << endl ;
+                cout << "======================================" << endl;
+                ///
+                system("pause");
+                system("cls");
                 break;
             case 5:
-
+                system("cls");
+                cout << "======================================" << endl;
+                cout << "       BUSCAR PRODUCTO POR TIPO" << endl ;
+                cout << "======================================" << endl;
+                ///
+                system("pause");
+                system("cls");
                break;
             case 6:
-
+                system("cls");
+                cout << "======================================" << endl;
+                cout << "     MODIFICAR PRECIO DE PRODUCTO" << endl ;
+                cout << "======================================" << endl;
+                ///
+                system("pause");
+                system("cls");
                 break;
             case 7:
-
+                system("cls");
+                cout << "======================================" << endl;
+                cout << "  CANTIDAD DE PRODUCTOS REGISTRADOS" << endl ;
+                cout << "======================================" << endl;
+                ///
+                system("pause");
+                system("cls");
                 break;
             case 0:
                 system("cls");
