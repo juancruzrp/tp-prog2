@@ -13,7 +13,7 @@ int main()
     MenuCompra menucompra;
     MenuVenta menuventa;
 
-    cout<< "123" << endl;
+
 
     do{
     cout << "======================================" << endl;
