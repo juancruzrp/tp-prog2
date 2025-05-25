@@ -1,0 +1,79 @@
+# depslib dependency file v1.0
+1748123881 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\compras.cpp
+	<iostream>
+
+1748123881 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\fecha.cpp
+	<iostream>
+
+1748134829 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\main.cpp
+	<iostream>
+	"MenuProducto.h"
+	"MenuProveedor.h"
+	"MenuCompra.h"
+	"MenuVenta.h"
+
+1748123881 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\proveedores.cpp
+	<iostream>
+
+1748123881 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\ventas.cpp
+	<iostream>
+
+1748123881 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\compra.cpp
+	<iostream>
+
+1748123881 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\proveedor.cpp
+	<iostream>
+
+1748123881 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\venta.cpp
+	<iostream>
+
+1748126955 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\producto.cpp
+	<iostream>
+	"Producto.h"
+	<cstring>
+
+1748126945 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\producto.h
+	<string>
+
+1748127843 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\ferreteriamenu.cpp
+	<iostream>
+	"FerreteriaMenu.h"
+
+1748127868 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\ferreteriamenu.h
+	<string>
+
+1748134358 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\menucompra.cpp
+	<iostream>
+	"MenuCompra.h"
+
+1748134097 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\menuproducto.cpp
+	<iostream>
+	"MenuProducto.h"
+
+1748134097 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\menuproveedor.cpp
+	<iostream>
+	"MenuProveedor.h"
+
+1748134941 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\menuventa.cpp
+	<iostream>
+	"MenuVenta.h"
+
+1748129621 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\ferreteriamanager.cpp
+	<iostream>
+	"FerreteriaManager.h"
+
+1748129613 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\ferreteriamanager.h
+	<string>
+
+1748132488 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\menuproducto.h
+	<string>
+
+1748133769 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\menuproveedor.h
+	<string>
+
+1748134220 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\menucompra.h
+	<string>
+
+1748134358 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\menuventa.h
+	<string>
+
