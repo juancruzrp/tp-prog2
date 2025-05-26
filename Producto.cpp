@@ -7,14 +7,18 @@ Producto::Producto(){
     int _codProducto = 0;
     strcpy(_nombreProducto, "");
     strcpy(_tipoProducto, "");
+    strcpy(_marca, "");
+    strcpy(_unidadMedida, "");
     float _precioUnitario = 0;
     int _stock = 0;
 }
 
-Producto::Producto(int codProducto, std::string nombreProducto, std::string tipoProducto, float precioUnitario, int stock){
+Producto::Producto(int codProducto, std::string nombreProducto, std::string tipoProducto, std::string marca, std::string unidadMedida,float precioUnitario, int stock){
     setCodProducto(codProducto);
     setNombreProducto(nombreProducto);
     setTipoProducto(tipoProducto);
+    setMarca(marca);
+    setUnidadMedida(unidadMedida);
     setPrecioUnitario(precioUnitario);
     setStock(stock);
 }
@@ -29,6 +33,14 @@ void Producto::setNombreProducto(std::string nombreProducto){
 
 void Producto::setTipoProducto(std::string tipoProducto){
     strcpy(_tipoProducto, tipoProducto.c_str());
+}
+
+void Producto::setMarca(std::string marca){
+    strcpy(_marca, marca.c_str());
+}
+
+void Producto::setUnidadMedida(std::string unidadMedida){
+    strcpy(_unidadMedida, unidadMedida.c_str());
 }
 
 void Producto::setPrecioUnitario(float precioUnitario){
@@ -49,6 +61,14 @@ std::string Producto::getNombreProducto(){
 
 std::string Producto::getTipoProducto(){
     return _tipoProducto;
+}
+
+std::string Producto::getMarca(){
+    return _marca;
+}
+
+std::string Producto::getUnidadMedida(){
+    return _unidadMedida;
 }
 
 float Producto::getPrecioUnitario(){
