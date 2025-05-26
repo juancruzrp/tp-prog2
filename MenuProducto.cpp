@@ -39,7 +39,9 @@ void MenuProducto::mostrar(){
                 system("cls");
                 break;
             case 2:
-                system("cls");
+                manager.listarProductos();  // <<—— Aca llamás a la función
+                 system("pause");
+                 system("cls");
                 cout << "======================================" << endl;
                 cout << "           LISTAR PRODUCTOS" << endl ;
                 cout << "======================================" << endl;
