@@ -150,3 +150,73 @@
 1748144493 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\proveedor.h
 	<string>
 
+1748217931 source:c:\users\usuario\documents\github\tp-prog2\fecha.cpp
+	"Fecha.h"
+
+1748217931 c:\users\usuario\documents\github\tp-prog2\fecha.h
+	<string>
+
+1748217931 source:c:\users\usuario\documents\github\tp-prog2\main.cpp
+	<iostream>
+	"MenuProducto.h"
+	"MenuProveedor.h"
+	"MenuCompra.h"
+	"MenuVenta.h"
+	"FerreteriaManager.h"
+
+1748217931 c:\users\usuario\documents\github\tp-prog2\menuproducto.h
+	<string>
+
+1748217931 c:\users\usuario\documents\github\tp-prog2\menuproveedor.h
+	<string>
+
+1748217931 c:\users\usuario\documents\github\tp-prog2\menucompra.h
+	<string>
+
+1748217931 c:\users\usuario\documents\github\tp-prog2\menuventa.h
+	<string>
+
+1748301069 c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.h
+	<string>
+
+1748217931 source:c:\users\usuario\documents\github\tp-prog2\menucompra.cpp
+	<iostream>
+	"MenuCompra.h"
+
+1748217931 source:c:\users\usuario\documents\github\tp-prog2\menuproducto.cpp
+	<iostream>
+	"MenuProducto.h"
+	"FerreteriaManager.h"
+
+1748217931 source:c:\users\usuario\documents\github\tp-prog2\menuproveedor.cpp
+	<iostream>
+	"MenuProveedor.h"
+
+1748217931 source:c:\users\usuario\documents\github\tp-prog2\menuventa.cpp
+	<iostream>
+	"MenuVenta.h"
+
+1748217931 source:c:\users\usuario\documents\github\tp-prog2\proveedor.cpp
+	<iostream>
+	"Proveedor.h"
+	<cstring>
+
+1748217931 c:\users\usuario\documents\github\tp-prog2\proveedor.h
+	<string>
+
+1748217931 source:c:\users\usuario\documents\github\tp-prog2\venta.cpp
+	<iostream>
+
+1748301069 source:c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.cpp
+	<iostream>
+	"Producto.h"
+	"FerreteriaManager.h"
+
+1748301069 c:\users\usuario\documents\github\tp-prog2\producto.h
+	<string>
+
+1748301069 source:c:\users\usuario\documents\github\tp-prog2\producto.cpp
+	<iostream>
+	"Producto.h"
+	<cstring>
+

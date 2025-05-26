@@ -29,4 +29,34 @@ void FerreteriaManager::cargarProducto(){
 
     producto = Producto(codProducto, nombreProducto, tipoProducto, precioUnitario, stock);
 
+   if (producto.guardarEnArchivo()) {
+        cout << "Producto guardado correctamente.\n";
+    } else {
+        cout << "Error al guardar el producto.\n";
+    }
+
 }
+
+
+FILE* archivo = fopen("productos.dat", "ab");
+
+
+
+
+
+void FerreteriaManager::listarProductos() {
+    Producto prod;
+    FILE* archivo = fopen("productos.dat", "rb");
+    if (archivo == NULL) {
+        cout << "No se pudo abrir el archivo.\n";
+        return;
+    }
+
+    while (fread(&prod, sizeof(Producto), 1, archivo)) {
+        prod.mostrar(); // Método de la clase Producto
+        cout << "-----------------------------\n";
+    }
+
+    fclose(archivo);
+}
+
