@@ -17,7 +17,7 @@ int main()
 
     do{
     cout << "======================================" << endl;
-    cout << "   SISTEMA DE GESTION FERRETERIA   " << endl ;
+    cout << "    SISTEMA DE GESTION FERRETERIA   " << endl ;
     cout << "======================================" << endl;
     cout << "1. Menu Productos" << endl;
     cout << "2. Menu Proveedores" << endl;
