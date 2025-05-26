@@ -7,7 +7,7 @@ using namespace std;
     /// PENSAR VALIDACIONES
 void FerreteriaManager::cargarProducto(){
     int codProducto, stock;
-    string nombreProducto, tipoProducto;
+    string nombreProducto, tipoProducto, marca, unidadMedida;
     float precioUnitario;
     Producto producto;
 
@@ -27,7 +27,7 @@ void FerreteriaManager::cargarProducto(){
     cout << "Ingrese stock: ";
     cin >> stock;
 
-    producto = Producto(codProducto, nombreProducto, tipoProducto, precioUnitario, stock);
+    producto = Producto(codProducto, nombreProducto, tipoProducto, marca, unidadMedida, precioUnitario, stock);
 
    if (producto.guardarEnArchivo()) {
         cout << "Producto guardado correctamente.\n";
