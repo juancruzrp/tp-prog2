@@ -51,22 +51,7 @@ void Producto::setStock(int stock){
     _stock = stock;
 }
 
-bool Producto::guardarEnArchivo() {
-    FILE* archivo = fopen("productos.dat", "ab"); // modo agregar binario
-    if (archivo == NULL) return false;
 
-    fwrite(this, sizeof(Producto), 1, archivo); // guardamos el objeto actual
-    fclose(archivo);
-    return true;
-}
-
-void Producto::mostrar() {
-    cout << "Codigo: " << _codProducto << endl;
-    cout << "Nombre: " << _nombreProducto << endl;
-    cout << "Tipo: " << _tipoProducto << endl;
-    cout << "Precio: $" << _precioUnitario << endl;
-    cout << "Stock: " << _stock << endl;
-}
 
 int Producto::getCodProducto(){
     return _codProducto;

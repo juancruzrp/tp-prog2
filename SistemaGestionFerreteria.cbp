@@ -36,6 +36,8 @@
 		<Unit filename="Compra.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="CompraArchivo.cpp" />
+		<Unit filename="CompraArchivo.h" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h">
 			<Option target="&lt;{~None~}&gt;" />
@@ -62,14 +64,20 @@
 		<Unit filename="Producto.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="ProductoArchivo.cpp" />
+		<Unit filename="ProductoArchivo.h" />
 		<Unit filename="Proveedor.cpp" />
 		<Unit filename="Proveedor.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="ProveedorArchivo.cpp" />
+		<Unit filename="ProveedorArchivo.h" />
 		<Unit filename="Venta.cpp" />
 		<Unit filename="Venta.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="VentaArchivo.cpp" />
+		<Unit filename="VentaArchivo.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
