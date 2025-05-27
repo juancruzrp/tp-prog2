@@ -8,6 +8,6 @@ private:
 public:
 
     void cargarProducto();
-    void listarProductos();
+    void mostrarCantidadProductos();
 
 };

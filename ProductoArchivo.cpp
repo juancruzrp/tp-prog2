@@ -12,35 +12,51 @@ ProductoArchivo::ProductoArchivo(std::string nombreArchivo){
     _nombreArchivo = nombreArchivo;
 }
 
+
 bool ProductoArchivo::guardarProducto(Producto registro) {
     FILE *pFile;
+    bool result;
 
-    pFile = fopen(_nombreArchivo.c_str(), "ab"); // modo agregar binario
-
+    pFile = fopen(_nombreArchivo.c_str(), "ab");
     if (pFile == nullptr) {
         return false;
     }
 
-    fwrite(this, sizeof(Producto), 1, pFile); // guardamos el objeto actual
+    result = fwrite(&registro, sizeof(Producto), 1, pFile);
+
     fclose(pFile);
-    return true;
+    return result;
 }
 
+/*
 void ProductoArchivo::mostrarProductos() {
-    Producto reg;
+    Producto registro;
+    FILE *pFile;
 
-    cout << "Codigo: " << reg.getCodProducto() << endl;
-    cout << "Nombre: " << reg.getNombreProducto() << endl;
-    cout << "Tipo: " << reg.getTipoProducto() << endl;
-    cout << "Precio: $" << reg.getPrecioUnitario() << endl;
-    cout << "Stock: " << reg.getStock() << endl;
+    pFile = fopen(_nombreArchivo.c_str(), "rb");
+
+    if (pFile == nullptr) {
+        cout << "No se pudo abrir el archivo." << endl;
+        return;
+    }
+
+
+
+    fclose(pFile);
+
+
+    cout << "Codigo: " << registro.getCodProducto() << endl;
+    cout << "Nombre: " << registro.getNombreProducto() << endl;
+    cout << "Tipo: " << registro.getTipoProducto() << endl;
+    cout << "Precio: $" << registro.getPrecioUnitario() << endl;
+    cout << "Stock: " << registro.getStock() << endl;
 }
 
 void ProductoArchivo::listarProductos() {
     ProductoArchivo prodArch;
     FILE *archivo;
 
-    archivo = fopen("productos.dat", "rb");
+    archivo = fopen("productos.dat", "ab");
     if (archivo == NULL) {
         cout << "No se pudo abrir el archivo." << endl;
         return;
@@ -52,4 +68,28 @@ void ProductoArchivo::listarProductos() {
     }
 
     fclose(archivo);
+}*/
+
+
+int ProductoArchivo::cantidadProductosRegistrados(){
+    FILE *pFile;
+    int tamReg, total, cantidad;
+
+    tamReg = sizeof(Producto);
+
+    pFile = fopen(_nombreArchivo.c_str(), "rb");
+
+    if(pFile==nullptr){
+        return 0;
+    }
+
+    fseek(pFile, 0, SEEK_END);
+
+    total = ftell(pFile);
+
+    cantidad = total / tamReg ;
+
+    fclose(pFile);
+
+    return cantidad;
 }

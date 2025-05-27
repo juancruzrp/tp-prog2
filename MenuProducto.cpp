@@ -31,12 +31,12 @@ void MenuProducto::mostrar(){
                 cout << "       CARGAR NUEVO PRODUCTO" << endl ;
                 cout << "======================================" << endl;
                 manager.cargarProducto();
-                system("cls");
+                ///system("cls");
                 cout << "======================================" << endl;
                 cout << "    PRODUCTO CARGADO CORRECTAMENTE" << endl ;
                 cout << "======================================" << endl;
-                system("pause");
-                system("cls");
+                ///system("pause");
+                ///system("cls");
                 break;
             case 2:
                 ///manager.listarProductos();  // <<—— Aca llamás a la función
@@ -90,7 +90,7 @@ void MenuProducto::mostrar(){
                 cout << "======================================" << endl;
                 cout << "  CANTIDAD DE PRODUCTOS REGISTRADOS" << endl ;
                 cout << "======================================" << endl;
-                ///
+                manager.mostrarCantidadProductos();
                 system("pause");
                 system("cls");
                 break;

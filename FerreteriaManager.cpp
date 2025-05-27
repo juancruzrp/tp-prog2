@@ -11,7 +11,8 @@ void FerreteriaManager::cargarProducto(){
     string nombreProducto, tipoProducto, marca, unidadMedida;
     float precioUnitario;
     Producto producto;
-    ProductoArchivo prodArch;
+    ProductoArchivo productoArchivo;
+
 
     cout << "Ingrese codigo del producto: " ;
     cin >> codProducto;
@@ -23,6 +24,12 @@ void FerreteriaManager::cargarProducto(){
     cout << "Ingrese tipo de producto: ";
     getline(cin, tipoProducto);
 
+    cout << "Ingrese marca del producto: ";
+    getline(cin, marca);
+
+    cout << "Ingrese unidad de medida del producto: ";
+    getline(cin, unidadMedida);
+
     cout << "Ingrese precio unitario: ";
     cin >> precioUnitario;
 
@@ -31,10 +38,33 @@ void FerreteriaManager::cargarProducto(){
 
     producto = Producto(codProducto, nombreProducto, tipoProducto, marca, unidadMedida, precioUnitario, stock);
 
+    if (productoArchivo.guardarProducto(producto)){
+        cout << "Se guardo correctamente";
+    }
+    else {
+        cout << "Hubo un error al cargar el producto.";
+    }
+
 }
 
 
-/// FILE* archivo = fopen("productos.dat", "ab");
+/*void FerreteriaManager::mostrarProductos(){
+    ProductoArchivo productoArchivo;
+
+    productoArchivo.mostrarProductos();
+
+
+}*/
+
+void FerreteriaManager::mostrarCantidadProductos(){
+    ProductoArchivo productoArchivo;
+    int cant;
+
+    cant = productoArchivo.cantidadProductosRegistrados();
+
+    cout << "Cantidad de productos registrados: " << cant << endl;
+
+}
 
 
 
