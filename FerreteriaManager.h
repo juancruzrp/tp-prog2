@@ -9,5 +9,5 @@ public:
 
     void cargarProducto();
 
-
+void listarProductos();
 };
