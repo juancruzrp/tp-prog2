@@ -55,6 +55,7 @@ void MenuProducto::mostrar(){
                 cout << "      BUSCAR PRODUCTO POR CODIGO" << endl ;
                 cout << "======================================" << endl;
                 ///
+                manager.buscarProductoPorCodigo();
                 system("pause");
                 system("cls");
                 break;
