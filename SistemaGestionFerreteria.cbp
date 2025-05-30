@@ -38,6 +38,14 @@
 		</Unit>
 		<Unit filename="CompraArchivo.cpp" />
 		<Unit filename="CompraArchivo.h" />
+		<Unit filename="DetalleCompra.cpp" />
+		<Unit filename="DetalleCompra.h" />
+		<Unit filename="DetalleCompraArchivo.cpp" />
+		<Unit filename="DetalleCompraArchivo.h" />
+		<Unit filename="DetalleVenta.cpp" />
+		<Unit filename="DetalleVenta.h" />
+		<Unit filename="DetalleVentaArchivo.cpp" />
+		<Unit filename="DetalleVentaArchivo.h" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h">
 			<Option target="&lt;{~None~}&gt;" />

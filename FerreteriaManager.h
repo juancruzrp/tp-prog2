@@ -6,7 +6,6 @@ class FerreteriaManager{
 private:
 
 public:
-
     void cargarProducto();
     void mostrarCantidadProductos();
 
