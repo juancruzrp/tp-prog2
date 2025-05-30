@@ -177,14 +177,14 @@
 1748217931 c:\users\usuario\documents\github\tp-prog2\menuventa.h
 	<string>
 
-1748301069 c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.h
+1748303471 c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.h
 	<string>
 
 1748217931 source:c:\users\usuario\documents\github\tp-prog2\menucompra.cpp
 	<iostream>
 	"MenuCompra.h"
 
-1748301708 source:c:\users\usuario\documents\github\tp-prog2\menuproducto.cpp
+1748303471 source:c:\users\usuario\documents\github\tp-prog2\menuproducto.cpp
 	<iostream>
 	"MenuProducto.h"
 	"FerreteriaManager.h"
