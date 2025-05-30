@@ -9,7 +9,7 @@ using namespace std;
     /// PENSAR SI AGREGAR VALIDACIONES
 void FerreteriaManager::cargarProducto(){
     int codProducto, stock;
-    string nombreProducto, tipoProducto;
+    string nombreProducto, tipoProducto, marca, unidadMedida;
     float precioUnitario;
     Producto producto;
     ProductoArchivo productoArchivo;
@@ -37,33 +37,27 @@ void FerreteriaManager::cargarProducto(){
     cout << "Ingrese stock: ";
     cin >> stock;
 
-    producto = Producto(codProducto, nombreProducto, tipoProducto, precioUnitario, stock);
+    producto = Producto(codProducto, nombreProducto, tipoProducto, marca, unidadMedida, precioUnitario, stock);
 
-<<<<<<< Updated upstream
+
+
     if (productoArchivo.guardarProducto(producto)){
         cout << "Se guardo correctamente";
     }
     else {
-        cout << "Hubo un error al cargar el producto.";
-=======
-    if (producto.guardarEnArchivo()) {
+        cout << "Hubo un error al cargar el producto.";}
+
+    /*if (producto.guardarEnArchivo()) {
         cout << "Producto guardado correctamente.\n";
     } else {
         cout << "Error al guardar el producto.\n";
->>>>>>> Stashed changes
-    }
 
+    }
+*/
 }
 
 
-/*void FerreteriaManager::mostrarProductos(){
-    ProductoArchivo productoArchivo;
 
-    productoArchivo.mostrarProductos();
-
-
-<<<<<<< Updated upstream
-}*/
 
 void FerreteriaManager::mostrarCantidadProductos(){
     ProductoArchivo productoArchivo;
@@ -72,23 +66,25 @@ void FerreteriaManager::mostrarCantidadProductos(){
     cant = productoArchivo.cantidadProductosRegistrados();
 
     cout << "Cantidad de productos registrados: " << cant << endl;
-=======
-void FerreteriaManager::listarProductos() {
+}
+
+
+/*void FerreteriaManager::listarProductos() {
     Producto prod;
     FILE* archivo = fopen("productos.dat", "rb");
     if (archivo == NULL) {
         cout << "No se pudo abrir el archivo.\n";
         return;
     }
->>>>>>> Stashed changes
+
 
 }
+*/
 
 
-<<<<<<< Updated upstream
 
-=======
-void FerreteriaManager::buscarProductoPorCodigo() {
+
+/*void FerreteriaManager::buscarProductoPorCodigo() {
     int codigoBuscado;
     bool encontrado = false;
 
@@ -117,4 +113,4 @@ void FerreteriaManager::buscarProductoPorCodigo() {
         cout << "No se encontro ningun producto con ese codigo.\n";
     }
 }
->>>>>>> Stashed changes
+*/
