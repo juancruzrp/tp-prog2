@@ -13,6 +13,6 @@ public:
     bool guardarProducto(Producto registro);
     void mostrarProductos();
     void listarProductos();
-    int cantidadProductosRegistrados();
+    int getCantidadRegistros();
 
 };

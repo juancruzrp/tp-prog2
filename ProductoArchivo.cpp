@@ -71,7 +71,7 @@ void ProductoArchivo::listarProductos() {
 }*/
 
 
-int ProductoArchivo::cantidadProductosRegistrados(){
+int ProductoArchivo::getCantidadRegistros(){
     FILE *pFile;
     int tamReg, total, cantidad;
 

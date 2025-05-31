@@ -63,7 +63,7 @@ void FerreteriaManager::mostrarCantidadProductos(){
     ProductoArchivo productoArchivo;
     int cant;
 
-    cant = productoArchivo.cantidadProductosRegistrados();
+    cant = productoArchivo.getCantidadRegistros();
 
     cout << "Cantidad de productos registrados: " << cant << endl;
 }
