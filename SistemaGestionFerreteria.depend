@@ -137,12 +137,13 @@
 1748123881 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\venta.cpp
 	<iostream>
 
-1748219551 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\main.cpp
+1748716906 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\main.cpp
 	<iostream>
 	"MenuProducto.h"
 	"MenuProveedor.h"
 	"MenuCompra.h"
 	"MenuVenta.h"
+	"MenuInforme.h"
 	"FerreteriaManager.h"
 
 1748141889 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\fecha.h
@@ -253,4 +254,12 @@
 
 1748568842 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\detalleventaarchivo.cpp
 	<iostream>
+
+1748715103 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menuinforme.h
+	<string>
+
+1748717601 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menuinforme.cpp
+	<iostream>
+	"MenuInforme.h"
+	"FerreteriaManager.h"
 
