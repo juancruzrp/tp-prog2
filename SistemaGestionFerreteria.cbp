@@ -58,6 +58,8 @@
 		<Unit filename="MenuCompra.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="MenuInforme.cpp" />
+		<Unit filename="MenuInforme.h" />
 		<Unit filename="MenuProducto.cpp" />
 		<Unit filename="MenuProducto.h">
 			<Option target="&lt;{~None~}&gt;" />
