@@ -99,7 +99,7 @@
 1748134220 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menucompra.h
 	<string>
 
-1748569995 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menuproducto.cpp
+1748830762 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menuproducto.cpp
 	<iostream>
 	"MenuProducto.h"
 	"FerreteriaManager.h"
