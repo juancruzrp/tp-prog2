@@ -69,48 +69,6 @@ void FerreteriaManager::mostrarCantidadProductos(){
 }
 
 
-/*void FerreteriaManager::listarProductos() {
-    Producto prod;
-    FILE* archivo = fopen("productos.dat", "rb");
-    if (archivo == NULL) {
-        cout << "No se pudo abrir el archivo.\n";
-        return;
-    }
-
-
-}
-*/
 
 
 
-
-/*void FerreteriaManager::buscarProductoPorCodigo() {
-    int codigoBuscado;
-    bool encontrado = false;
-
-    cout << "Ingrese el codigo del producto a buscar: ";
-    cin >> codigoBuscado;
-
-    Producto prod;
-    FILE* archivo = fopen("productos.dat", "rb");
-    if (archivo == NULL) {
-        cout << "No se pudo abrir el archivo.\n";
-        return;
-    }
-
-    while (fread(&prod, sizeof(Producto), 1, archivo)) {
-        if (prod.getCodProducto() == codigoBuscado) {
-            cout << "Producto encontrado:\n";
-            prod.mostrar();
-            encontrado = true;
-            break;  // cortamos la búsqueda porque ya lo encontramos
-        }
-    }
-
-    fclose(archivo);
-
-    if (!encontrado) {
-        cout << "No se encontro ningun producto con ese codigo.\n";
-    }
-}
-*/
