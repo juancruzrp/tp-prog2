@@ -3,6 +3,7 @@
 #include "MenuProveedor.h"
 #include "MenuCompra.h"
 #include "MenuVenta.h"
+#include "MenuInforme.h"
 #include "FerreteriaManager.h"
 using namespace std;
 
@@ -13,8 +14,9 @@ int main()
     MenuProveedor menuproveedor;
     MenuCompra menucompra;
     MenuVenta menuventa;
+    MenuInforme menuinforme;
 
-
+    /// holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     do{
     cout << "======================================" << endl;
     cout << "    SISTEMA DE GESTION FERRETERIA   " << endl ;
@@ -23,6 +25,7 @@ int main()
     cout << "2. Menu Proveedores" << endl;
     cout << "3. Menu Compras" << endl;
     cout << "4. Menu Ventas" << endl;
+    cout << "5. Generar Informe" << endl;
     cout << "0. Salir" << endl;
     cout << "======================================"<< endl;
     cout << "Ingrese una opcion: ";
@@ -56,6 +59,13 @@ int main()
 
             break;
 
+        case 5:
+            system("cls");
+            menuinforme.mostrar();
+            system("pause");
+            system("cls");
+
+            break;
         case 0:
             system("cls");
             cout << "======================================" << endl;
