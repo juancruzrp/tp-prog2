@@ -39,7 +39,7 @@ void MenuProducto::mostrar(){
                 ///system("cls");
                 break;
             case 2:
-                ///manager.listarProductos();  // <<—— Aca llamás a la función
+                /*manager.listarProductos(); */ // <<—— Aca llamás a la función
                 system("pause");
                 system("cls");
                 cout << "======================================" << endl;
@@ -91,7 +91,7 @@ void MenuProducto::mostrar(){
                 cout << "======================================" << endl;
                 cout << "  CANTIDAD DE PRODUCTOS REGISTRADOS" << endl ;
                 cout << "======================================" << endl;
-                manager.mostrarCantidadProductos();
+                /*manager.mostrarCantidadProductos();*/
                 system("pause");
                 system("cls");
                 break;

@@ -47,19 +47,26 @@ void FerreteriaManager::cargarProducto(){
     else {
         cout << "Hubo un error al cargar el producto.";}
 
-    /*if (producto.guardarEnArchivo()) {
+    if (producto.guardarEnArchivo()) {
         cout << "Producto guardado correctamente.\n";
     } else {
         cout << "Error al guardar el producto.\n";
 
     }
-*/
+
+}
+
+void FerreteriaManager::mostrarProductos() {
+    ProductoArchivo productoArchivo;
+    productoArchivo.listarProductos();
 }
 
 
 
 
-void FerreteriaManager::mostrarCantidadProductos(){
+
+
+/*void FerreteriaManager::mostrarCantidadProductos(){
     ProductoArchivo productoArchivo;
     int cant;
 
@@ -67,23 +74,7 @@ void FerreteriaManager::mostrarCantidadProductos(){
 
     cout << "Cantidad de productos registrados: " << cant << endl;
 }
-
-
-/*void FerreteriaManager::listarProductos() {
-    Producto prod;
-    FILE* archivo = fopen("productos.dat", "rb");
-    if (archivo == NULL) {
-        cout << "No se pudo abrir el archivo.\n";
-        return;
-    }
-
-
-}
 */
-
-
-
-
 /*void FerreteriaManager::buscarProductoPorCodigo() {
     int codigoBuscado;
     bool encontrado = false;

@@ -12,6 +12,30 @@ ProductoArchivo::ProductoArchivo(std::string nombreArchivo){
     _nombreArchivo = nombreArchivo;
 }
 
+void ProductoArchivo::listarProductos() {
+    Producto prod;
+    FILE* archivo = fopen(_nombreArchivo.c_str(), "rb");
+
+    if (archivo == NULL) {
+        cout << "No se pudo abrir el archivo." << endl;
+        return;
+    }
+
+    while (fread(&prod, sizeof(Producto), 1, archivo) == 1) {
+        cout << "------------------------------" << endl;
+        cout << "Código: " << prod.getCodProducto() << endl;
+        cout << "Nombre: " << prod.getNombreProducto() << endl;
+        cout << "Tipo: " << prod.getTipoProducto() << endl;
+        cout << "Marca: " << prod.getMarca() << endl;
+        cout << "Unidad de medida: " << prod.getUnidadMedida() << endl;
+        cout << "Precio unitario: $" << prod.getPrecioUnitario() << endl;
+        cout << "Stock: " << prod.getStock() << endl;
+    }
+
+    fclose(archivo);
+}
+
+
 
 bool ProductoArchivo::guardarProducto(Producto registro) {
     FILE *pFile;
@@ -28,47 +52,7 @@ bool ProductoArchivo::guardarProducto(Producto registro) {
     return result;
 }
 
-/*
-void ProductoArchivo::mostrarProductos() {
-    Producto registro;
-    FILE *pFile;
 
-    pFile = fopen(_nombreArchivo.c_str(), "rb");
-
-    if (pFile == nullptr) {
-        cout << "No se pudo abrir el archivo." << endl;
-        return;
-    }
-
-
-
-    fclose(pFile);
-
-
-    cout << "Codigo: " << registro.getCodProducto() << endl;
-    cout << "Nombre: " << registro.getNombreProducto() << endl;
-    cout << "Tipo: " << registro.getTipoProducto() << endl;
-    cout << "Precio: $" << registro.getPrecioUnitario() << endl;
-    cout << "Stock: " << registro.getStock() << endl;
-}
-
-void ProductoArchivo::listarProductos() {
-    ProductoArchivo prodArch;
-    FILE *archivo;
-
-    archivo = fopen("productos.dat", "ab");
-    if (archivo == NULL) {
-        cout << "No se pudo abrir el archivo." << endl;
-        return;
-    }
-
-    while (fread(&prodArch, sizeof(Producto), 1, archivo)) {
-        prodArch.mostrarProductos(); // Método de la clase Producto
-        cout << "-----------------------------" << endl;
-    }
-
-    fclose(archivo);
-}*/
 
 
 int ProductoArchivo::getCantidadRegistros(){
