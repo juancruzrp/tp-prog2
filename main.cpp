@@ -16,7 +16,7 @@ int main()
     MenuVenta menuventa;
     MenuInforme menuinforme;
 
-
+    /// holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     do{
     cout << "======================================" << endl;
     cout << "    SISTEMA DE GESTION FERRETERIA   " << endl ;
