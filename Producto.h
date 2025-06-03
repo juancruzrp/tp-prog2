@@ -23,11 +23,6 @@ public:
     void setPrecioUnitario(float precioUnitario);
     void setStock(int stock);
 
-
-     bool guardarEnArchivo();
-    void mostrar();
-
-
     int getCodProducto();
     std::string getNombreProducto();
     std::string getTipoProducto();
@@ -35,5 +30,7 @@ public:
     std::string getUnidadMedida();
     float getPrecioUnitario();
     int getStock();
+
+    std::string toCSV();
 
 };

@@ -47,61 +47,118 @@ void FerreteriaManager::cargarProducto(){
     else {
         cout << "Hubo un error al cargar el producto.";}
 
-    if (producto.guardarEnArchivo()) {
+    /*if (producto.guardarEnArchivo()) {
         cout << "Producto guardado correctamente.\n";
     } else {
         cout << "Error al guardar el producto.\n";
 
     }
-
-}
-
-void FerreteriaManager::mostrarProductos() {
-    ProductoArchivo productoArchivo;
-    productoArchivo.listarProductos();
-}
-
-
-
-
-
-
-/*void FerreteriaManager::mostrarCantidadProductos(){
-    ProductoArchivo productoArchivo;
-    int cant;
-
-    cant = productoArchivo.getCantidadRegistros();
-
-    cout << "Cantidad de productos registrados: " << cant << endl;
-}
 */
-/*void FerreteriaManager::buscarProductoPorCodigo() {
-    int codigoBuscado;
-    bool encontrado = false;
+}
 
-    cout << "Ingrese el codigo del producto a buscar: ";
-    cin >> codigoBuscado;
 
-    Producto prod;
+
+
+void FerreteriaManager::mostrarCantidadProductos(){
+    ProductoArchivo productoArchivo;
+    int cantidadProductos;
+
+    cantidadProductos = productoArchivo.getCantidadRegistros();
+
+    cout << "Cantidad de productos registrados: " << cantidadProductos << endl;
+}
+
+
+void FerreteriaManager::listarProductos() {
+    ProductoArchivo productoArchivo;
+    Producto registro;
+    int cantidadProductos =productoArchivo.getCantidadRegistros();
+
+    for(int i=0 ; i<cantidadProductos ; i++ ){
+
+        registro = productoArchivo.leer(i);
+        cout<< registro.toCSV() << endl;
+    }
+
+
     FILE* archivo = fopen("productos.dat", "rb");
     if (archivo == NULL) {
         cout << "No se pudo abrir el archivo.\n";
         return;
     }
 
-    while (fread(&prod, sizeof(Producto), 1, archivo)) {
-        if (prod.getCodProducto() == codigoBuscado) {
-            cout << "Producto encontrado:\n";
-            prod.mostrar();
-            encontrado = true;
-            break;  // cortamos la búsqueda porque ya lo encontramos
-        }
-    }
 
-    fclose(archivo);
-
-    if (!encontrado) {
-        cout << "No se encontro ningun producto con ese codigo.\n";
-    }
 }
-*/
+
+
+
+
+
+void FerreteriaManager::buscarProductoPorCodigo() {
+    ProductoArchivo productoArchivo;
+    Producto registro;
+    int buscarCodigo;
+    int cantidadProductos = productoArchivo.getCantidadRegistros();
+
+    cout<<"Ingrese el codigo de producto que desea buscar:";
+    cin >> buscarCodigo;
+
+    for(int i=0; i<cantidadProductos ; i++){
+
+        registro = productoArchivo.leer(i);
+        if(registro.getCodProducto()== buscarCodigo){
+
+        cout <<"Nombre del producto: " << registro.getNombreProducto() << endl;
+        cout <<"Tipo de producto: " << registro.getTipoProducto() << endl;
+        cout <<"Marca del producto: " << registro.getMarca() << endl;
+    }
+
+}
+return;
+}
+
+void FerreteriaManager::buscarProductoPorNombre(){
+    ProductoArchivo productoArchivo;
+    Producto registro;
+    std::string buscarNombre;
+    int cantidadProductos = productoArchivo.getCantidadRegistros();
+
+    cout<<"Ingrese el nombre de producto que desea buscar:";
+    cin >> buscarNombre;
+
+    for(int i=0; i<cantidadProductos ; i++){
+
+        registro = productoArchivo.leer(i);
+        if(registro.getNombreProducto()== buscarNombre){
+
+        cout <<"codigo del producto: " << registro.getCodProducto() << endl;
+        cout <<"Tipo de producto: " << registro.getTipoProducto() << endl;
+        cout <<"Marca del producto: " << registro.getMarca() << endl;
+    }
+
+}
+return;
+}
+
+void FerreteriaManager::buscarProductoPorTipo(){
+    ProductoArchivo productoArchivo;
+    Producto registro;
+    std::string buscarTipo;
+    int cantidadProductos = productoArchivo.getCantidadRegistros();
+
+    cout<<"Ingrese el nombre de producto que desea buscar:";
+    cin >> buscarTipo;
+
+    for(int i=0; i<cantidadProductos ; i++){
+
+        registro = productoArchivo.leer(i);
+        if(registro.getTipoProducto()== buscarTipo){
+
+        cout <<"codigo del producto: " << registro.getCodProducto() << endl;
+        cout <<"Nombre de producto: " << registro.getNombreProducto() << endl;
+        cout <<"Marca del producto: " << registro.getMarca() << endl;
+    }
+
+}
+return;
+}
