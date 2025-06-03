@@ -9,8 +9,9 @@ public:
     void cargarProducto();
     void mostrarCantidadProductos();
     void listarProductos();
-    void mostrarProductos();
-    ///void buscarProductoPorCodigo();
+    void buscarProductoPorCodigo();
+    void buscarProductoPorNombre();
+    void buscarProductoPorTipo();
 
 
 };
