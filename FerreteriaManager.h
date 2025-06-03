@@ -6,12 +6,38 @@ class FerreteriaManager{
 private:
 
 public:
+    ///PRODUCTOS
     void cargarProducto();
-    void mostrarCantidadProductos();
+    void listarCantidadProductos();
     void listarProductos();
     void buscarProductoPorCodigo();
     void buscarProductoPorNombre();
     void buscarProductoPorTipo();
+    void modificarPrecioProducto();
+
+    ///PROVEEDORES
+    void cargarProveedor();
+    void listarCantidadProveedores();
+    void listarProveedores();
+    void buscarProveedorPorID();
+    void buscarProveedorPorNombre();
+    void modificarTelefonoProveedor();
+    void modificarDireccionProveedor();
+
+    ///VENTAS
+    void cargarVenta();
+    void listarCantidadVentas();
+    void listarVentas();
+    void buscarVentaPorFecha();
+    void buscarVentaPorProducto();
+
+    ///COMPRAS
+    void cargarCompra();
+    void listarCantidadCompras();
+    void listarCompras();
+    void buscarCompraPorFecha();
+    void buscarCompraPorProveedor();
+
 
 
 };

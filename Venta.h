@@ -1,4 +1,5 @@
 #pragma once
+#include "Fecha.h"
 #include <string>
 
 class Venta{
@@ -15,12 +16,12 @@ public:
     void setIdVenta(int idVenta);
     void setImporteTotal(float importeTotal);
     void setMedioPago(std::string medioPago);
-    void setFecha(Fecha fechaVenta);
+    void setFechaVenta(Fecha fechaVenta);
 
-    int getVenta();
+    int getIdVenta();
     float getImporteTotal();
     std::string getMedioPago();
-    Fecha getFecha();
+    Fecha getFechaVenta();
 
 };
 

@@ -59,7 +59,7 @@ void FerreteriaManager::cargarProducto(){
 
 
 
-void FerreteriaManager::mostrarCantidadProductos(){
+void FerreteriaManager::listarCantidadProductos(){
     ProductoArchivo productoArchivo;
     int cantidadProductos;
 
@@ -146,7 +146,7 @@ void FerreteriaManager::buscarProductoPorTipo(){
     std::string buscarTipo;
     int cantidadProductos = productoArchivo.getCantidadRegistros();
 
-    cout<<"Ingrese el nombre de producto que desea buscar:";
+    cout<<"Ingrese el nombre de producto que desea buscar: ";
     cin >> buscarTipo;
 
     for(int i=0; i<cantidadProductos ; i++){

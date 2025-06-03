@@ -89,7 +89,7 @@ void MenuProducto::mostrar(){
                 cout << "======================================" << endl;
                 cout << "  CANTIDAD DE PRODUCTOS REGISTRADOS" << endl ;
                 cout << "======================================" << endl;
-                manager.mostrarCantidadProductos();
+                manager.listarCantidadProductos();
                 system("pause");
                 system("cls");
                 break;
