@@ -47,19 +47,26 @@ void FerreteriaManager::cargarProducto(){
     else {
         cout << "Hubo un error al cargar el producto.";}
 
-    /*if (producto.guardarEnArchivo()) {
+    if (producto.guardarEnArchivo()) {
         cout << "Producto guardado correctamente.\n";
     } else {
         cout << "Error al guardar el producto.\n";
 
     }
-*/
+
+}
+
+void FerreteriaManager::mostrarProductos() {
+    ProductoArchivo productoArchivo;
+    productoArchivo.listarProductos();
 }
 
 
 
 
-void FerreteriaManager::mostrarCantidadProductos(){
+
+
+/*void FerreteriaManager::mostrarCantidadProductos(){
     ProductoArchivo productoArchivo;
     int cant;
 
@@ -67,8 +74,34 @@ void FerreteriaManager::mostrarCantidadProductos(){
 
     cout << "Cantidad de productos registrados: " << cant << endl;
 }
+*/
+/*void FerreteriaManager::buscarProductoPorCodigo() {
+    int codigoBuscado;
+    bool encontrado = false;
 
+    cout << "Ingrese el codigo del producto a buscar: ";
+    cin >> codigoBuscado;
 
+    Producto prod;
+    FILE* archivo = fopen("productos.dat", "rb");
+    if (archivo == NULL) {
+        cout << "No se pudo abrir el archivo.\n";
+        return;
+    }
 
+    while (fread(&prod, sizeof(Producto), 1, archivo)) {
+        if (prod.getCodProducto() == codigoBuscado) {
+            cout << "Producto encontrado:\n";
+            prod.mostrar();
+            encontrado = true;
+            break;  // cortamos la búsqueda porque ya lo encontramos
+        }
+    }
 
+    fclose(archivo);
 
+    if (!encontrado) {
+        cout << "No se encontro ningun producto con ese codigo.\n";
+    }
+}
+*/

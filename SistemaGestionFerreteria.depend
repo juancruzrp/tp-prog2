@@ -83,7 +83,7 @@
 1748141889 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\fecha.cpp
 	"Fecha.h"
 
-1748833206 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ferreteriamanager.cpp
+1748649006 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ferreteriamanager.cpp
 	<iostream>
 	"Producto.h"
 	"FerreteriaManager.h"
@@ -99,7 +99,7 @@
 1748134220 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menucompra.h
 	<string>
 
-1748830762 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menuproducto.cpp
+1748569995 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menuproducto.cpp
 	<iostream>
 	"MenuProducto.h"
 	"FerreteriaManager.h"
@@ -137,13 +137,12 @@
 1748123881 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\venta.cpp
 	<iostream>
 
-1748833104 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\main.cpp
+1748219551 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\main.cpp
 	<iostream>
 	"MenuProducto.h"
 	"MenuProveedor.h"
 	"MenuCompra.h"
 	"MenuVenta.h"
-	"MenuInforme.h"
 	"FerreteriaManager.h"
 
 1748141889 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\fecha.h
@@ -152,13 +151,13 @@
 1748144493 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\proveedor.h
 	<string>
 
-1748217931 source:c:\users\usuario\documents\github\tp-prog2\fecha.cpp
+1748466125 source:c:\users\usuario\documents\github\tp-prog2\fecha.cpp
 	"Fecha.h"
 
-1748217931 c:\users\usuario\documents\github\tp-prog2\fecha.h
+1748466125 c:\users\usuario\documents\github\tp-prog2\fecha.h
 	<string>
 
-1748301127 source:c:\users\usuario\documents\github\tp-prog2\main.cpp
+1748466125 source:c:\users\usuario\documents\github\tp-prog2\main.cpp
 	<iostream>
 	"MenuProducto.h"
 	"MenuProveedor.h"
@@ -166,63 +165,64 @@
 	"MenuVenta.h"
 	"FerreteriaManager.h"
 
-1748217931 c:\users\usuario\documents\github\tp-prog2\menuproducto.h
+1748716163 c:\users\usuario\documents\github\tp-prog2\menuproducto.h
 	<string>
 
-1748217931 c:\users\usuario\documents\github\tp-prog2\menuproveedor.h
+1748466125 c:\users\usuario\documents\github\tp-prog2\menuproveedor.h
 	<string>
 
-1748217931 c:\users\usuario\documents\github\tp-prog2\menucompra.h
+1748466125 c:\users\usuario\documents\github\tp-prog2\menucompra.h
 	<string>
 
-1748217931 c:\users\usuario\documents\github\tp-prog2\menuventa.h
+1748466125 c:\users\usuario\documents\github\tp-prog2\menuventa.h
 	<string>
 
-1748303471 c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.h
+1748718415 c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.h
 	<string>
 
-1748217931 source:c:\users\usuario\documents\github\tp-prog2\menucompra.cpp
+1748466125 source:c:\users\usuario\documents\github\tp-prog2\menucompra.cpp
 	<iostream>
 	"MenuCompra.h"
 
-1748303471 source:c:\users\usuario\documents\github\tp-prog2\menuproducto.cpp
+1748717970 source:c:\users\usuario\documents\github\tp-prog2\menuproducto.cpp
 	<iostream>
 	"MenuProducto.h"
 	"FerreteriaManager.h"
 
-1748217931 source:c:\users\usuario\documents\github\tp-prog2\menuproveedor.cpp
+1748466125 source:c:\users\usuario\documents\github\tp-prog2\menuproveedor.cpp
 	<iostream>
 	"MenuProveedor.h"
 
-1748217931 source:c:\users\usuario\documents\github\tp-prog2\menuventa.cpp
+1748466125 source:c:\users\usuario\documents\github\tp-prog2\menuventa.cpp
 	<iostream>
 	"MenuVenta.h"
 
-1748217931 source:c:\users\usuario\documents\github\tp-prog2\proveedor.cpp
+1748466125 source:c:\users\usuario\documents\github\tp-prog2\proveedor.cpp
 	<iostream>
 	"Proveedor.h"
 	<cstring>
 
-1748217931 c:\users\usuario\documents\github\tp-prog2\proveedor.h
+1748466125 c:\users\usuario\documents\github\tp-prog2\proveedor.h
 	<string>
 
-1748217931 source:c:\users\usuario\documents\github\tp-prog2\venta.cpp
+1748466125 source:c:\users\usuario\documents\github\tp-prog2\venta.cpp
 	<iostream>
 
-1748301127 source:c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.cpp
+1748717728 source:c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.cpp
 	<iostream>
 	"Producto.h"
 	"FerreteriaManager.h"
+	"ProductoArchivo.h"
 
-1748301127 c:\users\usuario\documents\github\tp-prog2\producto.h
+1748716729 c:\users\usuario\documents\github\tp-prog2\producto.h
 	<string>
 
-1748301127 source:c:\users\usuario\documents\github\tp-prog2\producto.cpp
+1748716729 source:c:\users\usuario\documents\github\tp-prog2\producto.cpp
 	<iostream>
 	"Producto.h"
 	<cstring>
 
-1748301074 source:c:\users\usuario\documents\github\tp-prog2\compra.cpp
+1748466125 source:c:\users\usuario\documents\github\tp-prog2\compra.cpp
 	<iostream>
 
 1748306693 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\compraarchivo.cpp
@@ -255,11 +255,33 @@
 1748568842 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\detalleventaarchivo.cpp
 	<iostream>
 
-1748832116 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menuinforme.h
+1748466125 source:c:\users\usuario\documents\github\tp-prog2\compraarchivo.cpp
+	<iostream>
+
+1748716163 source:c:\users\usuario\documents\github\tp-prog2\detallecompra.cpp
+	<iostream>
+
+1748716163 source:c:\users\usuario\documents\github\tp-prog2\detallecompraarchivo.cpp
+	<iostream>
+
+1748716163 source:c:\users\usuario\documents\github\tp-prog2\detalleventa.cpp
+	<iostream>
+
+1748716163 source:c:\users\usuario\documents\github\tp-prog2\detalleventaarchivo.cpp
+	<iostream>
+
+1748717435 c:\users\usuario\documents\github\tp-prog2\productoarchivo.h
+	"Producto.h"
 	<string>
 
-1748832093 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menuinforme.cpp
+1748718346 source:c:\users\usuario\documents\github\tp-prog2\productoarchivo.cpp
 	<iostream>
-	"MenuInforme.h"
-	"FerreteriaManager.h"
+	"Producto.h"
+	"ProductoArchivo.h"
+
+1748466125 source:c:\users\usuario\documents\github\tp-prog2\proveedorarchivo.cpp
+	<iostream>
+
+1748466125 source:c:\users\usuario\documents\github\tp-prog2\ventaarchivo.cpp
+	<iostream>
 
