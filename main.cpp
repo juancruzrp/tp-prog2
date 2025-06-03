@@ -19,6 +19,8 @@ int main()
     /// Comentario 02/06
     ///comentario de gonza
 
+    ///hola dios
+
     do{
     cout << "======================================" << endl;
     cout << "    SISTEMA DE GESTION FERRETERIA   " << endl ;
