@@ -39,13 +39,11 @@ void MenuProducto::mostrar(){
                 ///system("cls");
                 break;
             case 2:
-                /*manager.listarProductos(); */ // <<—— Aca llamás a la función
-                system("pause");
                 system("cls");
                 cout << "======================================" << endl;
                 cout << "           LISTAR PRODUCTOS" << endl ;
                 cout << "======================================" << endl;
-                ///
+                manager.listarProductos();  // <<—— Aca llamás a la función
                 system("pause");
                 system("cls");
                 break;
@@ -55,7 +53,7 @@ void MenuProducto::mostrar(){
                 cout << "      BUSCAR PRODUCTO POR CODIGO" << endl ;
                 cout << "======================================" << endl;
                 ///
-                ///manager.buscarProductoPorCodigo();
+                manager.buscarProductoPorCodigo();
                 system("pause");
                 system("cls");
                 break;
@@ -64,7 +62,7 @@ void MenuProducto::mostrar(){
                 cout << "======================================" << endl;
                 cout << "       BUSCAR PRODUCTO POR NOMBRE" << endl ;
                 cout << "======================================" << endl;
-                ///
+                manager.buscarProductoPorNombre();
                 system("pause");
                 system("cls");
                 break;
@@ -73,7 +71,7 @@ void MenuProducto::mostrar(){
                 cout << "======================================" << endl;
                 cout << "       BUSCAR PRODUCTO POR TIPO" << endl ;
                 cout << "======================================" << endl;
-                ///
+                manager.buscarProductoPorTipo();
                 system("pause");
                 system("cls");
                break;
@@ -91,7 +89,7 @@ void MenuProducto::mostrar(){
                 cout << "======================================" << endl;
                 cout << "  CANTIDAD DE PRODUCTOS REGISTRADOS" << endl ;
                 cout << "======================================" << endl;
-                /*manager.mostrarCantidadProductos();*/
+                manager.mostrarCantidadProductos();
                 system("pause");
                 system("cls");
                 break;
