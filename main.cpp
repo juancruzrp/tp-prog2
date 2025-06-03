@@ -17,6 +17,7 @@ int main()
     MenuInforme menuinforme;
 
     /// Comentario 02/06
+    ///comentario de gonza
 
     do{
     cout << "======================================" << endl;
