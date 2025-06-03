@@ -83,7 +83,7 @@ void FerreteriaManager::listarProductos() {
 
     FILE* archivo = fopen("productos.dat", "rb");
     if (archivo == NULL) {
-        cout << "No se pudo abrir el archivo.\n";
+        cout << "No se pudo abrir el archivo." << endl;
         return;
     }
 
