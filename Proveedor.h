@@ -26,5 +26,7 @@ public:
     std::string getEmail();
     std::string getDireccion();
 
+    std::string toCSV();
+
 };
 

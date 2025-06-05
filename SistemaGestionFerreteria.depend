@@ -310,3 +310,141 @@
 	"DetalleVenta.h"
 	<string>
 
+1748911167 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\compra.cpp
+	<iostream>
+
+1748911167 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\compraarchivo.cpp
+	<iostream>
+
+1748911167 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\detallecompra.cpp
+	<iostream>
+
+1748911167 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\detallecompraarchivo.cpp
+	<iostream>
+
+1749158256 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\detalleventa.cpp
+	"DetalleVenta.h"
+	<string>
+
+1749158256 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\detalleventa.h
+	<string>
+
+1749158256 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\detalleventaarchivo.cpp
+	<iostream>
+	"DetalleVentaArchivo.h"
+
+1749158256 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\detalleventaarchivo.h
+	"DetalleVenta.h"
+	<string>
+
+1748911167 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\fecha.cpp
+	"Fecha.h"
+
+1748911167 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\fecha.h
+	<string>
+
+1748912713 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\main.cpp
+	<iostream>
+	"MenuProducto.h"
+	"MenuProveedor.h"
+	"MenuCompra.h"
+	"MenuVenta.h"
+	"MenuInforme.h"
+	"FerreteriaManager.h"
+
+1748911167 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menuproducto.h
+	<string>
+
+1748911167 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menuproveedor.h
+	<string>
+
+1748911167 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menucompra.h
+	<string>
+
+1748911167 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menuventa.h
+	<string>
+
+1748911167 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menuinforme.h
+	<string>
+
+1749158256 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ferreteriamanager.h
+	<string>
+
+1748911167 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menucompra.cpp
+	<iostream>
+	"MenuCompra.h"
+
+1748911167 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menuinforme.cpp
+	<iostream>
+	"MenuInforme.h"
+	"FerreteriaManager.h"
+
+1749158256 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menuproducto.cpp
+	<iostream>
+	"MenuProducto.h"
+	"FerreteriaManager.h"
+
+1749158256 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menuventa.cpp
+	<iostream>
+	"FerreteriaManager.h"
+	"MenuVenta.h"
+
+1749158256 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\producto.cpp
+	<iostream>
+	"Producto.h"
+	<cstring>
+
+1748913531 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\producto.h
+	<string>
+
+1749158256 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\venta.cpp
+	<iostream>
+	"Venta.h"
+	<cstring>
+
+1749158256 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\venta.h
+	"Fecha.h"
+	<string>
+
+1748911167 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ventaarchivo.cpp
+	<iostream>
+
+1749162116 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menuproveedor.cpp
+	<iostream>
+	"FerreteriaManager.h"
+	"MenuProveedor.h"
+
+1749161552 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\productoarchivo.cpp
+	<iostream>
+	"Producto.h"
+	"ProductoArchivo.h"
+
+1748913538 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\productoarchivo.h
+	"Producto.h"
+	<string>
+
+1749161790 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\proveedorarchivo.cpp
+	<iostream>
+	"Proveedor.h"
+	"ProveedorArchivo.h"
+
+1749161552 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\proveedor.h
+	<string>
+
+1749161774 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\proveedorarchivo.h
+	"Proveedor.h"
+	<string>
+
+1749162263 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ferreteriamanager.cpp
+	<iostream>
+	"FerreteriaManager.h"
+	"Producto.h"
+	"ProductoArchivo.h"
+	"Proveedor.h"
+	"ProveedorArchivo.h"
+
+1749162042 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\proveedor.cpp
+	<iostream>
+	"Proveedor.h"
+	<cstring>
+

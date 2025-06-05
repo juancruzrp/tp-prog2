@@ -60,3 +60,14 @@ std::string Proveedor::getEmail(){
 std::string Proveedor::getDireccion(){
     return _direccion;
 }
+
+std::string Proveedor::toCSV(){
+    std::string str = "";
+    str = to_string(_idProveedor) + ",";
+    str += string(_nombreProveedor) + ",";
+    str += string(_telefono) + ",";
+    str += string(_email) + ",";
+    str += string(_direccion);
+
+        return str;
+}
