@@ -15,13 +15,13 @@ public:
 
     void setIdVenta(int idVenta);
     void setCodProducto(int codProducto);
-    void setPrecioUnitario(float precioUnitario)
+    void setPrecioUnitario(float precioUnitario);
     void setCantidad(int cantidad);
     void setSubtotal(float subtotal);
 
     int getIdVenta();
     int getCodProducto();
-    float getPrecioUnitario()
+    float getPrecioUnitario();
     int getCantidad();
     float getSubtotal();
 

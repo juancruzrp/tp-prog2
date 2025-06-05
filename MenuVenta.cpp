@@ -1,10 +1,12 @@
 #include <iostream>
+#include "FerreteriaManager.h"
 #include "MenuVenta.h"
 using namespace std;
 
 void MenuVenta::mostrar(){
 
     int opcion;
+    FerreteriaManager manager;
 
     do{
     cout << "======================================" << endl;
@@ -23,17 +25,57 @@ void MenuVenta::mostrar(){
     switch(opcion) {
             case 1:
 
+                system("cls");
+                cout << "======================================" << endl;
+                cout << "        REGISTRAR NUEVA VENTA" << endl ;
+                cout << "======================================" << endl;
+                ///
+                system("pause");
+                system("cls");
+
                 break;
             case 2:
+
+                system("cls");
+                cout << "======================================" << endl;
+                cout << "       LISTAR TODAS LAS VENTAS" << endl ;
+                cout << "======================================" << endl;
+                ///
+                system("pause");
+                system("cls");
 
                 break;
             case 3:
 
+                system("cls");
+                cout << "======================================" << endl;
+                cout << "        BUSCAR VENTA POR FECHA" << endl ;
+                cout << "======================================" << endl;
+                ///
+                system("pause");
+                system("cls");
+
                 break;
             case 4:
 
+                system("cls");
+                cout << "======================================" << endl;
+                cout << "      BUSCAR VENTA POR PRODUCTO" << endl ;
+                cout << "======================================" << endl;
+                ///
+                system("pause");
+                system("cls");
+
                 break;
             case 5:
+
+                system("cls");
+                cout << "======================================" << endl;
+                cout << "    CANTIDAD DE VENTAS REGISTRADAS" << endl ;
+                cout << "======================================" << endl;
+                ///
+                system("pause");
+                system("cls");
 
                break;
             case 0:

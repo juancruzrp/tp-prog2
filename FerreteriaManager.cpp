@@ -59,7 +59,7 @@ void FerreteriaManager::cargarProducto(){
 
 
 
-void FerreteriaManager::mostrarCantidadProductos(){
+void FerreteriaManager::listarCantidadProductos(){
     ProductoArchivo productoArchivo;
     int cantidadProductos;
 
@@ -83,7 +83,7 @@ void FerreteriaManager::listarProductos() {
 
     FILE* archivo = fopen("productos.dat", "rb");
     if (archivo == NULL) {
-        cout << "No se pudo abrir el archivo.\n";
+        cout << "No se pudo abrir el archivo." << endl;
         return;
     }
 
@@ -146,7 +146,7 @@ void FerreteriaManager::buscarProductoPorTipo(){
     std::string buscarTipo;
     int cantidadProductos = productoArchivo.getCantidadRegistros();
 
-    cout<<"Ingrese el nombre de producto que desea buscar:";
+    cout<<"Ingrese el nombre de producto que desea buscar: ";
     cin >> buscarTipo;
 
     for(int i=0; i<cantidadProductos ; i++){
