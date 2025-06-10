@@ -29,7 +29,7 @@ void MenuVenta::mostrar(){
                 cout << "======================================" << endl;
                 cout << "        REGISTRAR NUEVA VENTA" << endl ;
                 cout << "======================================" << endl;
-                ///manager.
+                manager.cargarVenta();
                 system("pause");
                 system("cls");
 
@@ -40,7 +40,7 @@ void MenuVenta::mostrar(){
                 cout << "======================================" << endl;
                 cout << "       LISTAR TODAS LAS VENTAS" << endl ;
                 cout << "======================================" << endl;
-                ///
+                ///manager.listarVentas();
                 system("pause");
                 system("cls");
 
@@ -51,7 +51,7 @@ void MenuVenta::mostrar(){
                 cout << "======================================" << endl;
                 cout << "        BUSCAR VENTA POR FECHA" << endl ;
                 cout << "======================================" << endl;
-                ///
+                ///manager.buscarVentaPorFecha();
                 system("pause");
                 system("cls");
 
@@ -62,7 +62,7 @@ void MenuVenta::mostrar(){
                 cout << "======================================" << endl;
                 cout << "      BUSCAR VENTA POR PRODUCTO" << endl ;
                 cout << "======================================" << endl;
-                ///
+                ///manager.buscarVentaPorProducto();
                 system("pause");
                 system("cls");
 
@@ -73,7 +73,7 @@ void MenuVenta::mostrar(){
                 cout << "======================================" << endl;
                 cout << "    CANTIDAD DE VENTAS REGISTRADAS" << endl ;
                 cout << "======================================" << endl;
-                ///
+                ///manager.listarCantidadVentas();
                 system("pause");
                 system("cls");
 

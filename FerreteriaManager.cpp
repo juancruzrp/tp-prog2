@@ -55,13 +55,7 @@ void FerreteriaManager::cargarProducto(){
     else {
         cout << "Hubo un error al cargar el producto.";}
 
-    /*if (producto.guardarEnArchivo()) {
-        cout << "Producto guardado correctamente.\n";
-    } else {
-        cout << "Error al guardar el producto.\n";
 
-    }
-*/
 }
 
 
@@ -243,7 +237,7 @@ void FerreteriaManager::buscarProveedorPorID() {
     int buscarCodigo;
     int cantidadProveedores = proveedorArchivo.getCantidadRegistros();
 
-    cout<<"Ingrese el codigo del proveedor que desea buscar:";
+    cout<<"Ingrese el codigo del proveedor que desea buscar: ";
     cin >> buscarCodigo;
 
     for(int i=0; i<cantidadProveedores ; i++){
@@ -304,15 +298,27 @@ void FerreteriaManager::cargarVenta(){
     getline(cin, medioPago);
 
 
-    cout << "Ingrese fecha de venta: " ;
+    fechaVenta.cargar();
 
+    ///cout << "Importe total: " << importeTotal;
 
-    cout << "Importe total: " << importeTotal;
-    ///importeTotal += detalleVentaArchivo.getSubtotal();
+    venta = Venta(idVenta, importeTotal, medioPago, fechaVenta);
+
+    if (ventaArchivo.guardar(venta)){
+        cout << "Se guardo correctamente";
+    }
+    else {
+        cout << "Hubo un error al cargar el producto.";}
 
 }
-void FerreteriaManager::listarCantidadVentas(){
 
+void FerreteriaManager::listarCantidadVentas(){
+    VentaArchivo ventaArchivo;
+    int cantidadVentas;
+
+    cantidadVentas = ventaArchivo.getCantidadRegistros();
+
+    cout << "Cantidad de ventas registradas: " << cantidadVentas << endl;
 }
 
 void FerreteriaManager::listarVentas(){

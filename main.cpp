@@ -4,7 +4,6 @@
 #include "MenuCompra.h"
 #include "MenuVenta.h"
 #include "MenuInforme.h"
-#include "FerreteriaManager.h"
 using namespace std;
 
 int main()
