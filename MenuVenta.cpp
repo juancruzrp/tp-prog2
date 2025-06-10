@@ -29,7 +29,7 @@ void MenuVenta::mostrar(){
                 cout << "======================================" << endl;
                 cout << "        REGISTRAR NUEVA VENTA" << endl ;
                 cout << "======================================" << endl;
-                ///
+                ///manager.
                 system("pause");
                 system("cls");
 

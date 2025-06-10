@@ -4,6 +4,11 @@
 #include "ProductoArchivo.h"
 #include "Proveedor.h"
 #include "ProveedorArchivo.h"
+#include "Venta.h"
+#include "VentaArchivo.h"
+#include "Compra.h"
+#include "CompraArchivo.h"
+#include "Fecha.h"
 using namespace std;
 
 
@@ -276,4 +281,69 @@ void FerreteriaManager::buscarProveedorPorNombre(){
 
 }
 return;
+}
+
+
+
+                                         ///FUNCIONES PARA VENTAS///
+
+void FerreteriaManager::cargarVenta(){
+    int idVenta;
+    float importeTotal;
+    string medioPago;
+    Fecha fechaVenta;
+    Venta venta;
+    VentaArchivo ventaArchivo;
+
+    cout << "Ingrese ID de venta: " ;
+    cin >> idVenta;
+
+
+    cout << "Ingrese medio de pago: " ;
+    cin.ignore();
+    getline(cin, medioPago);
+
+
+    cout << "Ingrese fecha de venta: " ;
+
+
+    cout << "Importe total: " << importeTotal;
+    ///importeTotal += detalleVentaArchivo.getSubtotal();
+
+}
+void FerreteriaManager::listarCantidadVentas(){
+
+}
+
+void FerreteriaManager::listarVentas(){
+
+}
+
+void FerreteriaManager::buscarVentaPorFecha(){
+
+}
+
+void FerreteriaManager::buscarVentaPorProducto(){
+
+}
+
+
+
+
+
+
+                                         ///FUNCIONES PARA COMPRAS///
+void FerreteriaManager::cargarCompra(){
+}
+
+void FerreteriaManager::listarCantidadCompras(){
+}
+
+void FerreteriaManager::listarCompras(){
+}
+
+void FerreteriaManager::buscarCompraPorFecha(){
+}
+
+void FerreteriaManager::buscarCompraPorProveedor(){
 }
