@@ -8,15 +8,19 @@ Venta::Venta(){
     _importeTotal = 0;
     strcpy(_medioPago, "");
     _fechaVenta = Fecha();
+    _estado = true;
 }
 
-Venta::Venta(int idVenta, float importeTotal, std::string medioPago, Fecha fechaVenta){
+Venta::Venta(int idVenta, float importeTotal, std::string medioPago, Fecha fechaVenta, bool estado){
     setIdVenta(idVenta);
     setImporteTotal(importeTotal);
     setMedioPago(medioPago);
     setFechaVenta(fechaVenta);
+    setEstado(true);
 
 }
+
+
 
 void Venta::setIdVenta(int idVenta){
     _idVenta = idVenta;
@@ -31,6 +35,10 @@ void Venta::setMedioPago(std::string medioPago){
 
 void Venta::setFechaVenta(Fecha fechaVenta){
     _fechaVenta = fechaVenta;
+}
+
+void Venta::setEstado(bool estado){
+    _estado = estado;
 }
 
 int Venta::getIdVenta(){
@@ -48,3 +56,8 @@ std::string Venta::getMedioPago(){
 Fecha Venta::getFechaVenta(){
     return _fechaVenta;
 }
+
+bool Venta::getEstado(){
+    return _estado;
+}
+

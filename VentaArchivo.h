@@ -12,7 +12,7 @@ public:
 
     bool guardar(Venta);
     int buscar(int);
-    Venta leer(Venta);
+    Venta leer(int pos);
     bool eliminar();
     int getCantidadRegistros();
 };

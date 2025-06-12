@@ -14,9 +14,11 @@ void MenuVenta::mostrar(){
     cout << "======================================"<< endl;
     cout << "1. Registrar nueva venta" << endl;
     cout << "2. Listar todas las ventas" << endl;
-    cout << "3. Buscar venta por fecha" << endl;
-    cout << "4. Buscar venta por producto" << endl;
-    cout << "5. Cantidad de ventas registradas "<< endl;
+    cout << "3. Listar detalle de venta" << endl;
+    cout << "4. Buscar venta por fecha" << endl;
+    cout << "5. Buscar venta por producto" << endl;
+    cout << "6. Cantidad de ventas registradas " << endl;
+    cout << "7. Eliminar venta " << endl;
     cout << "0. Salir al menu principal" << endl;
     cout << "======================================"<< endl;
     cout << "Ingrese una opcion: ";
@@ -45,18 +47,32 @@ void MenuVenta::mostrar(){
                 system("cls");
 
                 break;
+
             case 3:
+                int idVenta;
+                system("cls");
+                cout << "======================================" << endl;
+                cout << "       LISTAR DETALLE DE VENTA" << endl ;
+                cout << "======================================" << endl;
+                manager.listarDetalleVenta();
+                system("pause");
+                system("cls");
+
+                break;
+
+            case 4:
 
                 system("cls");
                 cout << "======================================" << endl;
                 cout << "        BUSCAR VENTA POR FECHA" << endl ;
                 cout << "======================================" << endl;
                 ///manager.buscarVentaPorFecha();
+                manager.darAltaVenta();
                 system("pause");
                 system("cls");
 
                 break;
-            case 4:
+            case 5:
 
                 system("cls");
                 cout << "======================================" << endl;
@@ -67,13 +83,24 @@ void MenuVenta::mostrar(){
                 system("cls");
 
                 break;
-            case 5:
+            case 6:
 
                 system("cls");
                 cout << "======================================" << endl;
                 cout << "    CANTIDAD DE VENTAS REGISTRADAS" << endl ;
                 cout << "======================================" << endl;
-                ///manager.listarCantidadVentas();
+                manager.listarCantidadVentas();
+                system("pause");
+                system("cls");
+
+               break;
+            case 7:
+
+                system("cls");
+                cout << "======================================" << endl;
+                cout << "            ELIMINAR VENTA " << endl ;
+                cout << "======================================" << endl;
+                manager.eliminarVenta();
                 system("pause");
                 system("cls");
 

@@ -9,15 +9,17 @@ DetalleVenta::DetalleVenta(){
     _precioUnitario = 0;
     _cantidad = 0;
     _subtotal = 0;
+    _estado = true;
 
 }
 
-DetalleVenta::DetalleVenta(int idVenta, int codProducto, float precioUnitario, int cantidad, float subtotal){
+DetalleVenta::DetalleVenta(int idVenta, int codProducto, float precioUnitario, int cantidad, float subtotal, bool estado){
     _idVenta = idVenta;
     _codProducto = codProducto;
     _precioUnitario = precioUnitario;
     _cantidad = cantidad;
     _subtotal = subtotal;
+    _estado = estado;
 
 }
 
@@ -41,6 +43,10 @@ void DetalleVenta::setSubtotal(float subtotal){
     _subtotal = subtotal;
 }
 
+void DetalleVenta::setEstado(bool estado){
+    _estado = estado;
+}
+
 int DetalleVenta::getIdVenta(){
     return _idVenta;
 }
@@ -59,4 +65,8 @@ int DetalleVenta::getCantidad(){
 
 float DetalleVenta::getSubtotal(){
     return _subtotal;
+}
+
+bool DetalleVenta::getEstado(){
+    return _estado;
 }

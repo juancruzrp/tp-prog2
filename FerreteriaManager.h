@@ -28,8 +28,11 @@ public:
     void cargarVenta();
     void listarCantidadVentas();
     void listarVentas();
+    void listarDetalleVenta();
+    void darAltaVenta();
     void buscarVentaPorFecha();
     void buscarVentaPorProducto();
+    void eliminarVenta();
 
     ///COMPRAS
     void cargarCompra();

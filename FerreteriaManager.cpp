@@ -6,6 +6,7 @@
 #include "ProveedorArchivo.h"
 #include "Venta.h"
 #include "VentaArchivo.h"
+#include "DetalleVentaArchivo.h"
 #include "Compra.h"
 #include "CompraArchivo.h"
 #include "Fecha.h"
@@ -282,35 +283,80 @@ return;
                                          ///FUNCIONES PARA VENTAS///
 
 void FerreteriaManager::cargarVenta(){
-    int idVenta;
-    float importeTotal;
+    int idVenta, codProducto, cantidad;
+    float importeTotal, precioUnitario, subtotal;
     string medioPago;
+    bool estado=true;
+    Producto precioProducto;
     Fecha fechaVenta;
     Venta venta;
+    ProductoArchivo productoArchivo;
     VentaArchivo ventaArchivo;
+    DetalleVenta detalleVenta;
+    DetalleVentaArchivo detalleVentaArchivo;
+    int cantidadProductos = productoArchivo.getCantidadRegistros();
 
     cout << "Ingrese ID de venta: " ;
     cin >> idVenta;
-
 
     cout << "Ingrese medio de pago: " ;
     cin.ignore();
     getline(cin, medioPago);
 
+    cout << "Ingrese codigo del producto: " ;
+    cin >> codProducto;
+
+    cout << "Ingrese cantidad: " ;
+    cin >> cantidad;
 
     fechaVenta.cargar();
 
-    ///cout << "Importe total: " << importeTotal;
+    ///busca precio unitario y lo asigna
+    for(int i=0; i<cantidadProductos ; i++){
+        precioProducto = productoArchivo.leer(i);
 
-    venta = Venta(idVenta, importeTotal, medioPago, fechaVenta);
+        if(precioProducto.getCodProducto() == codProducto){
+            precioUnitario = precioProducto.getPrecioUnitario();
+        }
+    }
+
+    subtotal = precioUnitario * cantidad ;
+
+
+    for(int i=0; i<cantidadProductos ; i++){
+        detalleVenta = detalleVentaArchivo.leer(i);
+
+        if(detalleVenta.getIdVenta() == idVenta){
+            importeTotal += subtotal;
+        }
+    }
+
+
+    venta = Venta(idVenta, importeTotal, medioPago, fechaVenta, estado);
+    detalleVenta = DetalleVenta(idVenta, codProducto, precioUnitario, cantidad, subtotal, estado);
 
     if (ventaArchivo.guardar(venta)){
-        cout << "Se guardo correctamente";
+        cout << "Se guardo correctamente" << endl;
     }
     else {
-        cout << "Hubo un error al cargar el producto.";}
+        cout << "Hubo un error al cargar el producto." << endl;
+    }
+
+
+
+    if (detalleVentaArchivo.guardar(detalleVenta)){
+        cout << "Se guardo correctamente" << endl;
+    }
+    else {
+        cout << "Hubo un error al cargar el producto." << endl;
+    }
+
+
 
 }
+
+
+
 
 void FerreteriaManager::listarCantidadVentas(){
     VentaArchivo ventaArchivo;
@@ -322,8 +368,38 @@ void FerreteriaManager::listarCantidadVentas(){
 }
 
 void FerreteriaManager::listarVentas(){
+    Fecha fechaVenta;
+    Venta venta;
+
+    cout << venta.getIdVenta();
+    cout << venta.getMedioPago();
+    fechaVenta.mostrar();
+    cout << venta.getImporteTotal();
 
 }
+
+void FerreteriaManager::listarDetalleVenta(){
+    DetalleVentaArchivo detalleVentaArchivo;
+    DetalleVenta detalleVenta;
+    int idVenta;
+    int cantidadVentas = detalleVentaArchivo.getCantidadRegistros();
+
+    cout << "Ingrese ID de venta a listar: ";
+    cin >> idVenta;
+
+    for(int i=0; i<cantidadVentas ; i++){
+        detalleVenta = detalleVentaArchivo.leer(i);
+
+        if(detalleVenta.getIdVenta() == idVenta && detalleVenta.getEstado()==false ){
+            cout << "Id Venta: " << detalleVenta.getIdVenta() << " | " ;
+            cout << "Codigo producto: " << detalleVenta.getCodProducto() << " | " ;
+            cout << "Precio unitario: " << detalleVenta.getPrecioUnitario() << " | " ;
+            cout << "Cantidad: " << detalleVenta.getCantidad() << " | " ;
+            cout << "Subtotal: " << detalleVenta.getSubtotal() << " | " << endl;
+        }
+    }
+}
+
 
 void FerreteriaManager::buscarVentaPorFecha(){
 
@@ -333,8 +409,28 @@ void FerreteriaManager::buscarVentaPorProducto(){
 
 }
 
+void FerreteriaManager::eliminarVenta(){
+    DetalleVentaArchivo detalleVentaArchivo;
+    int idVenta;
+
+    cout << "Ingrese ID de venta a eliminar: ";
+    cin >> idVenta;
+
+    detalleVentaArchivo.eliminar(idVenta);
+
+}
 
 
+void FerreteriaManager::darAltaVenta(){
+    DetalleVentaArchivo detalleVentaArchivo;
+    int idVenta;
+
+    cout << "Ingrese ID de venta a dar de alta: ";
+    cin >> idVenta;
+
+    detalleVentaArchivo.alta(idVenta);
+
+}
 
 
 
