@@ -11,9 +11,10 @@ public:
     ProductoArchivo(std::string nombreArchivo);
 
     bool guardarProducto(Producto registro);
+    bool guardarProducto(Producto registro,int posicion);
     void mostrarProductos();
     void listarProductos();
     int getCantidadRegistros();
     Producto leer(int pos);
-
+    int buscarProducto(int posicion);
 };

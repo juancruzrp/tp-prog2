@@ -70,3 +70,39 @@ int ProductoArchivo::getCantidadRegistros(){
 
     return registro;
  }
+int ProductoArchivo::buscarProducto(int idProducto){
+    FILE *pFile;
+    Producto registro;
+    int posicion=0;
+    pFile =fopen(_nombreArchivo.c_str(),"rb");
+    if(pFile == nullptr){
+        return -1;
+    }
+    while(fread( &registro , sizeof(Producto), 1 , pFile)==1){
+        if(registro.getCodProducto() == idProducto){
+            fclose(pFile);
+            return posicion;
+
+        }
+        posicion++;
+
+    }
+    fclose(pFile);
+    return -1;
+}
+
+bool ProductoArchivo::guardarProducto(Producto registro,int posicion){
+
+    FILE *pFile;
+    bool result;
+
+    pFile =fopen(_nombreArchivo.c_str(),"rb+");
+
+    if( pFile == nullptr){
+        return false;
+    }
+    fseek( pFile , posicion * sizeof(Producto), SEEK_SET);
+    result = fwrite(&registro, sizeof(Producto), 1, pFile);
+    fclose(pFile);
+    return result;
+    }
