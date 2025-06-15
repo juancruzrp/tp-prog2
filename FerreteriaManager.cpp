@@ -289,11 +289,12 @@ void FerreteriaManager::cargarVenta(){
     bool estado=true;
     Producto producto;
     Fecha fechaVenta;
-    Venta venta;
+    Venta venta, reg;
     ProductoArchivo productoArchivo;
     VentaArchivo ventaArchivo;
     DetalleVenta detalleVenta;
     DetalleVentaArchivo detalleVentaArchivo;
+    int nroId;
     int cantidadProductos = productoArchivo.getCantidadRegistros();
 
 
@@ -333,14 +334,13 @@ void FerreteriaManager::cargarVenta(){
             cin >> cantidad;
         }
 
-    ///descuenta la cantidad vendida del stock
-    for(int i=0; i<cantidadProductos ; i++){
-        producto = productoArchivo.leer(i);
 
-        if(producto.getCodProducto() == codProducto){
-            ///producto.getStock() - cantidad;
-        }
-    }
+    ///descuenta la cantidad vendida del stock
+    int pos = productoArchivo.buscarProducto(codProducto);
+    producto = productoArchivo.leer(pos);
+    int cant = producto.getStock() - cantidad;
+    producto.setStock(cant);
+    productoArchivo.guardarProducto(producto ,pos);
 
 
 

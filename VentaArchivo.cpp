@@ -26,7 +26,19 @@ bool VentaArchivo::guardar(Venta registro){
 
 }
 
-int VentaArchivo::buscar(int){
+int VentaArchivo::modificar(int){
+    FILE *pFile;
+    bool result;
+
+    pFile = fopen(_nombreArchivo.c_str(), "rb+");
+    if (pFile == nullptr) {
+        return false;
+    }
+
+    ///result = fwrite(&registro, sizeof(Venta), 1, pFile);
+
+    fclose(pFile);
+    return result;
 }
 
 Venta VentaArchivo::leer(int pos){
@@ -49,6 +61,26 @@ Venta VentaArchivo::leer(int pos){
 bool VentaArchivo::eliminar(){
 }
 
+int VentaArchivo::buscar(int idVenta){
+    FILE *pFile;
+    Venta registro;
+    int posicion=0;
+
+    pFile = fopen(_nombreArchivo.c_str(), "rb");
+        if (pFile == nullptr) {
+        return -1;
+        }
+
+    while(fread(&registro, sizeof(Venta), 1, pFile) == 1){
+        if(registro.getIdVenta() == idVenta){
+            fclose(pFile);
+            return posicion;
+        }
+        posicion++;
+    }
+    fclose(pFile);
+    return -1;
+}
 
 
 

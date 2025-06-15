@@ -13,6 +13,7 @@ public:
     bool guardar(Venta);
     int buscar(int);
     Venta leer(int pos);
+    int modificar(int idVenta);
     bool eliminar();
     int getCantidadRegistros();
 };

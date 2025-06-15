@@ -70,4 +70,39 @@ int ProveedorArchivo::getCantidadRegistros(){
 
     return registro;
  }
+int ProveedorArchivo::buscarProveedor(int idProveedor){
+    FILE *pFile;
+    Proveedor registro;
+    int posicion=0;
+    pFile =fopen(_nombreArchivo.c_str(),"rb");
+    if(pFile == nullptr){
+        return -1;
+    }
+    while(fread( &registro , sizeof(Proveedor), 1 , pFile)==1){
+        if(registro.getIdProveedor()==idProveedor){
+            fclose(pFile);
+            return posicion;
 
+        }
+        posicion++;
+
+    }
+    fclose(pFile);
+    return -1;
+}
+
+bool ProveedorArchivo::guardarProveedor(Proveedor registro,int posicion){
+
+    FILE *pFile;
+    bool result;
+
+    pFile =fopen(_nombreArchivo.c_str(),"rb+");
+
+    if( pFile == nullptr){
+        return false;
+    }
+    fseek( pFile , posicion * sizeof(Proveedor), SEEK_SET);
+    result = fwrite(&registro, sizeof(Proveedor), 1, pFile);
+    fclose(pFile);
+    return result;
+    }

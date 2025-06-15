@@ -31,7 +31,7 @@ int main()
     cout << "5. Generar Informe" << endl;
     cout << "0. Salir" << endl;
     cout << "======================================"<< endl;
-    cout << "Ingrese una opcionñ: ";
+    cout << "Ingrese una opcion: ";
     cin >> opcion;
 
     switch (opcion) {
