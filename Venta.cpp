@@ -61,3 +61,19 @@ bool Venta::getEstado(){
     return _estado;
 }
 
+
+
+
+
+
+std::string Venta::toCSV(){
+    std::string str = "";
+    str = to_string(_idVenta) + ",";
+    str += to_string(_importeTotal) + ",";
+    str += string(_medioPago) + ",";
+    str += to_string(_fechaVenta.getDia()) + ",";
+    str += to_string(_fechaVenta.getMes()) + ",";
+    str += to_string(_fechaVenta.getAnio()) ;
+
+        return str;
+}

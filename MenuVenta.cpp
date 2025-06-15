@@ -42,7 +42,7 @@ void MenuVenta::mostrar(){
                 cout << "======================================" << endl;
                 cout << "       LISTAR TODAS LAS VENTAS" << endl ;
                 cout << "======================================" << endl;
-                ///manager.listarVentas();
+                manager.listarVentas();
                 system("pause");
                 system("cls");
 

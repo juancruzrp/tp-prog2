@@ -25,9 +25,12 @@ void Fecha::cargar(){
 }
 
 void Fecha::mostrar(){
+    cout << "Fecha: " ;
     cout << _dia << "/" << _mes << "/" << _anio;
 
 }
+
+
 
 int Fecha::getDia(){
     return _dia;
