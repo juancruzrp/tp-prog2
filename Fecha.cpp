@@ -18,10 +18,34 @@ Fecha::Fecha(int dia, int mes, int anio){
 void Fecha::cargar(){
     cout << "Ingrese dia: " ;
     cin >> _dia;
+        while(_dia<=0 || _dia>31){
+            cout << "DIA INVALIDO. VUELVA A INGRESAR DIA." << endl ;
+            system("pause");
+            system("cls");
+            cout << "Ingrese Dia: " ;
+            cin >> _dia;
+        }
+
     cout << "Ingrese mes: ";
     cin >> _mes;
+        while(_mes<=0 || _mes>12 || (_dia>28 && _mes==2) || (_dia>30 && _mes ==4) || (_dia>30 && _mes==6) || (_dia>30 && _mes==9) || (_dia>30 && _mes==11)){
+            cout << "MES INVALIDO. VUELVA A INGRESAR MES." << endl ;
+            system("pause");
+            system("cls");
+            cout << "Ingrese Mes: " ;
+            cin >> _mes;
+        }
+
     cout << "Ingrese anio: ";
     cin >> _anio;
+        while(_anio<=0 || _anio>2025){
+            cout << "AÑO INVALIDO. VUELVA A INGRESAR ANIO." << endl ;
+            system("pause");
+            system("cls");
+            cout << "Ingrese Anio: " ;
+            cin >> _anio;
+        }
+
 }
 
 void Fecha::mostrar(){
