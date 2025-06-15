@@ -9,6 +9,8 @@ class Fecha{
     Fecha();
     Fecha(int dia, int mes, int anio);
 
+    void cargar();
+    void mostrar();
     int getDia();
     int getMes();
     int getAnio();
