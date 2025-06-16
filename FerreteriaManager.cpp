@@ -294,7 +294,6 @@ void FerreteriaManager::cargarVenta(){
     VentaArchivo ventaArchivo;
     DetalleVenta detalleVenta;
     DetalleVentaArchivo detalleVentaArchivo;
-    int nroId;
     int cantidadProductos = productoArchivo.getCantidadRegistros();
 
 
