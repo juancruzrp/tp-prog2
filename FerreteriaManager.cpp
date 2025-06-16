@@ -335,11 +335,21 @@ void FerreteriaManager::cargarVenta(){
 
 
     ///descuenta la cantidad vendida del stock
+<<<<<<< Updated upstream
     ///int pos = productoArchivo.buscarProducto(codProducto);
     ///producto = productoArchivo.leer(pos);
     ///int cant = producto.getStock() - cantidad;
     ///producto.setStock(cant);
     ///productoArchivo.guardarProducto(producto ,pos);
+=======
+    int pos = productoArchivo.buscarProducto(codProducto);
+    producto = productoArchivo.leer(pos);
+    int cant = producto.getStock() - cantidad;
+    producto.setStock(cant);
+    if(productoArchivo.guardarProducto(producto ,pos)){
+        cout << "Se guardo correctamente";
+    }
+>>>>>>> Stashed changes
 
 
 
