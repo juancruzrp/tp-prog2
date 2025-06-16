@@ -84,7 +84,7 @@
 	<iostream>
 	"Fecha.h"
 
-1750099562 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ferreteriamanager.cpp
+1750100098 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ferreteriamanager.cpp
 	<iostream>
 	"FerreteriaManager.h"
 	"Producto.h"
@@ -352,7 +352,7 @@
 	"VentaArchivo.h"
 	<string>
 
-1749965865 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\fecha.cpp
+1750099084 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\fecha.cpp
 	<iostream>
 	"Fecha.h"
 
@@ -394,7 +394,7 @@
 	"MenuInforme.h"
 	"FerreteriaManager.h"
 
-1749965577 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menuproducto.cpp
+1750099084 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menuproducto.cpp
 	<iostream>
 	"MenuProducto.h"
 	"FerreteriaManager.h"
@@ -421,16 +421,16 @@
 	"Fecha.h"
 	<string>
 
-1749965865 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ventaarchivo.cpp
+1750099084 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ventaarchivo.cpp
 	<iostream>
 	"VentaArchivo.h"
 
-1749963599 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menuproveedor.cpp
+1750099084 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menuproveedor.cpp
 	<iostream>
 	"FerreteriaManager.h"
 	"MenuProveedor.h"
 
-1749965577 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\productoarchivo.cpp
+1750099084 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\productoarchivo.cpp
 	<iostream>
 	"Producto.h"
 	"ProductoArchivo.h"
@@ -451,7 +451,7 @@
 	"Proveedor.h"
 	<string>
 
-1749965883 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ferreteriamanager.cpp
+1750099084 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ferreteriamanager.cpp
 	<iostream>
 	"FerreteriaManager.h"
 	"Producto.h"
@@ -464,6 +464,7 @@
 	"Compra.h"
 	"CompraArchivo.h"
 	"Fecha.h"
+	<cctype>
 
 1749162042 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\proveedor.cpp
 	<iostream>
@@ -483,7 +484,7 @@
 
 1748306693 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\compraarchivo.h
 
-1749965865 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ventaarchivo.h
+1750099084 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ventaarchivo.h
 	"Venta.h"
 	<string>
 
