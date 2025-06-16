@@ -301,6 +301,7 @@ void FerreteriaManager::buscarProveedorPorNombre(){
     }
 
 }
+
 return;
 }
         cout<<"Ingrese el nuevo numero de telefono:";
@@ -318,6 +319,7 @@ return;
     }
 
 }
+
 void FerreteriaManager::modificarDireccionProveedor(){
     int idProveedor,posicion;
     string nuevaDireccion;
