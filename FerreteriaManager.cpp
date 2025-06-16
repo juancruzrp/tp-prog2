@@ -303,6 +303,17 @@ void FerreteriaManager::buscarProveedorPorNombre(){
 }
 return;
 }
+void FerreteriaManager::modificarTelefonoProveedor(){
+    int idProveedor,posicion;
+    string nuevoTelefono;
+    cout<< "Ingresar el id del proveedor a modificar:";
+    cin >> idProveedor;
+
+    ProveedorArchivo archivo;
+    posicion = archivo.buscarProveedor(idProveedor);
+
+    if(posicion >=0){
+        Proveedor registro = archivo.leer(posicion);
         cout<<"Ingrese el nuevo numero de telefono:";
         cin >> nuevoTelefono;
         registro.setTelefono(nuevoTelefono);
