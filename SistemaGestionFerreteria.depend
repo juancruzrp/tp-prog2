@@ -80,11 +80,11 @@
 1748219259 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\compra.cpp
 	<iostream>
 
-1749942236 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\fecha.cpp
+1750001178 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\fecha.cpp
 	<iostream>
 	"Fecha.h"
 
-1749954623 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ferreteriamanager.cpp
+1750031235 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ferreteriamanager.cpp
 	<iostream>
 	"FerreteriaManager.h"
 	"Producto.h"
@@ -97,6 +97,7 @@
 	"Compra.h"
 	"CompraArchivo.h"
 	"Fecha.h"
+	<cctype>
 
 1749691202 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ferreteriamanager.h
 	<string>
@@ -108,7 +109,7 @@
 1748134220 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menucompra.h
 	<string>
 
-1748918370 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menuproducto.cpp
+1750001484 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menuproducto.cpp
 	<iostream>
 	"MenuProducto.h"
 	"FerreteriaManager.h"
@@ -116,7 +117,7 @@
 1748651023 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menuproducto.h
 	<string>
 
-1749162672 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menuproveedor.cpp
+1750001513 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menuproveedor.cpp
 	<iostream>
 	"FerreteriaManager.h"
 	"MenuProveedor.h"
@@ -150,7 +151,7 @@
 	"Venta.h"
 	<cstring>
 
-1749594134 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\main.cpp
+1750026255 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\main.cpp
 	<iostream>
 	"MenuProducto.h"
 	"MenuProveedor.h"
@@ -241,20 +242,20 @@
 1748306693 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\compraarchivo.cpp
 	<iostream>
 
-1749162672 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\proveedorarchivo.cpp
+1750001350 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\proveedorarchivo.cpp
 	<iostream>
 	"Proveedor.h"
 	"ProveedorArchivo.h"
 
-1749946732 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ventaarchivo.cpp
+1750028476 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ventaarchivo.cpp
 	<iostream>
 	"VentaArchivo.h"
 
-1748914213 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\productoarchivo.h
+1750001350 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\productoarchivo.h
 	"Producto.h"
 	<string>
 
-1749162672 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\productoarchivo.cpp
+1750030684 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\productoarchivo.cpp
 	<iostream>
 	"Producto.h"
 	"ProductoArchivo.h"
@@ -469,11 +470,11 @@
 	"Proveedor.h"
 	<cstring>
 
-1749162672 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\proveedorarchivo.h
+1750001350 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\proveedorarchivo.h
 	"Proveedor.h"
 	<string>
 
-1749681134 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ventaarchivo.h
+1750027848 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ventaarchivo.h
 	"Venta.h"
 	<string>
 

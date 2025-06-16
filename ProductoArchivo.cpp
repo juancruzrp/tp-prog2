@@ -70,6 +70,7 @@ int ProductoArchivo::getCantidadRegistros(){
 
     return registro;
  }
+
 int ProductoArchivo::buscarProducto(int idProducto){
     FILE *pFile;
     Producto registro;

@@ -10,8 +10,8 @@
 #include "Compra.h"
 #include "CompraArchivo.h"
 #include "Fecha.h"
+#include <cctype>
 using namespace std;
-
 
 
     /// PENSAR SI AGREGAR VALIDACIONES
@@ -287,37 +287,72 @@ void FerreteriaManager::cargarVenta(){
     float importeTotal, precioUnitario, subtotal;
     string medioPago;
     bool estado=true;
-
-    Producto precioProducto;
+    Producto producto;
     Fecha fechaVenta;
-    Venta venta;
+    Venta venta, reg;
     ProductoArchivo productoArchivo;
     VentaArchivo ventaArchivo;
     DetalleVenta detalleVenta;
     DetalleVentaArchivo detalleVentaArchivo;
+    int nroId;
     int cantidadProductos = productoArchivo.getCantidadRegistros();
+
 
     cout << "Ingrese ID de venta: " ;
     cin >> idVenta;
 
+        while(idVenta<=0 || idVenta>30){
+            cout << "ID DE VENTA INVALIDA. VUELVA A INGRESAR ID DE VENTA. " << endl ;
+            system("pause");
+            system("cls");
+            cout << "Ingrese ID de venta: " ;
+            cin >> idVenta;
+        }
+
     cout << "Ingrese medio de pago: " ;
     cin.ignore();
     getline(cin, medioPago);
+    ///falta validar medio de pago
 
     cout << "Ingrese codigo del producto: " ;
     cin >> codProducto;
+        while(codProducto<=0 || codProducto>30){
+            cout << "CODIGO INVALIDO. VUELVA A INGRESAR CODIGO DEL PRODUCTO." << endl ;
+            system("pause");
+            system("cls");
+            cout << "Ingrese Codigo: " ;
+            cin >> codProducto;
+        }
 
     cout << "Ingrese cantidad: " ;
     cin >> cantidad;
+        while(cantidad<=0){
+            cout << "CANTIDAD INVALIDA. VUELVA A INGRESAR LA CANTIDAD." << endl ;
+            system("pause");
+            system("cls");
+            cout << "Ingrese Cantidad: " ;
+            cin >> cantidad;
+        }
+
+
+    ///descuenta la cantidad vendida del stock
+    int pos = productoArchivo.buscarProducto(codProducto);
+    producto = productoArchivo.leer(pos);
+    int cant = producto.getStock() - cantidad;
+    producto.setStock(cant);
+    productoArchivo.guardarProducto(producto ,pos);
+
+
 
     fechaVenta.cargar();
 
+
     ///busca precio unitario y lo asigna
     for(int i=0; i<cantidadProductos ; i++){
-        precioProducto = productoArchivo.leer(i);
+        producto = productoArchivo.leer(i);
 
-        if(precioProducto.getCodProducto() == codProducto){
-            precioUnitario = precioProducto.getPrecioUnitario();
+        if(producto.getCodProducto() == codProducto){
+            precioUnitario = producto.getPrecioUnitario();
         }
     }
 
