@@ -71,7 +71,7 @@ void MenuProveedor::mostrar(){
                 cout << "======================================" << endl;
                 cout << "    MODIFICAR TELEFONO DE PROVEEDOR   " << endl ;
                 cout << "======================================" << endl;
-                ///manager.modificarTelefonoProveedor();
+                manager.modificarTelefonoProveedor();
                 ///system("cls");
                 cout << "======================================" << endl;
                 cout << "     MODIFICACION HECHA CON EXITO     " << endl ;
@@ -84,7 +84,7 @@ void MenuProveedor::mostrar(){
                 cout << "======================================" << endl;
                 cout << "    MODIFICAR DIRECCION DE PROVEEDOR  " << endl ;
                 cout << "======================================" << endl;
-                ///manager.modificarDireccionProveedor();
+                manager.modificarDireccionProveedor();
                 ///system("cls");
                 cout << "======================================" << endl;
                 cout << "     MODIFICACION HECHA CON EXITO     " << endl ;

@@ -165,7 +165,33 @@ void FerreteriaManager::buscarProductoPorTipo(){
 }
 return;
 }
+void FerreteriaManager::modificarPrecioProducto(){
+    int idProducto,posicion;
+    float nuevoPrecio;
+    cout<< "Ingrese el id del producto a modificar:";
+    cin >> idProducto;
 
+    ProductoArchivo archivo;
+    posicion = archivo.buscarProducto(idProducto);
+
+    if(posicion >=0){
+        Producto registro = archivo.leer(posicion);
+        cout <<"Precio unitario actual:"<<registro.getPrecioUnitario()<<endl;
+        cout<<"Ingrese el nuevo precio unitario:";
+        cin >> nuevoPrecio;
+        registro.setPrecioUnitario(nuevoPrecio);
+        if(archivo.guardarProducto(registro, posicion)){
+            cout<<"Registro modificado con exito."<<endl;
+        }
+        else{
+            cout<<"Hubo un error al modificar el registro."<<endl;
+        }
+    }
+    else{
+        cout<<"No existe el id del producto."<<endl;
+    }
+
+}
 
                                          ///FUNCIONES PARA PROVEEDORES///
 void FerreteriaManager::cargarProveedor(){
@@ -277,7 +303,48 @@ void FerreteriaManager::buscarProveedorPorNombre(){
 }
 return;
 }
+        cout<<"Ingrese el nuevo numero de telefono:";
+        cin >> nuevoTelefono;
+        registro.setTelefono(nuevoTelefono);
+        if(archivo.guardarProveedor(registro, posicion)){
+            cout<<"Registro modificado con exito."<<endl;
+        }
+        else{
+            cout<<"Hubo un error al modificar el registro."<<endl;
+        }
+    }
+    else{
+        cout<<"No existe el id del proveedor."<<endl;
+    }
 
+}
+void FerreteriaManager::modificarDireccionProveedor(){
+    int idProveedor,posicion;
+    string nuevaDireccion;
+    cout<< "Ingresar el id del proveedor a modificar:";
+    cin >> idProveedor;
+
+    ProveedorArchivo archivo;
+    posicion = archivo.buscarProveedor(idProveedor);
+
+    if(posicion >=0){
+        Proveedor registro = archivo.leer(posicion);
+        cout<<"Ingrese la nueva direccion del proveedor:";
+        cin.ignore();
+        getline(cin,nuevaDireccion);
+        registro.setDireccion(nuevaDireccion);
+        if(archivo.guardarProveedor(registro, posicion)){
+            cout<<"Registro modificado con exito."<<endl;
+        }
+        else{
+            cout<<"Hubo un error al modificar el registro."<<endl;
+        }
+    }
+    else{
+        cout<<"No existe el id del proveedor."<<endl;
+    }
+
+}
 
 
                                          ///FUNCIONES PARA VENTAS///

@@ -80,7 +80,7 @@ void MenuProducto::mostrar(){
                 cout << "======================================" << endl;
                 cout << "     MODIFICAR PRECIO DE PRODUCTO" << endl ;
                 cout << "======================================" << endl;
-                ///manager.modificarPrecioProducto();
+                manager.modificarPrecioProducto();
                 system("pause");
                 system("cls");
                 break;
