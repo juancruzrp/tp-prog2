@@ -15,10 +15,6 @@ int main()
     MenuVenta menuventa;
     MenuInforme menuinforme;
 
-    /// Comentario 02/06
-    ///comentario de gonza
-
-    ///hola dios
 
     do{
     cout << "======================================" << endl;

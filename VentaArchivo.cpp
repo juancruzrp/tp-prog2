@@ -26,20 +26,25 @@ bool VentaArchivo::guardar(Venta registro){
 
 }
 
-int VentaArchivo::modificar(int){
+
+bool VentaArchivo::guardar(Venta registro,int posicion){
+
     FILE *pFile;
     bool result;
 
-    pFile = fopen(_nombreArchivo.c_str(), "rb+");
-    if (pFile == nullptr) {
+    pFile =fopen(_nombreArchivo.c_str(),"rb+");
+
+    if( pFile == nullptr){
         return false;
     }
 
-    ///result = fwrite(&registro, sizeof(Venta), 1, pFile);
-
+    fseek( pFile , posicion * sizeof(Venta), SEEK_SET);
+    result = fwrite(&registro, sizeof(Venta), 1, pFile);
     fclose(pFile);
     return result;
 }
+
+
 
 Venta VentaArchivo::leer(int pos){
     FILE *pFile;
@@ -50,6 +55,7 @@ Venta VentaArchivo::leer(int pos){
     if(pFile == nullptr){
         return registro;
     }
+
     fseek(pFile,sizeof(Venta)* pos,SEEK_SET);
     fread(&registro,sizeof(Venta),1, pFile);
     fclose(pFile);
@@ -58,8 +64,6 @@ Venta VentaArchivo::leer(int pos){
 }
 
 
-bool VentaArchivo::eliminar(){
-}
 
 int VentaArchivo::buscar(int idVenta){
     FILE *pFile;
@@ -67,9 +71,10 @@ int VentaArchivo::buscar(int idVenta){
     int posicion=0;
 
     pFile = fopen(_nombreArchivo.c_str(), "rb");
-        if (pFile == nullptr) {
+
+    if (pFile == nullptr) {
         return -1;
-        }
+    }
 
     while(fread(&registro, sizeof(Venta), 1, pFile) == 1){
         if(registro.getIdVenta() == idVenta){
@@ -78,11 +83,10 @@ int VentaArchivo::buscar(int idVenta){
         }
         posicion++;
     }
+
     fclose(pFile);
     return -1;
 }
-
-
 
 
 int VentaArchivo::getCantidadRegistros(){
@@ -107,3 +111,6 @@ int VentaArchivo::getCantidadRegistros(){
 
     return cantidad;
 }
+
+
+

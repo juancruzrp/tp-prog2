@@ -63,7 +63,7 @@ void MenuProveedor::mostrar(){
                 cout << "======================================" << endl;
                 manager.buscarProveedorPorNombre();
                 ///system("cls");
-                ///system("pause");
+                ///system("pause");'
                 ///system("cls");
                 break;
             case 5:

@@ -11,7 +11,6 @@ DetalleVentaArchivo::DetalleVentaArchivo(std::string nombreArchivo){
 }
 
 
-
 bool DetalleVentaArchivo::guardar(DetalleVenta registro) {
     FILE *pFile;
     bool result;
@@ -29,6 +28,22 @@ bool DetalleVentaArchivo::guardar(DetalleVenta registro) {
 
 
 
+bool DetalleVentaArchivo::guardar(DetalleVenta registro,int posicion){
+
+    FILE *pFile;
+    bool result;
+
+    pFile =fopen(_nombreArchivo.c_str(),"rb+");
+
+    if( pFile == nullptr){
+        return false;
+    }
+
+    fseek( pFile , posicion * sizeof(DetalleVenta), SEEK_SET);
+    result = fwrite(&registro, sizeof(DetalleVenta), 1, pFile);
+    fclose(pFile);
+    return result;
+}
 
 
 
@@ -50,7 +65,28 @@ DetalleVenta DetalleVentaArchivo::leer(int pos){
  }
 
 
+int DetalleVentaArchivo::buscar(int idVenta){
+    FILE *pFile;
+    DetalleVenta registro;
+    int posicion=0;
 
+    pFile = fopen(_nombreArchivo.c_str(), "rb");
+
+    if (pFile == nullptr) {
+        return -1;
+    }
+
+    while(fread(&registro, sizeof(DetalleVenta), 1, pFile) == 1){
+        if(registro.getIdVenta() == idVenta){
+            fclose(pFile);
+            return posicion;
+        }
+        posicion++;
+    }
+
+    fclose(pFile);
+    return -1;
+}
 
 
 
@@ -78,40 +114,12 @@ int DetalleVentaArchivo::getCantidadRegistros(){
 }
 
 
+int buscar(int){
+}
 
-bool DetalleVentaArchivo::eliminar(int idEliminar){
-    DetalleVentaArchivo detalleVenta;
-    DetalleVenta id;
-    VentaArchivo venta;
-    Venta idB;
-    int cantidadRegistros = detalleVenta.getCantidadRegistros();
-
-    for (int x=0; x<cantidadRegistros ; x++){
-        id = detalleVenta.leer(x);
-        idB = venta.leer(x);
-            if (id.getIdVenta() == idEliminar && idB.getIdVenta() == idEliminar){
-                id.setEstado(0);
-                idB.setEstado(0);
-            }
-    }
+bool baja(int idVenta){
 
 }
 
-bool DetalleVentaArchivo::alta(int idEliminar){
-    DetalleVentaArchivo detalleVenta;
-    DetalleVenta id;
-    VentaArchivo venta;
-    Venta idB;
-    int cantidadRegistros = getCantidadRegistros();
 
-    for (int x=0; x<cantidadRegistros ; x++){
-        id = detalleVenta.leer(x);
-        idB = venta.leer(x);
-            if (id.getIdVenta() == idEliminar && idB.getIdVenta() == idEliminar){
-                id.setEstado(1);
-                idB.setEstado(1);
-            }
-    }
-
-}
 

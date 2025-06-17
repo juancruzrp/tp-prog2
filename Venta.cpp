@@ -8,7 +8,7 @@ Venta::Venta(){
     _importeTotal = 0;
     strcpy(_medioPago, "");
     _fechaVenta = Fecha();
-    _estado = true;
+    _estado = 1;
 }
 
 Venta::Venta(int idVenta, float importeTotal, std::string medioPago, Fecha fechaVenta, bool estado){
@@ -16,7 +16,7 @@ Venta::Venta(int idVenta, float importeTotal, std::string medioPago, Fecha fecha
     setImporteTotal(importeTotal);
     setMedioPago(medioPago);
     setFechaVenta(fechaVenta);
-    setEstado(true);
+    setEstado(estado);
 
 }
 
