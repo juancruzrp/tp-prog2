@@ -11,7 +11,7 @@ int main()
     int opcion;
     MenuProducto menuproducto;
     MenuProveedor menuproveedor;
-    MenuCompra menucompra;
+     MenuCompra MenuCompra;
     MenuVenta menuventa;
     MenuInforme menuinforme;
 
@@ -45,7 +45,7 @@ int main()
             break;
         case 3:
             system("cls");
-            menucompra.mostrar();
+            MenuCompra.mostrar();
             system("pause");
             system("cls");
 
