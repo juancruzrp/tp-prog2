@@ -65,21 +65,29 @@ int DetalleCompraArchivo::getCantidadRegistros() {
 }
 
 
+bool DetalleCompraArchivo::guardar(DetalleCompra detalle, int pos) {
+    FILE* pFile = fopen("detallecompra.dat", "rb+");
+    if (pFile == nullptr) return false;
+
+    fseek(pFile, sizeof(DetalleCompra) * pos, SEEK_SET);
+    bool result = fwrite(&detalle, sizeof(DetalleCompra), 1, pFile);
+    fclose(pFile);
+    return result;
+}
+
 bool DetalleCompraArchivo::eliminar(int idCompra) {
-    FILE* pFile;
-    pFile = fopen(_nombreArchivo.c_str(), "rb+");  // lectura/escritura
-    if (pFile == nullptr) {
-        return false;
-    }
+    FILE* pFile = fopen("detallecompra.dat", "rb+");
+    if (pFile == nullptr) return false;
 
     DetalleCompra detalle;
     int pos = 0;
+
     while (fread(&detalle, sizeof(DetalleCompra), 1, pFile)) {
         if (detalle.getIdCompra() == idCompra && detalle.getEstado()) {
             detalle.setEstado(false);
-            fseek(pFile, sizeof(DetalleCompra) * pos, SEEK_SET); // Volver registro actual
+            fseek(pFile, sizeof(DetalleCompra) * pos, SEEK_SET);
             fwrite(&detalle, sizeof(DetalleCompra), 1, pFile);
-            fseek(pFile, sizeof(DetalleCompra) * (pos + 1), SEEK_SET); // sig posicion
+            fseek(pFile, sizeof(DetalleCompra) * (pos + 1), SEEK_SET); // siguiente
         }
         pos++;
     }

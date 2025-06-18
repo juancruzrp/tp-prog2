@@ -27,12 +27,12 @@ void FerreteriaManager::cargarProducto(){
     Producto producto;
     ProductoArchivo productoArchivo;
 
-    ///se pide un codigo de producto,si se ingresa algo que no sea un entero
+    ///se pide un codigo de producto,si se ingresa algo que no sea un entero,valores negativos o cero
     ///se vuelve a pedir el ingreso hasta que sea correcto.
     ///cin.clear() limpia el estado del error
     ///cin.ignore() ignora hasta 15 caracteres o hasta un espacio('\n')
     cout << "Ingrese codigo del producto: " ;
-    while(!(cin >> codProducto)){
+    while(!(cin >> codProducto)|| codProducto<=0){
     cin.clear();
     cin.ignore(15,'\n');
     cout << "Ingrese nuevamente el codigo del producto: " ;
@@ -61,7 +61,6 @@ void FerreteriaManager::cargarProducto(){
 
 
     if (productoArchivo.guardarProducto(producto)){
-        cout << "Se guardo correctamente";
     }
     else {
         cout << "Hubo un error al cargar el producto.";}
@@ -205,7 +204,11 @@ void FerreteriaManager::cargarProveedor(){
     ProveedorArchivo proveedorArchivo;
 
     cout << "Ingrese codigo del proveedor: " ;
-    cin >> idProveedor;
+    while(!(cin >> idProveedor)|| idProveedor<=0){
+    cin.clear();
+    cin.ignore(15,'\n');
+    cout << "Ingrese nuevamente el codigo del proveedor: " ;
+    }
 
     cout << "Ingrese nombre del proveedor: " ;
     cin.ignore();
@@ -223,7 +226,6 @@ void FerreteriaManager::cargarProveedor(){
   proveedor = Proveedor( idProveedor, nombreProveedor, telefono, mail, direccion);
 
   if (proveedorArchivo.guardarProveedor(proveedor)){
-        cout << "Se guardo correctamente";
     }
     else {
         cout << "Hubo un error al cargar el proveedor.";}
@@ -695,6 +697,7 @@ std::string FerreteriaManager::convertirAMinusculas(std::string texto) {
     string tipoFactura;
     float importeTotal = 0, subtotal;
     bool pagado;
+    int entrada;
     Fecha f; // Fecha de la compra
     CompraArchivo archivoCompra;
     DetalleCompraArchivo archivoDetalles;
@@ -740,13 +743,21 @@ std::string FerreteriaManager::convertirAMinusculas(std::string texto) {
         return;
     }
 
-    cout << "La compra fue pagada (1 = SI, 0 = NO): ";
-    cin >> pagado;
 
-    if (pagado != 0 && pagado != 1) {
-        cout << "Valor invalido para 'Pagado'. Debe ser 0 o 1." << endl;
-        return;
-    }
+    cout << "La compra fue pagada (1 = SI, 0 = NO): ";
+    cin >> entrada;
+
+// Validación: si no es número o no es 0/1
+    while (cin.fail() || (entrada != 0 && entrada != 1)) {
+    cin.clear();             // Limpia el error de cin
+    cin.ignore(1000, '\n');  // Ignora hasta 1000 caracteres o hasta salto de línea
+    cout << "Valor invalido. Solo puede ingresar 0 o 1: ";
+    cin >> entrada;
+}
+
+pagado = entrada;
+
+
 
     cout << "Cantidad de productos : ";
     cin >> cantidadDetalles;
@@ -917,16 +928,102 @@ void FerreteriaManager::listarCantidadCompras(){
 }
 
 void FerreteriaManager::eliminarCompra() {
-    DetalleCompraArchivo archivoDetalle;
     int idCompra;
-
     cout << "Ingrese ID de compra a eliminar: ";
     cin >> idCompra;
 
+    while (idCompra <= 0) {
+        cout << "ID inválido. Ingrese nuevamente: ";
+        cin >> idCompra;
+    }
+
+    // Archivos
+    CompraArchivo archivoCompra;
+    DetalleCompraArchivo archivoDetalle;
+
+    int posCompra = archivoCompra.buscar(idCompra);
+    if (posCompra == -1) {
+        cout << "No se encontró una compra con ese ID." << endl;
+        return;
+    }
+
+    // Leer la compra y dar de baja lógica
+    Compra compra = archivoCompra.leer(posCompra);
+    if (!compra.getEstado()) {
+        cout << "La compra ya fue eliminada anteriormente." << endl;
+        return;
+    }
+
+    compra.setEstado(false);
+    if (!archivoCompra.guardar(compra, posCompra)) {
+        cout << "Error al intentar eliminar la compra." << endl;
+        return;
+    }
+
+    // Dar de baja los detalles asociados
     if (archivoDetalle.eliminar(idCompra)) {
-        cout << "Detalles de la compra eliminados correctamente." << endl;//baja logica
+        cout << "Compra y detalles eliminados correctamente." << endl;
     } else {
-        cout << "Error al eliminar los detalles." << endl;
+        cout << "Error al eliminar los detalles de la compra." << endl;
     }
 }
+
+
+void FerreteriaManager::totalGastadoPorAnioMes() {
+    CompraArchivo archivo;
+    int anio, mes;
+    float total = 0;
+    int cantidad = archivo.getCantidadRegistros();
+
+    cout << "Ingrese el anio (ej. 2024): ";
+    cin >> anio;
+
+    cout << "Desea filtrar por mes tambien? (1=SI, 0=NO): ";
+    int conMes;
+    cin >> conMes;
+
+    if (conMes == 1) {
+        cout << "Ingrese el mes (1-12): ";
+        cin >> mes;
+    }
+
+    for (int i = 0; i < cantidad; i++) {
+        Compra compra = archivo.leer(i);
+        if (compra.getEstado()) {
+            if (compra.getAnio() == anio && (conMes == 0 || compra.getMes() == mes)) {
+                total += compra.getImporteTotal();
+            }
+        }
+    }
+
+    cout << "Total gastado en compras en ";
+    if (conMes == 1) cout << mes << "/";
+    cout << anio << ": $" << total << endl;
+}
+
+
+void FerreteriaManager::listarComprasPendientes() {
+    CompraArchivo archivo;
+    int cantidad = archivo.getCantidadRegistros();
+    bool hayPendientes = false;
+
+    cout << "--- COMPRAS PENDIENTES DE PAGO ---" << endl;
+
+    for (int i = 0; i < cantidad; i++) {
+        Compra compra = archivo.leer(i);
+        if (!compra.getPagado() && compra.getEstado()) {
+            cout << "ID Compra: " << compra.getIdCompra() << endl;
+            cout << "Proveedor: " << compra.getIdProveedor() << endl;
+            cout << "Importe: $" << compra.getImporteTotal() << endl;
+            cout << "Fecha: "; compra.getFechaCompra().mostrar(); cout << endl;
+            cout << "--------------------------" << endl;
+            hayPendientes = true;
+        }
+    }
+
+    if (!hayPendientes) {
+        cout << "No hay compras pendientes de pago." << endl;
+    }
+}
+
 
