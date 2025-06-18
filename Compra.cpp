@@ -24,7 +24,7 @@ Compra::Compra(int idCompra, int idProveedor, Fecha fecha,std::string tipoFactur
     _numeroFactura = numeroFactura;
     _importeTotal = importeTotal;
     _pagado = pagado;
-    estado = estado; // si está implementado
+    estado = estado;
 }
 
 void Compra::setIdCompra(int idCompra) {

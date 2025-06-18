@@ -23,7 +23,7 @@ public:
     void setCantidad(int cantidad);
     void setSubtotal(float subtotal);
     void setEstado(bool estado);
-
+    void calcularSubtotal();
     // Getters
     int getIdCompra();
     int getCodProducto();
@@ -33,8 +33,8 @@ public:
     bool getEstado() const;
 
 
-    // Método para calcular subtotal (precio * cantidad)
-    void calcularSubtotal();
+
+
 };
 
 #endif
