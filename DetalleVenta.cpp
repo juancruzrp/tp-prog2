@@ -1,4 +1,3 @@
-#pragma once
 #include "DetalleVenta.h"
 #include <string>
 
@@ -9,17 +8,17 @@ DetalleVenta::DetalleVenta(){
     _precioUnitario = 0;
     _cantidad = 0;
     _subtotal = 0;
-    _estado = true;
+    _estado = 1;
 
 }
 
 DetalleVenta::DetalleVenta(int idVenta, int codProducto, float precioUnitario, int cantidad, float subtotal, bool estado){
-    _idVenta = idVenta;
-    _codProducto = codProducto;
-    _precioUnitario = precioUnitario;
-    _cantidad = cantidad;
-    _subtotal = subtotal;
-    _estado = estado;
+    setIdVenta(idVenta);
+    setCodProducto(codProducto);
+    setPrecioUnitario(precioUnitario);
+    setCantidad(cantidad);
+    setSubtotal(subtotal);
+    setEstado(estado);
 
 }
 

@@ -11,14 +11,10 @@ int main()
     int opcion;
     MenuProducto menuproducto;
     MenuProveedor menuproveedor;
-    MenuCompra menucompra;
+     MenuCompra MenuCompra;
     MenuVenta menuventa;
     MenuInforme menuinforme;
 
-    /// Comentario 02/06
-    ///comentario de gonza
-
-    ///hola dios
 
     do{
     cout << "======================================" << endl;
@@ -49,7 +45,7 @@ int main()
             break;
         case 3:
             system("cls");
-            menucompra.mostrar();
+            MenuCompra.mostrar();
             system("pause");
             system("cls");
 

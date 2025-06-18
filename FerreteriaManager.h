@@ -32,15 +32,19 @@ public:
     void darAltaVenta();
     void buscarVentaPorFecha();
     void buscarVentaPorProducto();
-    void eliminarVenta();
+    void bajaDeVenta();
+    std::string convertirAMinusculas(std::string medioPago);
 
     ///COMPRAS
+
+///COMPRAS
     void cargarCompra();
+    void mostrarCompras();
     void listarCantidadCompras();
     void listarCompras();
-    void buscarCompraPorFecha();
+   void buscarCompraPorFecha();
     void buscarCompraPorProveedor();
-
+    void eliminarCompra();
 
 
 };

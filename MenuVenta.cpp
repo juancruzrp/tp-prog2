@@ -26,7 +26,6 @@ void MenuVenta::mostrar(){
 
     switch(opcion) {
             case 1:
-
                 system("cls");
                 cout << "======================================" << endl;
                 cout << "        REGISTRAR NUEVA VENTA" << endl ;
@@ -34,10 +33,8 @@ void MenuVenta::mostrar(){
                 manager.cargarVenta();
                 system("pause");
                 system("cls");
-
                 break;
             case 2:
-
                 system("cls");
                 cout << "======================================" << endl;
                 cout << "       LISTAR TODAS LAS VENTAS" << endl ;
@@ -45,11 +42,8 @@ void MenuVenta::mostrar(){
                 manager.listarVentas();
                 system("pause");
                 system("cls");
-
                 break;
-
             case 3:
-                int idVenta;
                 system("cls");
                 cout << "======================================" << endl;
                 cout << "       LISTAR DETALLE DE VENTA" << endl ;
@@ -57,34 +51,27 @@ void MenuVenta::mostrar(){
                 manager.listarDetalleVenta();
                 system("pause");
                 system("cls");
-
                 break;
 
             case 4:
-
                 system("cls");
                 cout << "======================================" << endl;
                 cout << "        BUSCAR VENTA POR FECHA" << endl ;
                 cout << "======================================" << endl;
                 ///manager.buscarVentaPorFecha();
-                manager.darAltaVenta();
                 system("pause");
                 system("cls");
-
                 break;
             case 5:
-
                 system("cls");
                 cout << "======================================" << endl;
                 cout << "      BUSCAR VENTA POR PRODUCTO" << endl ;
                 cout << "======================================" << endl;
-                ///manager.buscarVentaPorProducto();
+                manager.buscarVentaPorProducto();
                 system("pause");
                 system("cls");
-
                 break;
             case 6:
-
                 system("cls");
                 cout << "======================================" << endl;
                 cout << "    CANTIDAD DE VENTAS REGISTRADAS" << endl ;
@@ -92,19 +79,16 @@ void MenuVenta::mostrar(){
                 manager.listarCantidadVentas();
                 system("pause");
                 system("cls");
-
-               break;
+                break;
             case 7:
-
                 system("cls");
                 cout << "======================================" << endl;
                 cout << "            ELIMINAR VENTA " << endl ;
                 cout << "======================================" << endl;
-                manager.eliminarVenta();
+                manager.bajaDeVenta();
                 system("pause");
                 system("cls");
-
-               break;
+                break;
             case 0:
                 system("cls");
                 cout << "======================================" << endl;

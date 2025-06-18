@@ -11,9 +11,9 @@ public:
     VentaArchivo(std::string nombreArchivo);
 
     bool guardar(Venta);
-    int buscar(int);
+    bool guardar(Venta registro,int posicion);
+    int buscar(int idVenta);
     Venta leer(int pos);
-    int modificar(int idVenta);
-    bool eliminar();
+    bool baja(int idVenta);
     int getCantidadRegistros();
 };

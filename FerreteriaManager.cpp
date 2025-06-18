@@ -1,4 +1,7 @@
 #include <iostream>
+#include <cctype>
+#include <algorithm>
+#include <string>
 #include "FerreteriaManager.h"
 #include "Producto.h"
 #include "ProductoArchivo.h"
@@ -9,8 +12,9 @@
 #include "DetalleVentaArchivo.h"
 #include "Compra.h"
 #include "CompraArchivo.h"
+#include "DetalleCompra.h"
+#include "DetalleCompraArchivo.h"
 #include "Fecha.h"
-#include <cctype>
 using namespace std;
 
 
@@ -59,9 +63,6 @@ void FerreteriaManager::cargarProducto(){
 
 }
 
-
-
-
 void FerreteriaManager::listarCantidadProductos(){
     ProductoArchivo productoArchivo;
     int cantidadProductos;
@@ -92,10 +93,6 @@ void FerreteriaManager::listarProductos() {
 
 
 }
-
-
-
-
 
 void FerreteriaManager::buscarProductoPorCodigo() {
     ProductoArchivo productoArchivo;
@@ -162,9 +159,10 @@ void FerreteriaManager::buscarProductoPorTipo(){
         cout <<"Marca del producto: " << registro.getMarca() << endl;
     }
 
+    }
+    return;
 }
-return;
-}
+
 void FerreteriaManager::modificarPrecioProducto(){
     int idProducto,posicion;
     float nuevoPrecio;
@@ -235,8 +233,6 @@ void FerreteriaManager::listarCantidadProveedores(){
 
 }
 
-
-
 void FerreteriaManager::listarProveedores() {
     ProveedorArchivo proveedorArchivo;
     Proveedor registro;
@@ -301,6 +297,7 @@ void FerreteriaManager::buscarProveedorPorNombre(){
     }
 
 }
+
 return;
 }
 void FerreteriaManager::modificarTelefonoProveedor(){
@@ -329,6 +326,7 @@ void FerreteriaManager::modificarTelefonoProveedor(){
     }
 
 }
+
 void FerreteriaManager::modificarDireccionProveedor(){
     int idProveedor,posicion;
     string nuevaDireccion;
@@ -363,16 +361,16 @@ void FerreteriaManager::modificarDireccionProveedor(){
 void FerreteriaManager::cargarVenta(){
     int idVenta, codProducto, cantidad;
     float importeTotal, precioUnitario, subtotal;
-    string medioPago;
-    bool estado=true;
-    Producto producto;
+    string medioPago, pago;
+    bool estado=1;
+    FerreteriaManager manager;
+    Producto producto, prod;
     Fecha fechaVenta;
     Venta venta, reg;
     ProductoArchivo productoArchivo;
     VentaArchivo ventaArchivo;
     DetalleVenta detalleVenta;
     DetalleVentaArchivo detalleVentaArchivo;
-    int nroId;
     int cantidadProductos = productoArchivo.getCantidadRegistros();
 
 
@@ -390,7 +388,20 @@ void FerreteriaManager::cargarVenta(){
     cout << "Ingrese medio de pago: " ;
     cin.ignore();
     getline(cin, medioPago);
-    ///falta validar medio de pago
+    pago = manager.convertirAMinusculas(medioPago);
+    cout << pago;
+
+    ///validar medio de pago
+    while(pago != "efectivo" && pago!= "debito" && pago!= "qr" && pago!= "credito" && pago!= "transferencia"){
+            cout << "MEDIO DE PAGO INCORRECTO. VUELVA A INGRESAR MEDIO DE PAGO." << endl ;
+            cout << "Medios de pago disponibles: Efectivo - Credito - Debito - Transferencia - QR" << endl;
+            system("pause");
+            system("cls");
+            cout << "Ingrese medio de pago: " ;
+            getline(cin, medioPago);
+            pago = manager.convertirAMinusculas(medioPago);
+    }
+
 
     cout << "Ingrese codigo del producto: " ;
     cin >> codProducto;
@@ -421,11 +432,10 @@ void FerreteriaManager::cargarVenta(){
     productoArchivo.guardarProducto(producto ,pos);
 
 
-
     fechaVenta.cargar();
 
 
-    ///busca precio unitario y lo asigna
+    /// asigna precio unitario
     for(int i=0; i<cantidadProductos ; i++){
         producto = productoArchivo.leer(i);
 
@@ -459,15 +469,22 @@ void FerreteriaManager::cargarVenta(){
 }
 
 
-
-
 void FerreteriaManager::listarCantidadVentas(){
     VentaArchivo ventaArchivo;
     int cantidadVentas;
+    Venta venta;
 
     cantidadVentas = ventaArchivo.getCantidadRegistros();
 
-    cout << "Cantidad de ventas registradas: " << cantidadVentas << endl;
+    for (int x=0; x<cantidadVentas;x++){
+        venta = ventaArchivo.leer(x);
+
+        if(venta.getEstado()==0){
+            cantidadVentas--;
+        }
+    }
+
+        cout << "Cantidad de ventas registradas: " << cantidadVentas << endl;
 }
 
 void FerreteriaManager::listarVentas(){
@@ -476,59 +493,58 @@ void FerreteriaManager::listarVentas(){
     Venta venta;
     DetalleVentaArchivo detalleVentaArchivo;
     VentaArchivo ventaArchivo;
-    int cantidadVentas = detalleVentaArchivo.getCantidadRegistros();
+    int cantidadVentas = ventaArchivo.getCantidadRegistros();
     float acuImportes[50]{};
     int id[50]{};
     bool idb[50]{};
 
+    for (int x=0; x<cantidadVentas;x++){
+        venta = ventaArchivo.leer(x);
+
+        cout << "Id Venta: " << venta.getIdVenta();
+        cout << " | " ;
+        cout << "Medio de pago: " << venta.getMedioPago();
+        cout << " | " ;
+        venta.getFechaVenta().mostrar();
+        cout << " | " ;
+        cout << "Importe Total: " << venta.getImporteTotal() ;
+        cout << " | " ;
+    }
 
 
-        for (int x=0 ; x<cantidadVentas;x++){
+
+        /*for (int x=0 ; x<cantidadVentas;x++){
             detalleVenta = detalleVentaArchivo.leer(x);
             venta = ventaArchivo.leer(x);
 
-            acuImportes[venta.getIdVenta()]+=detalleVenta.getSubtotal();
-            id[venta.getIdVenta()]=venta.getIdVenta();
+            acuImportes[venta.getIdVenta()-1]+=detalleVenta.getSubtotal();
+            id[venta.getIdVenta()-1]=venta.getIdVenta();
         }
 
         for(int i=0; i<cantidadVentas ; i++){
             detalleVenta = detalleVentaArchivo.leer(i);
             venta = ventaArchivo.leer(i);
 
-            while ( idb[venta.getIdVenta()] == 0){
-                cout << "Id Venta: " << id[venta.getIdVenta()] ;
-                cout << " | " ;
-                idb[venta.getIdVenta()]=1;
-                cout << "Medio de pago: " << venta.getMedioPago() ;
-                cout << " | ";
-                venta.getFechaVenta().mostrar();
-                cout << " | " ;
-                cout << "Importe Total: " << acuImportes[venta.getIdVenta()] ;
-                cout << " | " << endl;
+            while ( idb[venta.getIdVenta()-1] == 0 && venta.getEstado()==1 ){
+
+                    cout << "Id Venta: " << id[venta.getIdVenta()+1] ;
+                    cout << " | " ;
+                    idb[venta.getIdVenta()-1]=1;
+                    cout << "Medio de pago: " << venta.getMedioPago() ;
+                    cout << " | ";
+                    venta.getFechaVenta().mostrar();
+                    cout << " | " ;
+                    cout << "Importe Total: " << acuImportes[venta.getIdVenta()-1] ;
+                    cout << " | " << endl;
+
             }
-        }
+        }*/
 
-   /// cout << venta.toCSV();
-
-
-
-    for(int i=0 ; i<cantidadVentas; i++ ){
-
+    /*for(int i=0 ; i<cantidadVentas; i++ ){
         venta = ventaArchivo.leer(i);
         cout<< venta.toCSV() << endl;
-    }
-
-
-
-
-
+    }*/
 }
-
-
-
-
-
-
 
 
 void FerreteriaManager::listarDetalleVenta(){
@@ -543,7 +559,7 @@ void FerreteriaManager::listarDetalleVenta(){
     for(int i=0; i<cantidadVentas ; i++){
         detalleVenta = detalleVentaArchivo.leer(i);
 
-        if(detalleVenta.getIdVenta() == idVenta){
+        if(detalleVenta.getIdVenta() == idVenta && detalleVenta.getEstado()== 1){
             cout << "Id Venta: " << detalleVenta.getIdVenta() << " | " ;
             cout << "Codigo producto: " << detalleVenta.getCodProducto() << " | " ;
             cout << "Precio unitario: " << detalleVenta.getPrecioUnitario() << " | " ;
@@ -559,46 +575,333 @@ void FerreteriaManager::buscarVentaPorFecha(){
 }
 
 void FerreteriaManager::buscarVentaPorProducto(){
+    int codProducto;
+    Venta venta;
+    VentaArchivo ventaArchivo;
+    DetalleVenta detalleVenta;
+    DetalleVentaArchivo detalleVentaArchivo;
+    Producto producto;
+    ProductoArchivo productoArchivo;
+
+    cout << "Ingrese Codigo del producto: ";
+    cin >> codProducto;
+
+    while(codProducto<=0 || codProducto>30){
+            cout << "CODIGO INVALIDO. VUELVA A INGRESAR CODIGO DEL PRODUCTO." << endl ;
+            system("pause");
+            system("cls");
+            cout << "Ingrese Codigo: " ;
+            cin >> codProducto;
+    }
+
+    int pos = productoArchivo.buscarProducto(codProducto);
+    if(pos >=0){
+        producto = productoArchivo.leer(pos);
+        cout << "Nombre del producto: " << producto.getNombreProducto() << endl;
+        cout << "Precio unitario: " << producto.getPrecioUnitario() << endl;
+    }
+
+    int poss = detalleVentaArchivo.buscar(codProducto);
+    if(poss >=0){
+        detalleVenta = detalleVentaArchivo.leer(poss);
+            cout << "Cantidad vendida: " << detalleVenta.getCantidad() << endl;
+            cout << "Subtotal: " << detalleVenta.getSubtotal() << endl;
+    }
+
 
 }
 
-void FerreteriaManager::eliminarVenta(){
-    DetalleVentaArchivo detalleVentaArchivo;
-    int idVenta;
 
-    cout << "Ingrese ID de venta a eliminar: ";
+void FerreteriaManager::bajaDeVenta(){
+    int idVenta;
+    VentaArchivo ventaArchivo;
+    DetalleVentaArchivo detalleVentaArchivo;
+    DetalleVenta detalleVenta;
+    Venta venta;
+    int cantidadVentas = detalleVentaArchivo.getCantidadRegistros();
+
+    cout << "Ingrese ID de venta a eliminar: " ;
     cin >> idVenta;
 
-    detalleVentaArchivo.eliminar(idVenta);
+        while(idVenta<=0 || idVenta>30){
+            cout << "ID DE VENTA INVALIDA. VUELVA A INGRESAR ID DE VENTA. " << endl ;
+            system("pause");
+            system("cls");
+            cout << "Ingrese ID de venta: " ;
+            cin >> idVenta;
+        }
+
+    int pos = ventaArchivo.buscar(idVenta);
+
+    for (int x=0;x <cantidadVentas;x++){
+        detalleVenta = detalleVentaArchivo.leer(x);
+
+        if(detalleVenta.getIdVenta() == idVenta){
+            detalleVenta.setEstado(0);
+            detalleVentaArchivo.guardar(detalleVenta, x);
+        }
+    }
+
+    if( pos >=0){
+        venta = ventaArchivo.leer(pos);
+        venta.setEstado(0);
+
+        if(ventaArchivo.guardar(venta, pos)){
+            cout << "Venta eliminada correctamente."<< endl;
+            }
+        else {
+            cout << "Hubo un error al eliminar la venta. Intente nuevamente";
+        }
+    }
 
 }
 
 
-void FerreteriaManager::darAltaVenta(){
-    DetalleVentaArchivo detalleVentaArchivo;
-    int idVenta;
-
-    cout << "Ingrese ID de venta a dar de alta: ";
-    cin >> idVenta;
-
-    detalleVentaArchivo.alta(idVenta);
-
+std::string FerreteriaManager::convertirAMinusculas(std::string texto) {
+    std::transform(texto.begin(), texto.end(), texto.begin(),
+                   [](unsigned char c){ return std::tolower(c); });
+    return texto;
 }
-
-
 
                                          ///FUNCIONES PARA COMPRAS///
-void FerreteriaManager::cargarCompra(){
+
+    void FerreteriaManager::cargarCompra() {
+    int idCompra, idProveedor, numeroFactura, cantidadDetalles;
+    string tipoFactura;
+    float importeTotal = 0, subtotal;
+    bool pagado;
+    Fecha f; // Fecha de la compra
+    CompraArchivo archivoCompra;
+    DetalleCompraArchivo archivoDetalles;
+
+    // INGRESO DE DATOS
+    cout << "Ingrese ID de la compra: ";
+    cin >> idCompra;
+
+    if (idCompra <= 0) {
+        cout << "ID de compra invalido. Debe ser un numero positivo." << endl;
+        return;
+    }
+
+    cout << "Ingrese ID del proveedor: ";
+    cin >> idProveedor;
+
+    if (idProveedor <= 0) {
+        cout << "ID de proveedor invalido. Debe ser un numero positivo." << endl;
+        return;
+    }
+
+    // Cargar fecha
+    f.cargar();
+
+    cout << "Ingrese tipo de factura (A, B o C): ";
+    cin >> tipoFactura;
+
+    // Convertir a mayúsculas
+    for (char &c : tipoFactura) {
+        c = toupper(c);
+    }
+
+    if (tipoFactura != "A" && tipoFactura != "B" && tipoFactura != "C") {
+        cout << "Tipo de factura invalido. Debe ser A, B o C." << endl;
+        return;
+    }
+
+    cout << "Ingrese número de factura: ";
+    cin >> numeroFactura;
+
+    if (numeroFactura <= 0) {
+        cout << "Número de factura invalido. Debe ser un numero positivo." << endl;
+        return;
+    }
+
+    cout << "La compra fue pagada (1 = SI, 0 = NO): ";
+    cin >> pagado;
+
+    if (pagado != 0 && pagado != 1) {
+        cout << "Valor invalido para 'Pagado'. Debe ser 0 o 1." << endl;
+        return;
+    }
+
+    cout << "Cantidad de productos : ";
+    cin >> cantidadDetalles;
+
+    // INGRESO DE DETALLES
+    for (int i = 0; i < cantidadDetalles; i++) {
+        int codProducto, cantidad;
+        float precioUnitario;
+
+        cout << "----- Producto " << (i + 1) << " -----" << endl;
+
+        cout << "Ingrese codigo del producto: ";
+        cin >> codProducto;
+
+        cout << "Ingrese precio unitario: ";
+        cin >> precioUnitario;
+
+        if (precioUnitario <= 0) {
+            cout << "Precio unitario invalido. Debe ser mayor que cero." << endl;
+            continue;
+        }
+
+        cout << "Ingrese cantidad: ";
+        cin >> cantidad;
+
+        if (cantidad <= 0) {
+            cout << "Cantidad invalida. Debe ser mayor que cero." << endl;
+            continue;
+        }
+
+        subtotal = precioUnitario * cantidad;
+
+        // Crear y guardar detalle
+        DetalleCompra detalle(idCompra, codProducto, precioUnitario, cantidad);
+        importeTotal += detalle.getSubtotal();
+
+        if (archivoDetalles.guardarDetalle(detalle)) {
+            cout << "Detalle guardado correctamente." << endl;
+        } else {
+            cout << "Error al guardar el detalle." << endl;
+        }
+    }
+
+    // Crear objeto compra con fecha correctamente
+    Compra compra(idCompra, idProveedor, f, tipoFactura, numeroFactura, importeTotal, pagado, 1);
+
+    if (archivoCompra.guardarCompra(compra)) {
+        cout << "Compra registrada correctamente." << endl;
+    } else {
+        cout << "Error al registrar la compra." << endl;
+    }
+}
+
+
+    void FerreteriaManager::listarCompras() {
+    CompraArchivo archivoCompra("compra.dat");
+    int cantidad = archivoCompra.getCantidadRegistros();
+
+    if (cantidad == 0) {
+        cout << "No hay compras registradas." << endl;
+        return;
+    }
+
+    cout << "--- LISTADO DE COMPRAS ---" << endl; // Encabezado
+
+    for (int i = 0; i < cantidad; i++) {
+        Compra compra = archivoCompra.leer(i);
+
+        cout << "Compra #" << (i + 1) << ":" << std::endl; // Numerar
+        cout << "  ID Compra: " << compra.getIdCompra() << endl;
+        cout << "  ID Proveedor: " << compra.getIdProveedor() << endl;
+
+        // Imprimir la fecha correctamente
+        cout << "  Fecha: " << compra.getDia() << "/" << compra.getMes() << "/" << compra.getAnio() << endl;
+
+        cout << "  Tipo Factura: " << compra.getTipoFactura() << endl;
+        cout << "  Nro Factura: " << compra.getNumeroFactura() << endl;
+        cout << "  Importe Total: $" << compra.getImporteTotal() << endl;
+        cout << "  Pagado: " << (compra.getPagado() ? "SI" : "NO") << endl;
+        cout << "------------------------" << endl;
+    }
+}
+
+
+void FerreteriaManager::buscarCompraPorFecha() {
+    Fecha fechaBuscada;
+    cout << "--- BUSCAR COMPRAS POR FECHA ---" << std::endl;
+    fechaBuscada.cargar();
+
+    CompraArchivo archivoCompra;
+    Compra compra;
+    int cantidad = archivoCompra.getCantidadRegistros();
+    bool encontrado = false;
+
+    for (int i = 0; i < cantidad; i++) {
+        compra = archivoCompra.leer(i);
+        Fecha fechaCompra = compra.getFechaCompra();
+
+        if (fechaCompra.getDia() == fechaBuscada.getDia() &&
+            fechaCompra.getMes() == fechaBuscada.getMes() &&
+            fechaCompra.getAnio() == fechaBuscada.getAnio()) {
+
+            cout << "------------------------" << endl;
+            cout << "ID Compra: " << compra.getIdCompra() << endl;
+            cout << "ID Proveedor: " << compra.getIdProveedor() << endl;
+            cout << "Fecha: ";
+            compra.getFechaCompra().mostrar();
+            cout << std::endl;
+            cout << "Tipo Factura: " << compra.getTipoFactura() << endl;
+            cout << "Numero Factura: " << compra.getNumeroFactura() << endl;
+            cout << "Importe Total: $" << compra.getImporteTotal() << endl;
+            cout << "Pagado: " << (compra.getPagado() ? "SI" : "NO") << endl;
+            encontrado = true;
+        }
+    }
+
+    if (!encontrado) {
+        cout << "No se encontraron compras para la fecha ingresada." << endl;
+    }
+}
+
+void FerreteriaManager::buscarCompraPorProveedor() {
+    CompraArchivo archivoCompra;
+    int cantidad = archivoCompra.getCantidadRegistros();
+    int idBuscado;
+    bool encontrada = false;
+
+    cout << "Ingrese ID del proveedor: ";
+    cin >> idBuscado;
+
+    if (cantidad == 0) {
+        cout << "No hay compras registradas para ese proveedor." << endl;
+        return;
+    }
+
+    cout << "--- COMPRAS DEL PROVEEDOR #" << idBuscado << " ---" << endl;
+
+    for (int i = 0; i < cantidad; i++) {
+        Compra compra = archivoCompra.leer(i);
+
+        if (compra.getIdProveedor() == idBuscado) {
+            encontrada = true;
+            cout << "ID Compra: " << compra.getIdCompra() << std::endl;
+            cout << "Fecha: ";
+            compra.getFechaCompra().mostrar();  // Debe tener bien definida la función mostrar()
+            cout << std::endl;
+            cout << "Tipo Factura: " << compra.getTipoFactura() << endl;
+            cout << "Nro Factura: " << compra.getNumeroFactura() << endl;
+            cout << "Importe Total: $" << compra.getImporteTotal() << endl;
+            cout << "Pagado: " << (compra.getPagado() ? "SI" : "NO") << endl;
+            cout << "-----------------------------" << endl;
+        }
+    }
+
+    if (!encontrada) {
+        std::cout << "No se encontraron compras para ese proveedor." << std::endl;
+    }
 }
 
 void FerreteriaManager::listarCantidadCompras(){
+    CompraArchivo CompraArchivo;
+    int cantidadCompras;
+
+    cantidadCompras = CompraArchivo.getCantidadRegistros();
+
+    cout << "Cantidad de compras registradas: " << cantidadCompras << endl;
+
 }
 
-void FerreteriaManager::listarCompras(){
+void FerreteriaManager::eliminarCompra() {
+    DetalleCompraArchivo archivoDetalle;
+    int idCompra;
+
+    cout << "Ingrese ID de compra a eliminar: ";
+    cin >> idCompra;
+
+    if (archivoDetalle.eliminar(idCompra)) {
+        cout << "Detalles de la compra eliminados correctamente." << endl;//baja logica
+    } else {
+        cout << "Error al eliminar los detalles." << endl;
+    }
 }
 
-void FerreteriaManager::buscarCompraPorFecha(){
-}
-
-void FerreteriaManager::buscarCompraPorProveedor(){
-}
