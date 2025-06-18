@@ -199,7 +199,7 @@
 1750117236 c:\users\usuario\documents\github\tp-prog2\menuventa.h
 	<string>
 
-1750193480 c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.h
+1750275146 c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.h
 	<string>
 
 1750265624 source:c:\users\usuario\documents\github\tp-prog2\menucompra.cpp
@@ -235,7 +235,7 @@
 	"Venta.h"
 	<cstring>
 
-1750194864 source:c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.cpp
+1750275146 source:c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.cpp
 	<iostream>
 	<cctype>
 	<algorithm>
@@ -306,16 +306,16 @@
 	<iostream>
 	"DetalleVentaArchivo.h"
 
-1750193480 source:c:\users\usuario\documents\github\tp-prog2\compraarchivo.cpp
+1750275146 source:c:\users\usuario\documents\github\tp-prog2\compraarchivo.cpp
 	<iostream>
 	"Compra.h"
 	"CompraArchivo.h"
 
-1750193480 source:c:\users\usuario\documents\github\tp-prog2\detallecompra.cpp
+1750275146 source:c:\users\usuario\documents\github\tp-prog2\detallecompra.cpp
 	<iostream>
 	"DetalleCompra.h"
 
-1750194128 source:c:\users\usuario\documents\github\tp-prog2\detallecompraarchivo.cpp
+1750275146 source:c:\users\usuario\documents\github\tp-prog2\detallecompraarchivo.cpp
 	"DetalleCompraArchivo.h"
 	<iostream>
 	<cstdio>
@@ -585,19 +585,18 @@
 	"Proveedor.h"
 	<string>
 
-1750193480 c:\users\usuario\documents\github\tp-prog2\compra.h
+1750275441 c:\users\usuario\documents\github\tp-prog2\compra.h
 	<string>
 	"Fecha.h"
 
-1750193480 c:\users\usuario\documents\github\tp-prog2\compraarchivo.h
+1750275146 c:\users\usuario\documents\github\tp-prog2\compraarchivo.h
 	"Compra.h"
 	<fstream>
 	<string>
-	<vector>
 
-1750194778 c:\users\usuario\documents\github\tp-prog2\detallecompra.h
+1750275146 c:\users\usuario\documents\github\tp-prog2\detallecompra.h
 
-1750194382 c:\users\usuario\documents\github\tp-prog2\detallecompraarchivo.h
+1750275146 c:\users\usuario\documents\github\tp-prog2\detallecompraarchivo.h
 	<iostream>
 	<fstream>
 	"DetalleCompra.h"

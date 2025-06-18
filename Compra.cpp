@@ -12,6 +12,8 @@ Compra::Compra() {
     _numeroFactura = 0;
     _importeTotal = 0.0;
     _pagado = false;
+     _estado = true;
+
 }
 
 Compra::Compra(int idCompra, int idProveedor, Fecha fecha,std::string tipoFactura , int numeroFactura, float importeTotal, bool pagado, bool estado){
@@ -22,7 +24,7 @@ Compra::Compra(int idCompra, int idProveedor, Fecha fecha,std::string tipoFactur
     _numeroFactura = numeroFactura;
     _importeTotal = importeTotal;
     _pagado = pagado;
-    // _estado = estado; // si está implementado
+    estado = estado; // si está implementado
 }
 
 void Compra::setIdCompra(int idCompra) {
@@ -52,7 +54,9 @@ void Compra::setPagado(bool pagado) {
     _pagado = pagado;
 }
 
-
+void Compra::setEstado(bool estado) {
+    _estado = estado;
+}
 // Getters
 int Compra::getIdCompra() {
     return _idCompra;
@@ -91,4 +95,7 @@ int Compra::getAnio() {
     return _fechaCompra.getAnio();
     }
 
+bool Compra::getEstado() const {
+    return _estado;
+}
 

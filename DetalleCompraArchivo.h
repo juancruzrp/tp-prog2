@@ -16,8 +16,7 @@ public:
     DetalleCompra leer(int pos);
 
     int getCantidadRegistros();
-    bool alta(int idEliminar);
     bool eliminar(int idCompra);
-
+    bool guardar(DetalleCompra detalle, int pos);
 };
 

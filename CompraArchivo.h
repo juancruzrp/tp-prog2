@@ -3,7 +3,6 @@
 #include "Compra.h"
 #include <fstream>
 #include <string>
-#include <vector>
 using namespace std;
 
 class CompraArchivo {
@@ -21,10 +20,8 @@ public:
     void listarCompras();
     int buscarCompra(int idCompra);
     Compra leer(int pos);
-    std::vector<Compra> leerTodasLasCompras();
-    //std::vector<Compra> buscarCompraPorFecha(Fecha fecha);
-    //bool modificar(Compra reg, int pos);
-
+    int buscar(int idCompra);
+    bool guardar(Compra compra, int pos);
     int getCantidadRegistros();
     bool eliminar(int idCompra);
 };
