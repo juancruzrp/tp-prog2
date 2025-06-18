@@ -42,9 +42,10 @@ public:
     void mostrarCompras();
     void listarCantidadCompras();
     void listarCompras();
-   void buscarCompraPorFecha();
+    void buscarCompraPorFecha();
     void buscarCompraPorProveedor();
     void eliminarCompra();
-
+    void totalGastadoPorAnioMes();
+    void listarComprasPendientes();
 
 };

@@ -43,6 +43,15 @@ void DetalleCompra::setSubtotal(float subtotal) {
     _subtotal = subtotal;
 }
 
+void DetalleCompra::setEstado(bool estado) {
+    _estado = estado;
+}
+
+// Calcula subtotal
+void DetalleCompra::calcularSubtotal() {
+    _subtotal = _precioUnitario * _cantidad;
+}
+
 // Getters
 int DetalleCompra::getIdCompra() {
     return _idCompra;
@@ -63,8 +72,9 @@ int DetalleCompra::getCantidad() {
 float DetalleCompra::getSubtotal() {
     return _subtotal;
 }
-
-// Calcula subtotal
-void DetalleCompra::calcularSubtotal() {
-    _subtotal = _precioUnitario * _cantidad;
+bool DetalleCompra::getEstado() const {
+    return _estado;
 }
+
+
+

@@ -44,26 +44,7 @@ bool CompraArchivo::guardarCompra(Compra registro) {
  }
 
 
-/*bool CompraArchivo::modificar(Compra reg, int pos) {
-    FILE* p = fopen (_nombreArchivo.c_str(), "rb+");
-    if (p == nullptr) return false;
-
-    fseek(p, 0, SEEK_END);
-    int total = ftell(p);
-    int cantidad = total / sizeof(Compra);
-
-    if (pos < 0 || pos >= cantidad) {
-        fclose(p);
-        return false;
-    }
-
-    fseek(p, pos * sizeof(Compra), SEEK_SET);
-    bool ok = fwrite(&reg, sizeof(Compra), 1, p);
-    fclose(p);
-    return ok;
-}
-*/
-int CompraArchivo::getCantidadRegistros() {
+CompraArchivo::getCantidadRegistros() {
     FILE* pFile;
     int tamReg = sizeof(Compra);
     int total, cantidad;
@@ -79,4 +60,32 @@ int CompraArchivo::getCantidadRegistros() {
 
     cantidad = total / tamReg;
     return cantidad;
+}
+
+int CompraArchivo::buscar(int idCompra) {
+    Compra compra;
+    FILE* p = fopen(_nombreArchivo.c_str(), "rb");
+    if (p == nullptr) return -1;
+
+    int pos = 0;
+    while (fread(&compra, sizeof(Compra), 1, p)) {
+        if (compra.getIdCompra() == idCompra && compra.getEstado()) {
+            fclose(p);
+            return pos;
+        }
+        pos++;
+    }
+
+    fclose(p);
+    return -1;
+}
+bool CompraArchivo::guardar(Compra compra, int pos) {
+    FILE* p = fopen(_nombreArchivo.c_str(), "rb+");
+    if (p == nullptr) return false;
+
+    fseek(p, pos * sizeof(Compra), SEEK_SET);
+    bool ok = fwrite(&compra, sizeof(Compra), 1, p);
+
+    fclose(p);
+    return ok;
 }

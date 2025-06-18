@@ -12,6 +12,7 @@ private:
     int _numeroFactura;
     float _importeTotal;
     bool _pagado;
+    bool _estado;
 
 public:
     // Constructores
@@ -27,7 +28,7 @@ public:
     void setNumeroFactura(int numeroFactura);
     void setImporteTotal(float importeTotal);
     void setPagado(bool pagado);
-
+    void setEstado(bool estado);
     // Getters
     int getIdCompra();
     int getIdProveedor();
@@ -36,6 +37,7 @@ public:
     int getNumeroFactura();
     float getImporteTotal();
     bool getPagado();
+    bool getEstado() const;
 
     // Métodos auxiliares para acceder a la fecha
     int getDia();
