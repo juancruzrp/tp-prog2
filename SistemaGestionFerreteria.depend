@@ -235,7 +235,7 @@
 	"Venta.h"
 	<cstring>
 
-1750275146 source:c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.cpp
+1750275754 source:c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.cpp
 	<iostream>
 	<cctype>
 	<algorithm>
@@ -262,7 +262,7 @@
 	"Producto.h"
 	<cstring>
 
-1750193480 source:c:\users\usuario\documents\github\tp-prog2\compra.cpp
+1750275441 source:c:\users\usuario\documents\github\tp-prog2\compra.cpp
 	"Compra.h"
 	<cstring>
 
