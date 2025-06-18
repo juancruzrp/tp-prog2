@@ -58,7 +58,7 @@ void MenuVenta::mostrar(){
                 cout << "======================================" << endl;
                 cout << "        BUSCAR VENTA POR FECHA" << endl ;
                 cout << "======================================" << endl;
-                ///manager.buscarVentaPorFecha();
+                manager.buscarVentaPorFecha();
                 system("pause");
                 system("cls");
                 break;

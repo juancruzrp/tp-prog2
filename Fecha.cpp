@@ -38,7 +38,7 @@ void Fecha::cargar(){
 
     cout << "Ingrese anio: ";
     cin >> _anio;
-        while(_anio<=0 || _anio>2025){
+        while(_anio !=2025 ){
             cout << "AÑO INVALIDO. VUELVA A INGRESAR ANIO." << endl ;
             system("pause");
             system("cls");

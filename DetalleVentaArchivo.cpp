@@ -3,7 +3,7 @@
 using namespace std;
 
 DetalleVentaArchivo::DetalleVentaArchivo(){
-    _nombreArchivo = "DetalleVenta.dat";
+    _nombreArchivo = "detalleVenta.dat";
 }
 
 DetalleVentaArchivo::DetalleVentaArchivo(std::string nombreArchivo){
@@ -11,7 +11,7 @@ DetalleVentaArchivo::DetalleVentaArchivo(std::string nombreArchivo){
 }
 
 
-bool DetalleVentaArchivo::guardar(DetalleVenta registro) {
+bool DetalleVentaArchivo::guardar(DetalleVenta registro){
     FILE *pFile;
     bool result;
 
@@ -26,7 +26,7 @@ bool DetalleVentaArchivo::guardar(DetalleVenta registro) {
     return result;
 }
 
-
+/// ------------------------------------------------------------------------------------------------------------------------
 
 bool DetalleVentaArchivo::guardar(DetalleVenta registro,int posicion){
 
@@ -45,7 +45,7 @@ bool DetalleVentaArchivo::guardar(DetalleVenta registro,int posicion){
     return result;
 }
 
-
+/// ------------------------------------------------------------------------------------------------------------------------
 
 DetalleVenta DetalleVentaArchivo::leer(int pos){
 
@@ -62,8 +62,9 @@ DetalleVenta DetalleVentaArchivo::leer(int pos){
     fclose(pFile);
 
     return registro;
- }
+}
 
+/// ------------------------------------------------------------------------------------------------------------------------
 
 int DetalleVentaArchivo::buscar(int idVenta){
     FILE *pFile;
@@ -88,7 +89,7 @@ int DetalleVentaArchivo::buscar(int idVenta){
     return -1;
 }
 
-
+/// ------------------------------------------------------------------------------------------------------------------------
 
 int DetalleVentaArchivo::getCantidadRegistros(){
     FILE *pFile;
@@ -112,14 +113,3 @@ int DetalleVentaArchivo::getCantidadRegistros(){
 
     return cantidad;
 }
-
-
-int buscar(int){
-}
-
-bool baja(int idVenta){
-
-}
-
-
-
