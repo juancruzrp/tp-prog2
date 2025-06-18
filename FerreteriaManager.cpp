@@ -27,12 +27,12 @@ void FerreteriaManager::cargarProducto(){
     Producto producto;
     ProductoArchivo productoArchivo;
 
-    ///se pide un codigo de producto,si se ingresa algo que no sea un entero
+    ///se pide un codigo de producto,si se ingresa algo que no sea un entero,valores negativos o cero
     ///se vuelve a pedir el ingreso hasta que sea correcto.
     ///cin.clear() limpia el estado del error
     ///cin.ignore() ignora hasta 15 caracteres o hasta un espacio('\n')
     cout << "Ingrese codigo del producto: " ;
-    while(!(cin >> codProducto)){
+    while(!(cin >> codProducto)|| codProducto<=0){
     cin.clear();
     cin.ignore(15,'\n');
     cout << "Ingrese nuevamente el codigo del producto: " ;
@@ -205,7 +205,11 @@ void FerreteriaManager::cargarProveedor(){
     ProveedorArchivo proveedorArchivo;
 
     cout << "Ingrese codigo del proveedor: " ;
-    cin >> idProveedor;
+    while(!(cin >> idProveedor)|| idProveedor<=0){
+    cin.clear();
+    cin.ignore(15,'\n');
+    cout << "Ingrese nuevamente el codigo del proveedor: " ;
+    }
 
     cout << "Ingrese nombre del proveedor: " ;
     cin.ignore();
