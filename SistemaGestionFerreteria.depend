@@ -77,14 +77,15 @@
 1748134358 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\menuventa.h
 	<string>
 
-1748219259 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\compra.cpp
-	<iostream>
+1750248946 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\compra.cpp
+	"Compra.h"
+	<cstring>
 
 1750001178 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\fecha.cpp
 	<iostream>
 	"Fecha.h"
 
-1750129202 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ferreteriamanager.cpp
+1750248946 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ferreteriamanager.cpp
 	<iostream>
 	<cctype>
 	<algorithm>
@@ -99,14 +100,17 @@
 	"DetalleVentaArchivo.h"
 	"Compra.h"
 	"CompraArchivo.h"
+	"DetalleCompra.h"
+	"DetalleCompraArchivo.h"
 	"Fecha.h"
 
-1750107889 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ferreteriamanager.h
+1750248946 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ferreteriamanager.h
 	<string>
 
-1748134358 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menucompra.cpp
+1750248946 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menucompra.cpp
 	<iostream>
 	"MenuCompra.h"
+	"FerreteriaManager.h"
 
 1748134220 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menucompra.h
 	<string>
@@ -153,7 +157,7 @@
 	"Venta.h"
 	<cstring>
 
-1750101776 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\main.cpp
+1750248946 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\main.cpp
 	<iostream>
 	"MenuProducto.h"
 	"MenuProveedor.h"
@@ -261,8 +265,10 @@
 	"Compra.h"
 	<cstring>
 
-1748306693 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\compraarchivo.cpp
+1750248946 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\compraarchivo.cpp
 	<iostream>
+	"Compra.h"
+	"CompraArchivo.h"
 
 1750001350 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\proveedorarchivo.cpp
 	<iostream>
@@ -282,15 +288,18 @@
 	"Producto.h"
 	"ProductoArchivo.h"
 
-1748565750 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\detallecompra.cpp
+1750248946 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\detallecompra.cpp
 	<iostream>
+	"DetalleCompra.h"
 
 1750116401 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\detalleventa.cpp
 	"DetalleVenta.h"
 	<string>
 
-1748568842 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\detallecompraarchivo.cpp
+1750248946 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\detallecompraarchivo.cpp
+	"DetalleCompraArchivo.h"
 	<iostream>
+	<cstdio>
 
 1750129268 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\detalleventaarchivo.cpp
 	<iostream>
@@ -511,10 +520,15 @@
 	"Venta.h"
 	<string>
 
-1748565711 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\compra.h
+1750248946 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\compra.h
 	<string>
+	"Fecha.h"
 
-1748306693 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\compraarchivo.h
+1750248946 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\compraarchivo.h
+	"Compra.h"
+	<fstream>
+	<string>
+	<vector>
 
 1750099797 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ventaarchivo.h
 	"Venta.h"
@@ -566,6 +580,13 @@
 1750194778 c:\users\usuario\documents\github\tp-prog2\detallecompra.h
 
 1750194382 c:\users\usuario\documents\github\tp-prog2\detallecompraarchivo.h
+	<iostream>
+	<fstream>
+	"DetalleCompra.h"
+
+1750248946 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\detallecompra.h
+
+1750248946 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\detallecompraarchivo.h
 	<iostream>
 	<fstream>
 	"DetalleCompra.h"
