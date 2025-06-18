@@ -35,8 +35,8 @@ void MenuProveedor::mostrar(){
                 cout << "======================================" << endl;
                 cout << "    PROVEEDOR CARGADO CORRECTAMENTE" << endl ;
                 cout << "======================================" << endl;
-                ///system("pause");
-                ///system("cls");
+                system("pause");
+                system("cls");
                 break;
             case 2:
                 system("cls");

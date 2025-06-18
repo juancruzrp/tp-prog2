@@ -35,8 +35,8 @@ void MenuProducto::mostrar(){
                 cout << "======================================" << endl;
                 cout << "    PRODUCTO CARGADO CORRECTAMENTE" << endl ;
                 cout << "======================================" << endl;
-                ///system("pause");
-                ///system("cls");
+                system("pause");
+                system("cls");
                 break;
             case 2:
                 system("cls");

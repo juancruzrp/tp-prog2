@@ -61,7 +61,6 @@ void FerreteriaManager::cargarProducto(){
 
 
     if (productoArchivo.guardarProducto(producto)){
-        cout << "Se guardo correctamente";
     }
     else {
         cout << "Hubo un error al cargar el producto.";}
@@ -227,7 +226,6 @@ void FerreteriaManager::cargarProveedor(){
   proveedor = Proveedor( idProveedor, nombreProveedor, telefono, mail, direccion);
 
   if (proveedorArchivo.guardarProveedor(proveedor)){
-        cout << "Se guardo correctamente";
     }
     else {
         cout << "Hubo un error al cargar el proveedor.";}
