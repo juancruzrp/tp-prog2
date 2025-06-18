@@ -6,6 +6,7 @@ using namespace std;
 void MenuCompra::mostrar(){
 
     int opcion;
+    FerreteriaManager manager;
 
     do{
     cout << "======================================" << endl;
@@ -28,7 +29,7 @@ void MenuCompra::mostrar(){
                 cout << "======================================" << endl;
                 cout << "       REGISTRAR NUEVO COMPRA" << endl ;
                 cout << "======================================" << endl;
-//              manager.cargarCompra();
+              manager.cargarCompra();
                 system("cls");
                 cout << "======================================" << endl;
                 cout << "    COMPRA REGISTRADA CORRECTAMENTE" << endl ;
@@ -42,7 +43,7 @@ void MenuCompra::mostrar(){
                 cout << "======================================" << endl;
                 cout << "           LISTAR TODAS LAS COMPRAS" << endl ;
                 cout << "======================================" << endl;
-               // manager.listarCompras();
+                manager.listarCompras();
                 system("pause");
                 system("cls");
 
@@ -53,7 +54,7 @@ void MenuCompra::mostrar(){
                 cout << "======================================" << endl;
                 cout << "      BUSCAR COMPRA POR FEHCA" << endl ;
                 cout << "======================================" << endl;
-               // manager.buscarCompraPorFecha();
+                manager.buscarCompraPorFecha();
                 system("pause");
                 system("cls");
 
@@ -63,7 +64,7 @@ void MenuCompra::mostrar(){
                 cout << "======================================" << endl;
                 cout << "      BUSCAR COMPRA POR PROVEEDOR" << endl ;
                 cout << "======================================" << endl;
-                //manager.buscarCompraPorProveedor();
+                manager.buscarCompraPorProveedor();
                 system("pause");
                 system("cls");
 
@@ -73,7 +74,7 @@ void MenuCompra::mostrar(){
                 cout << "======================================" << endl;
                 cout << "      CANTIDAD DE COMPRAS REGISTRADAS" << endl ;
                 cout << "======================================" << endl;
-               // manager.listarCantidadCompras();
+                manager.listarCantidadCompras();
                 system("pause");
                 system("cls");
 

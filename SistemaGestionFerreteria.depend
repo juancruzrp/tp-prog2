@@ -192,8 +192,9 @@
 1750117236 c:\users\usuario\documents\github\tp-prog2\menuproveedor.h
 	<string>
 
-1750117236 c:\users\usuario\documents\github\tp-prog2\menucompra.h
+1750265383 c:\users\usuario\documents\github\tp-prog2\menucompra.h
 	<string>
+	"FerreteriaManager.h"
 
 1750117236 c:\users\usuario\documents\github\tp-prog2\menuventa.h
 	<string>
@@ -201,7 +202,7 @@
 1750193480 c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.h
 	<string>
 
-1750195047 source:c:\users\usuario\documents\github\tp-prog2\menucompra.cpp
+1750195304 source:c:\users\usuario\documents\github\tp-prog2\menucompra.cpp
 	<iostream>
 	"MenuCompra.h"
 	"FerreteriaManager.h"
