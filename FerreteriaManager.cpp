@@ -32,10 +32,13 @@ void FerreteriaManager::cargarProducto(){
     ///cin.clear() limpia el estado del error
     ///cin.ignore() ignora hasta 15 caracteres o hasta un espacio('\n')
     cout << "Ingrese codigo del producto: " ;
-    while(!(cin >> codProducto)|| codProducto<=0){
+    cin >>codProducto;
+    while(cin.fail() || codProducto<=0){
     cin.clear();
     cin.ignore(15,'\n');
+    cout <<"(recuerde que solo puede ingresar numeros)"<<endl;
     cout << "Ingrese nuevamente el codigo del producto: " ;
+    cin >>codProducto;
     }
     cout << "Ingrese nombre del producto: " ;
     cin.ignore();
@@ -51,17 +54,29 @@ void FerreteriaManager::cargarProducto(){
     getline(cin, unidadMedida);
 
     cout << "Ingrese precio unitario: ";
-    cin >> precioUnitario;
-
+    cin >>precioUnitario;
+    while(cin.fail() || precioUnitario<=0){
+    cin.clear();
+    cin.ignore(15,'\n');
+    cout << "Ingrese nuevamente el precio del producto: " ;
+    cin >>precioUnitario;
+    cout <<"(recuerde que solo puede ingresar numeros)";
+    }
     cout << "Ingrese stock: ";
     cin >> stock;
+    while(cin.fail()){
+    cin.clear();
+    cin.ignore(15,'\n');
+    cout << "Ingrese nuevamente el stock del producto: " ;
+    cin >>stock;
+    cout <<"(recuerde que solo puede ingresar numeros)";
+    }
 
     producto = Producto(codProducto, nombreProducto, tipoProducto, marca, unidadMedida, precioUnitario, stock);
 
 
 
-    if (productoArchivo.guardarProducto(producto)){
-    }
+    if (productoArchivo.guardarProducto(producto)){}
     else {
         cout << "Hubo un error al cargar el producto.";}
 
