@@ -26,6 +26,7 @@ bool VentaArchivo::guardar(Venta registro){
 
 }
 
+/// ------------------------------------------------------------------------------------------------------------------------
 
 bool VentaArchivo::guardar(Venta registro,int posicion){
 
@@ -44,7 +45,7 @@ bool VentaArchivo::guardar(Venta registro,int posicion){
     return result;
 }
 
-
+/// ------------------------------------------------------------------------------------------------------------------------
 
 Venta VentaArchivo::leer(int pos){
     FILE *pFile;
@@ -63,7 +64,7 @@ Venta VentaArchivo::leer(int pos){
     return registro;
 }
 
-
+/// ------------------------------------------------------------------------------------------------------------------------
 
 int VentaArchivo::buscar(int idVenta){
     FILE *pFile;
@@ -88,6 +89,7 @@ int VentaArchivo::buscar(int idVenta){
     return -1;
 }
 
+/// ------------------------------------------------------------------------------------------------------------------------
 
 int VentaArchivo::getCantidadRegistros(){
     FILE *pFile;
@@ -111,6 +113,3 @@ int VentaArchivo::getCantidadRegistros(){
 
     return cantidad;
 }
-
-
-
