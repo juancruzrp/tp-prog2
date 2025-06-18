@@ -737,24 +737,31 @@ std::string FerreteriaManager::convertirAMinusculas(std::string texto) {
     // Cargar fecha
     f.cargar();
 
+
+do {
     cout << "Ingrese tipo de factura (A, B o C): ";
     cin >> tipoFactura;
 
-    // Convertir a mayúsculas
-    for (char &c : tipoFactura) {
-        c = toupper(c);
+    // Validación: un solo caracter  A, B o C (sin importar minuscula o mayuscula)
+    if (tipoFactura.length() == 1) {
+        tipoFactura[0] = toupper(tipoFactura[0]);
+
+        if (tipoFactura == "A" || tipoFactura == "B" || tipoFactura == "C") {
+            break;
+        }
     }
 
-    if (tipoFactura != "A" && tipoFactura != "B" && tipoFactura != "C") {
-        cout << "Tipo de factura invalido. Debe ser A, B o C." << endl;
-        return;
-    }
+    cout << "Tipo de factura invalido. Debe ser A, B o C." << endl;
+    system("pause");
+    system("cls");
+
+} while (true);
 
     cout << "Ingrese número de factura: ";
     cin >> numeroFactura;
 
     if (numeroFactura <= 0) {
-        cout << "Número de factura invalido. Debe ser un numero positivo." << endl;
+        cout << "Numero de factura invalido. Debe ser un numero positivo." << endl;
         return;
     }
 
@@ -816,7 +823,7 @@ pagado = entrada;
         }
     }
 
-    // Crear objeto compra con fecha correctamente
+    // Crear objeto compra con fecha
     Compra compra(idCompra, idProveedor, f, tipoFactura, numeroFactura, importeTotal, pagado, 1);
 
     if (archivoCompra.guardarCompra(compra)) {
@@ -845,7 +852,7 @@ pagado = entrada;
         cout << "  ID Compra: " << compra.getIdCompra() << endl;
         cout << "  ID Proveedor: " << compra.getIdProveedor() << endl;
 
-        // Imprimir la fecha correctamente
+        // Imprimir la fecha
         cout << "  Fecha: " << compra.getDia() << "/" << compra.getMes() << "/" << compra.getAnio() << endl;
 
         cout << "  Tipo Factura: " << compra.getTipoFactura() << endl;
@@ -917,7 +924,7 @@ void FerreteriaManager::buscarCompraPorProveedor() {
             encontrada = true;
             cout << "ID Compra: " << compra.getIdCompra() << std::endl;
             cout << "Fecha: ";
-            compra.getFechaCompra().mostrar();  // Debe tener bien definida la función mostrar()
+            compra.getFechaCompra().mostrar();
             cout << std::endl;
             cout << "Tipo Factura: " << compra.getTipoFactura() << endl;
             cout << "Nro Factura: " << compra.getNumeroFactura() << endl;
@@ -952,7 +959,7 @@ void FerreteriaManager::eliminarCompra() {
         cin >> idCompra;
     }
 
-    // Archivos
+
     CompraArchivo archivoCompra;
     DetalleCompraArchivo archivoDetalle;
 
@@ -962,7 +969,7 @@ void FerreteriaManager::eliminarCompra() {
         return;
     }
 
-    // Leer la compra y dar de baja lógica
+
     Compra compra = archivoCompra.leer(posCompra);
     if (!compra.getEstado()) {
         cout << "La compra ya fue eliminada anteriormente." << endl;

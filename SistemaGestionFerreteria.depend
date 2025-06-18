@@ -235,7 +235,7 @@
 	"Venta.h"
 	<cstring>
 
-1750275754 source:c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.cpp
+1750277518 source:c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.cpp
 	<iostream>
 	<cctype>
 	<algorithm>
@@ -262,7 +262,7 @@
 	"Producto.h"
 	<cstring>
 
-1750275441 source:c:\users\usuario\documents\github\tp-prog2\compra.cpp
+1750277518 source:c:\users\usuario\documents\github\tp-prog2\compra.cpp
 	"Compra.h"
 	<cstring>
 
@@ -584,7 +584,7 @@
 	"Proveedor.h"
 	<string>
 
-1750275441 c:\users\usuario\documents\github\tp-prog2\compra.h
+1750277518 c:\users\usuario\documents\github\tp-prog2\compra.h
 	<string>
 	"Fecha.h"
 
@@ -593,7 +593,7 @@
 	<fstream>
 	<string>
 
-1750275146 c:\users\usuario\documents\github\tp-prog2\detallecompra.h
+1750277574 c:\users\usuario\documents\github\tp-prog2\detallecompra.h
 
 1750275146 c:\users\usuario\documents\github\tp-prog2\detallecompraarchivo.h
 	<iostream>
