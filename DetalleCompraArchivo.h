@@ -1,6 +1,23 @@
-#ifndef DETALLECOMPRAARCHIVO_H_INCLUDED
-#define DETALLECOMPRAARCHIVO_H_INCLUDED
+#pragma once
+#include <iostream>
+#include <fstream>
+#include "DetalleCompra.h"
 
 
+class DetalleCompraArchivo{
+private:
+    std::string _nombreArchivo;
 
-#endif // DETALLECOMPRAARCHIVO_H_INCLUDED
+public:
+    DetalleCompraArchivo();
+    DetalleCompraArchivo(std::string nombreArchivo);
+
+    bool guardarDetalle(DetalleCompra registro);
+    DetalleCompra leer(int pos);
+
+    int getCantidadRegistros();
+    bool alta(int idEliminar);
+    bool eliminar(int idCompra);
+
+};
+
