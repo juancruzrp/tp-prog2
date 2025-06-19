@@ -14,6 +14,7 @@ public:
     void buscarProductoPorNombre();
     void buscarProductoPorTipo();
     void modificarPrecioProducto();
+    void validacionCodigoProducto();
 
     ///PROVEEDORES
     void cargarProveedor();
@@ -35,9 +36,9 @@ public:
     void bajaDeVenta();
     std::string convertirAMinusculas(std::string medioPago);
 
-    ///COMPRAS
 
-///COMPRAS
+
+    ///COMPRAS
     void cargarCompra();
     void mostrarCompras();
     void listarCantidadCompras();
@@ -48,9 +49,9 @@ public:
     void totalGastadoPorAnioMes();
     void listarComprasPendientes();
 
-
-
-
-
-
+    ///INFORMES
+    void productosBajoStock();
+    void cantidadCompras();
+    void cantidadVentas();
+    void productosNoVendidos();
 };

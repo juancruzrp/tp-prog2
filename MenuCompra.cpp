@@ -17,7 +17,7 @@ void MenuCompra::mostrar(){
     cout << "3. Buscar compra por fecha" << endl;
     cout << "4. Buscar compra por proveedor" << endl;
     cout << "5. Cantidad de compras registradas "<< endl;
-    cout << "6. Eliminar venta " << endl;
+    cout << "6. Eliminar compra " << endl;
     cout << "0. Salir al menu principal" << endl;
     cout << "======================================"<< endl;
     cout << "Ingrese una opcion: ";
@@ -52,7 +52,7 @@ void MenuCompra::mostrar(){
             case 3:
                 system("cls");
                 cout << "======================================" << endl;
-                cout << "      BUSCAR COMPRA POR FEHCA" << endl ;
+                cout << "      BUSCAR COMPRA POR FECHA" << endl ;
                 cout << "======================================" << endl;
                 manager.buscarCompraPorFecha();
                 system("pause");
@@ -82,7 +82,7 @@ void MenuCompra::mostrar(){
                case 6:
                 system("cls");
                 cout << "======================================" << endl;
-                cout << "            ELIMINAR VENTA " << endl ;
+                cout << "            ELIMINAR COMPRA " << endl ;
                 cout << "======================================" << endl;
              //  manager.eliminarCompra();
                 system("pause");

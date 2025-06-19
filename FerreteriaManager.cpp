@@ -26,19 +26,24 @@ void FerreteriaManager::cargarProducto(){
     float precioUnitario;
     Producto producto;
     ProductoArchivo productoArchivo;
+    Producto registro;
 
     ///se pide un codigo de producto,si se ingresa algo que no sea un entero,valores negativos o cero
     ///se vuelve a pedir el ingreso hasta que sea correcto.
     ///cin.clear() limpia el estado del error
     ///cin.ignore() ignora hasta 15 caracteres o hasta un espacio('\n')
+    int cantidadProductos =productoArchivo.getCantidadRegistros();
+
     cout << "Ingrese codigo del producto: " ;
     cin >>codProducto;
+    while(registro.getCodProducto()==codProducto){
     while(cin.fail() || codProducto<=0){
     cin.clear();
     cin.ignore(15,'\n');
-    cout <<"(recuerde que solo puede ingresar numeros)"<<endl;
+    cout <<"(recuerde que solo puede ingresar numeros mayores a cero)"<<endl;
     cout << "Ingrese nuevamente el codigo del producto: " ;
     cin >>codProducto;
+    }
     }
     cout << "Ingrese nombre del producto: " ;
     cin.ignore();
@@ -458,7 +463,7 @@ void FerreteriaManager::cargarVenta(){
 
     cout << "Ingrese codigo del producto: " ;
     cin >> codProducto;
-        while(codProducto<=0 || codProducto>40){
+        while(codProducto<=0 || codProducto>cantidadProductos-1){
             cout << "CODIGO INVALIDO. VUELVA A INGRESAR CODIGO DEL PRODUCTO." << endl ;
             system("pause");
             system("cls");
@@ -632,6 +637,7 @@ void FerreteriaManager::buscarVentaPorFecha(){
     VentaArchivo ventaArchivo;
     Venta venta;
     int cantidadVentas = ventaArchivo.getCantidadRegistros();
+    bool bf=0;
 
     fecha.cargar();
 
@@ -647,9 +653,13 @@ void FerreteriaManager::buscarVentaPorFecha(){
             cout << " | ";
             cout << "Importe Total: " <<venta.getImporteTotal();
             cout << " | " << endl;
+            bf = 1;
         }
     }
 
+    if (bf==0){
+        cout << "No hay ventas registradas en esa fecha." << endl;
+    }
 
 }
 
@@ -755,12 +765,11 @@ std::string FerreteriaManager::convertirAMinusculas(std::string texto) {
                                          ///FUNCIONES PARA COMPRAS///
 
     void FerreteriaManager::cargarCompra() {
-    int idCompra, idProveedor, numeroFactura, cantidadDetalles,codProducto;
+    int idCompra, idProveedor, numeroFactura, cantidadDetalles;
     string tipoFactura;
     float importeTotal = 0, subtotal;
     bool pagado;
     int entrada;
-    int cantidad;
     Fecha f; // Fecha de la compra
     CompraArchivo archivoCompra;
     DetalleCompraArchivo archivoDetalles;
@@ -841,18 +850,8 @@ pagado = entrada;
 
         cout << "----- Producto " << (i + 1) << " -----" << endl;
 
-        cout << "Ingrese codigo del producto (entre 1 y 30): ";
+        cout << "Ingrese codigo del producto: ";
         cin >> codProducto;
-
-        // Validar que sea número, mayor que 0 y menor o igual a 30
-    while (cin.fail() || codProducto < 1 || codProducto > 30) {
-        cin.clear();
-        cin.ignore(15, '\n');
-        cout << "ERROR: Debe ingresar un numero entre 1 y 30." << endl;
-        cout << "Ingrese nuevamente el codigo del producto: ";
-        cin >> codProducto;
-    }
-
 
         cout << "Ingrese precio unitario: ";
         cin >> precioUnitario;
@@ -869,26 +868,9 @@ pagado = entrada;
             cout << "Cantidad invalida. Debe ser mayor que cero." << endl;
             continue;
         }
+   int pos = archivoProducto.buscarProducto(codProducto);
 
-
-        subtotal = precioUnitario * cantidad;
-
-        // Crear y guardar detalle
-        DetalleCompra detalle(idCompra, codProducto, precioUnitario, cantidad);
-        importeTotal += detalle.getSubtotal();
-
-        if (archivoDetalles.guardarDetalle(detalle)) {
-            cout << "Detalle guardado correctamente." << endl;
-        } else {
-            cout << "Error al guardar el detalle." << endl;
-      }
-
-    }
-
-
-   // int pos = archivoProducto.buscarProducto(codProducto);
-
-/*if (pos >= 0) {
+if (pos >= 0) {
     producto = archivoProducto.leer(pos);
     int nuevoStock = producto.getStock() + cantidad;
     producto.setStock(nuevoStock);
@@ -904,7 +886,21 @@ pagado = entrada;
 } else {
     cout << "Producto con código " << codProducto << " no encontrado. No se pudo actualizar el stock." << endl;
 }
-*/
+
+        subtotal = precioUnitario * cantidad;
+
+        // Crear y guardar detalle
+        DetalleCompra detalle(idCompra, codProducto, precioUnitario, cantidad);
+        importeTotal += detalle.getSubtotal();
+
+        if (archivoDetalles.guardarDetalle(detalle)) {
+            cout << "Detalle guardado correctamente." << endl;
+        } else {
+            cout << "Error al guardar el detalle." << endl;
+      }
+
+    }
+
 
 
     // Crear objeto compra con fecha
@@ -1075,6 +1071,10 @@ void FerreteriaManager::eliminarCompra() {
 }
 
 
+
+
+                                            ///FUNCIONES PARA INFORMES///
+
 void FerreteriaManager::totalGastadoPorAnioMes() {
     CompraArchivo archivo;
     int anio, mes;
@@ -1107,6 +1107,7 @@ void FerreteriaManager::totalGastadoPorAnioMes() {
     cout << anio << ": $" << total << endl;
 }
 
+/// ------------------------------------------------------------------------------------------------------------------------
 
 void FerreteriaManager::listarComprasPendientes() {
     CompraArchivo archivo;
@@ -1130,4 +1131,35 @@ void FerreteriaManager::listarComprasPendientes() {
     if (!hayPendientes) {
         cout << "No hay compras pendientes de pago." << endl;
     }
+}
+
+/// ------------------------------------------------------------------------------------------------------------------------
+
+void FerreteriaManager::productosBajoStock(){
+    ProductoArchivo productoArchivo;
+    Producto registro;
+    int cantidadProductos =productoArchivo.getCantidadRegistros();
+
+    for(int i=0 ; i<cantidadProductos ; i++ ){
+        registro = productoArchivo.leer(i);
+        if(registro.getStock()<=0)
+        cout<< registro.toMismoRenglon() << endl;
+    }
+
+
+    FILE* archivo = fopen("productos.dat", "rb");
+    if (archivo == NULL) {
+        cout << "No se pudo abrir el archivo." << endl;
+        return;
+    }
+
+
+}
+
+/// ------------------------------------------------------------------------------------------------------------------------
+
+
+void FerreteriaManager::productosNoVendidos(){
+
+
 }
