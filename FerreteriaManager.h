@@ -14,6 +14,7 @@ public:
     void buscarProductoPorNombre();
     void buscarProductoPorTipo();
     void modificarPrecioProducto();
+    void validacionCodigoProducto();
 
     ///PROVEEDORES
     void cargarProveedor();
@@ -53,5 +54,4 @@ public:
     void cantidadCompras();
     void cantidadVentas();
     void productosNoVendidos();
-    void mostrarStockBajoPorTipo(std::string tipoFiltrado);
 };

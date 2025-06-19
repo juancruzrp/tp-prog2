@@ -26,19 +26,24 @@ void FerreteriaManager::cargarProducto(){
     float precioUnitario;
     Producto producto;
     ProductoArchivo productoArchivo;
+    Producto registro;
 
     ///se pide un codigo de producto,si se ingresa algo que no sea un entero,valores negativos o cero
     ///se vuelve a pedir el ingreso hasta que sea correcto.
     ///cin.clear() limpia el estado del error
     ///cin.ignore() ignora hasta 15 caracteres o hasta un espacio('\n')
+    int cantidadProductos =productoArchivo.getCantidadRegistros();
+
     cout << "Ingrese codigo del producto: " ;
     cin >>codProducto;
+    while(registro.getCodProducto()==codProducto){
     while(cin.fail() || codProducto<=0){
     cin.clear();
     cin.ignore(15,'\n');
-    cout <<"(recuerde que solo puede ingresar numeros)"<<endl;
+    cout <<"(recuerde que solo puede ingresar numeros mayores a cero)"<<endl;
     cout << "Ingrese nuevamente el codigo del producto: " ;
     cin >>codProducto;
+    }
     }
     cout << "Ingrese nombre del producto: " ;
     cin.ignore();
@@ -1131,6 +1136,23 @@ void FerreteriaManager::listarComprasPendientes() {
 /// ------------------------------------------------------------------------------------------------------------------------
 
 void FerreteriaManager::productosBajoStock(){
+    ProductoArchivo productoArchivo;
+    Producto registro;
+    int cantidadProductos =productoArchivo.getCantidadRegistros();
+
+    for(int i=0 ; i<cantidadProductos ; i++ ){
+        registro = productoArchivo.leer(i);
+        if(registro.getStock()<=0)
+        cout<< registro.toMismoRenglon() << endl;
+    }
+
+
+    FILE* archivo = fopen("productos.dat", "rb");
+    if (archivo == NULL) {
+        cout << "No se pudo abrir el archivo." << endl;
+        return;
+    }
+
 
 }
 
