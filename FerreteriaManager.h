@@ -54,4 +54,5 @@ public:
     void cantidadCompras();
     void cantidadVentas();
     void productosNoVendidos();
+    void mostrarProductosNoVendidos();
 };

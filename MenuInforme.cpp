@@ -56,7 +56,7 @@ void MenuInforme::mostrar(){
                 cout << "======================================" << endl;
                 cout << "        PRODUCTOS NO VENDIDOS" << endl ;
                 cout << "======================================" << endl;
-                manager.productosNoVendidos();
+                manager.mostrarProductosNoVendidos();
                 system("pause");
                 system("cls");
                 break;

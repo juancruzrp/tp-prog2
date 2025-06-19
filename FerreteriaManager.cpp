@@ -27,23 +27,28 @@ void FerreteriaManager::cargarProducto(){
     Producto producto;
     ProductoArchivo productoArchivo;
     Producto registro;
-
+    bool encontrado=0;
     ///se pide un codigo de producto,si se ingresa algo que no sea un entero,valores negativos o cero
     ///se vuelve a pedir el ingreso hasta que sea correcto.
     ///cin.clear() limpia el estado del error
     ///cin.ignore() ignora hasta 15 caracteres o hasta un espacio('\n')
-    int cantidadProductos =productoArchivo.getCantidadRegistros();
+
 
     cout << "Ingrese codigo del producto: " ;
     cin >>codProducto;
-    while(registro.getCodProducto()==codProducto){
+    for(int i;i<30;i++){
+        registro =productoArchivo.leer(i);
+        if(registro.getCodProducto()== codProducto && encontrado==0){
+            encontrado=1;
+            cout<<"ingrese otro numero"<<endl;
+        }
+    }
     while(cin.fail() || codProducto<=0){
     cin.clear();
     cin.ignore(15,'\n');
     cout <<"(recuerde que solo puede ingresar numeros mayores a cero)"<<endl;
     cout << "Ingrese nuevamente el codigo del producto: " ;
     cin >>codProducto;
-    }
     }
     cout << "Ingrese nombre del producto: " ;
     cin.ignore();
@@ -829,7 +834,7 @@ do {
 
 } while (true);
 
-    cout << "Ingrese número de factura: ";
+    cout << "Ingrese numero de factura: ";
     cin >> numeroFactura;
 
     if (numeroFactura <= 0) {
@@ -897,7 +902,7 @@ if (pos >= 0) {
 
 
 } else {
-    cout << "Producto con código " << codProducto << " no encontrado. No se pudo actualizar el stock." << endl;
+    cout << "Producto con codigo " << codProducto << " no encontrado. No se pudo actualizar el stock." << endl;
 }
 
         subtotal = precioUnitario * cantidad;
@@ -982,7 +987,7 @@ void FerreteriaManager::buscarCompraPorFecha() {
             compra.getFechaCompra().mostrar();
             cout << std::endl;
             cout << "Tipo Factura: " << compra.getTipoFactura() << endl;
-            cout << "Numero Factura: " << compra.getNumeroFactura() << endl;
+            cout << "Nro Factura: " << compra.getNumeroFactura() << endl;
             cout << "Importe Total: $" << compra.getImporteTotal() << endl;
             cout << "Pagado: " << (compra.getPagado() ? "SI" : "NO") << endl;
             encontrado = true;
@@ -1048,7 +1053,7 @@ void FerreteriaManager::eliminarCompra() {
     cin >> idCompra;
 
     while (idCompra <= 0) {
-        cout << "ID inválido. Ingrese nuevamente: ";
+        cout << "ID invalido. Ingrese nuevamente: ";
         cin >> idCompra;
     }
 
@@ -1058,7 +1063,7 @@ void FerreteriaManager::eliminarCompra() {
 
     int posCompra = archivoCompra.buscar(idCompra);
     if (posCompra == -1) {
-        cout << "No se encontró una compra con ese ID." << endl;
+        cout << "No se encontro una compra con ese ID." << endl;
         return;
     }
 
@@ -1155,7 +1160,7 @@ void FerreteriaManager::productosBajoStock(){
 
     for(int i=0 ; i<cantidadProductos ; i++ ){
         registro = productoArchivo.leer(i);
-        if(registro.getStock()<=0)
+        if(registro.getStock()<=15)
         cout<< registro.toMismoRenglon() << endl;
     }
 
@@ -1171,6 +1176,49 @@ void FerreteriaManager::productosBajoStock(){
 
 /// ------------------------------------------------------------------------------------------------------------------------
 
-void FerreteriaManager::productosNoVendidos(){
+void FerreteriaManager::mostrarProductosNoVendidos() {
+    ProductoArchivo productoArchivo;
+    DetalleVentaArchivo detalleVentaArchivo;
 
+    int cantProductos = productoArchivo.getCantidadRegistros();
+    int cantDetalles = detalleVentaArchivo.getCantidadRegistros();
+
+    if (cantProductos == 0) {
+        cout << "No hay productos cargados." << endl;
+        return;
+    }
+
+    bool encontrado = false;
+
+    for (int i = 0; i < cantProductos; i++) {
+        Producto prod = productoArchivo.leer(i);
+        int codProducto = prod.getCodProducto();
+        bool fueVendido = false;
+
+        // Buscar si ese producto aparece en algún detalle de venta
+        for (int j = 0; j < cantDetalles; j++) {
+            DetalleVenta det = detalleVentaArchivo.leer(j);
+            if (det.getCodProducto() == codProducto) {
+                fueVendido = true;
+                break;
+            }
+        }
+
+        if (!fueVendido) {
+            encontrado = true;
+            cout << "Producto NO vendido:" << endl;
+            cout << "Codigo: " << prod.getCodProducto();
+            cout << " | " ;
+            cout << "Nombre: " << prod.getNombreProducto();
+            cout << " | " ;
+            cout << "stock: " << prod.getStock();
+            cout << " | " ;
+            cout << endl;
+
+        }
+    }
+
+    if (!encontrado) {
+        cout << "Todos los productos se vendieron al menos una vez." << endl;
+    }
 }
