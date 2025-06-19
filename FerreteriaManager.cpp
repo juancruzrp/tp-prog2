@@ -458,7 +458,7 @@ void FerreteriaManager::cargarVenta(){
 
     cout << "Ingrese codigo del producto: " ;
     cin >> codProducto;
-        while(codProducto<=0 || codProducto>cantidadProductos){
+        while(codProducto<=0 || codProducto>cantidadProductos-1){
             cout << "CODIGO INVALIDO. VUELVA A INGRESAR CODIGO DEL PRODUCTO." << endl ;
             system("pause");
             system("cls");
@@ -1124,3 +1124,20 @@ void FerreteriaManager::listarComprasPendientes() {
 }
 
 
+                                            ///FUNCIONES PARA INFORMES///
+
+void FerreteriaManager::productosBajoStock(){
+
+}
+
+void FerreteriaManager::cantidadCompras(){
+
+}
+
+void FerreteriaManager::cantidadVentas(){
+
+}
+
+void FerreteriaManager::productosNoVendidos(){
+
+}

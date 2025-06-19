@@ -13,11 +13,10 @@ void MenuInforme::mostrar(){
     cout << "======================================" << endl;
     cout << "           MENU INFORMES" << endl;
     cout << "======================================"<< endl;
-    cout << "1. Cantidad total de compras mensuales/anuales" << endl;
-    cout << "2. Cantidad total de compras pendientes" << endl;
-    cout << "3. Cantidad total de ventas mensuales" << endl;
-    cout << "4. Cantidad total de ventas anuales" << endl;
-    cout << "5. Productos mas vendidos" << endl;
+    cout << "1. Productos con bajo stock disponible" << endl;
+    cout << "2. Cantidad total de compras" << endl;
+    cout << "3. Cantidad total de ventas" << endl;
+    cout << "4. Productos no vendidos" << endl;
     cout << "0. Salir al menu principal" << endl;
     cout << "======================================"<< endl;
     cout << "Ingrese una opcion: ";
@@ -27,9 +26,9 @@ void MenuInforme::mostrar(){
             case 1:
                 system("cls");
                 cout << "======================================" << endl;
-                cout << "    CANTIDAD DE COMPRAS MENSUALES/ANUALES" << endl ;
+                cout << "  PRODUCTOS CON BAJO STOCK DISPONIBLE" << endl ;
                 cout << "======================================" << endl;
-               manager.totalGastadoPorAnioMes();
+                manager.productosBajoStock();
                 system("pause");
                 system("cls");
                 break;
@@ -37,39 +36,30 @@ void MenuInforme::mostrar(){
                 system("pause");
                 system("cls");
                 cout << "======================================" << endl;
-                cout << "     CANTIDAD DE COMPRAS PENDIENTES" << endl ;
+                cout << "      CANTIDAD TOTAL DE COMPRAS" << endl ;
                 cout << "======================================" << endl;
-                manager.listarComprasPendientes();
+                manager.cantidadCompras();
                 system("pause");
                 system("cls");
                 break;
             case 3:
                 system("cls");
                 cout << "======================================" << endl;
-                cout << "     CANTIDAD DE VENTAS MENSUALES" << endl ;
+                cout << "       CANTIDAD TOTAL DE VENTAS" << endl ;
                 cout << "======================================" << endl;
-                ///
+                manager.cantidadVentas();
                 system("pause");
                 system("cls");
                 break;
             case 4:
                 system("cls");
                 cout << "======================================" << endl;
-                cout << "      CANTIDAD DE VENTAS ANUALES" << endl ;
+                cout << "        PRODUCTOS NO VENDIDOS" << endl ;
                 cout << "======================================" << endl;
-                ///
+                manager.productosNoVendidos();
                 system("pause");
                 system("cls");
                 break;
-            case 5:
-                system("cls");
-                cout << "======================================" << endl;
-                cout << "         PRODUCTO MAS VENDIDO" << endl ;
-                cout << "======================================" << endl;
-                ///
-                system("pause");
-                system("cls");
-               break;
             case 0:
                 system("cls");
                 cout << "======================================" << endl;
