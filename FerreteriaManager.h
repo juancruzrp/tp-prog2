@@ -46,13 +46,11 @@ public:
     void buscarCompraPorFecha();
     void buscarCompraPorProveedor();
     void eliminarCompra();
-    void totalGastadoPorAnioMes();
-    void listarComprasPendientes();
 
     ///INFORMES
+    void totalGastadoPorAnioMes();
+    void listarComprasPendientes();
     void productosBajoStock();
-    void cantidadCompras();
-    void cantidadVentas();
-    void productosNoVendidos();
     void mostrarProductosNoVendidos();
+
 };
