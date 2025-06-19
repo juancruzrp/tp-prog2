@@ -434,7 +434,7 @@
 1750099797 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menuinforme.h
 	<string>
 
-1750357773 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ferreteriamanager.h
+1750359913 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ferreteriamanager.h
 	<string>
 
 1750353886 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menucompra.cpp
@@ -442,7 +442,7 @@
 	"MenuCompra.h"
 	"FerreteriaManager.h"
 
-1750357721 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menuinforme.cpp
+1750360173 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\menuinforme.cpp
 	<iostream>
 	"MenuInforme.h"
 	"FerreteriaManager.h"
@@ -505,7 +505,7 @@
 	"Proveedor.h"
 	<string>
 
-1750356467 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ferreteriamanager.cpp
+1750360783 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ferreteriamanager.cpp
 	<iostream>
 	<cctype>
 	<algorithm>

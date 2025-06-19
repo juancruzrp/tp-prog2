@@ -17,7 +17,6 @@ void MenuInforme::mostrar(){
     cout << "2. Monto total de compras anuales" << endl;
     cout << "3. Compras pendientes de pago" << endl;
     cout << "4. Productos no vendidos" << endl;
-    cout << "5. Productos con stock bajo" << endl;
     cout << "0. Salir al menu principal" << endl;
     cout << "======================================"<< endl;
     cout << "Ingrese una opcion: ";
@@ -58,15 +57,6 @@ void MenuInforme::mostrar(){
                 cout << "        PRODUCTOS NO VENDIDOS" << endl ;
                 cout << "======================================" << endl;
                 manager.productosNoVendidos();
-                system("pause");
-                system("cls");
-                break;
-                case 5:
-                system("cls");
-                cout << "======================================" << endl;
-                cout << "        PRODUCTOS NO VENDIDOS" << endl ;
-                cout << "======================================" << endl;
-                manager.mostrarStockBajoPorTipo();
                 system("pause");
                 system("cls");
                 break;
