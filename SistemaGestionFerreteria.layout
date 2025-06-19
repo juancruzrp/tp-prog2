@@ -7,20 +7,9 @@
 			<Cursor1 position="476" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="ProductoArchivo.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="FerreteriaManager.h" open="1" top="1" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="996" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="15" />
-			<Collapse line="32" />
-			<Collapse line="56" />
-			<Collapse line="73" />
-		</Folding>
-	</File>
-	<File name="MenuProducto.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="78" />
+			<Cursor1 position="1251" topLine="28" />
 		</Cursor>
 	</File>
 	<File name="CompraArchivo.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -28,9 +17,38 @@
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="FerreteriaManager.cpp" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="MenuInforme.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="573" topLine="9" />
+			<Cursor1 position="2066" topLine="36" />
+		</Cursor>
+	</File>
+	<File name="Producto.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2120" topLine="54" />
+		</Cursor>
+		<Folding>
+			<Collapse line="14" />
+		</Folding>
+	</File>
+	<File name="MenuProducto.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="74" />
+		</Cursor>
+	</File>
+	<File name="ProductoArchivo.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="992" topLine="15" />
+		</Cursor>
+		<Folding>
+			<Collapse line="15" />
+			<Collapse line="32" />
+			<Collapse line="73" />
+			<Collapse line="94" />
+		</Folding>
+	</File>
+	<File name="FerreteriaManager.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="36005" topLine="227" />
 		</Cursor>
 		<Folding>
 			<Collapse line="22" />
@@ -47,7 +65,6 @@
 			<Collapse line="317" />
 			<Collapse line="340" />
 			<Collapse line="367" />
-			<Collapse line="398" />
 			<Collapse line="546" />
 			<Collapse line="566" />
 			<Collapse line="599" />
@@ -55,6 +72,13 @@
 			<Collapse line="657" />
 			<Collapse line="701" />
 			<Collapse line="747" />
+			<Collapse line="920" />
+			<Collapse line="950" />
+			<Collapse line="987" />
+			<Collapse line="1025" />
+			<Collapse line="1035" />
+			<Collapse line="1077" />
+			<Collapse line="1110" />
 		</Folding>
 	</File>
 </CodeBlocks_layout_file>

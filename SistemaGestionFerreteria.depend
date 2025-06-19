@@ -200,7 +200,7 @@
 1750117236 c:\users\usuario\documents\github\tp-prog2\menuventa.h
 	<string>
 
-1750275146 c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.h
+1750357996 c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.h
 	<string>
 
 1750265624 source:c:\users\usuario\documents\github\tp-prog2\menucompra.cpp
@@ -236,7 +236,7 @@
 	"Venta.h"
 	<cstring>
 
-1750351655 source:c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.cpp
+1750357807 source:c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.cpp
 	<iostream>
 	<cctype>
 	<algorithm>

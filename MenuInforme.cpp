@@ -48,7 +48,7 @@ void MenuInforme::mostrar(){
                 cout << "======================================" << endl;
                 cout << "     CANTIDAD DE VENTAS MENSUALES" << endl ;
                 cout << "======================================" << endl;
-                ///
+             manager.mostrarProductosStockBajo();
                 system("pause");
                 system("cls");
                 break;

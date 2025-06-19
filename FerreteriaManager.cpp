@@ -1131,5 +1131,3 @@ void FerreteriaManager::listarComprasPendientes() {
         cout << "No hay compras pendientes de pago." << endl;
     }
 }
-
-
