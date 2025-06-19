@@ -173,8 +173,9 @@
 1750353294 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\proveedor.h
 	<string>
 
-1750277828 source:c:\users\usuario\documents\github\tp-prog2\fecha.cpp
+1750367229 source:c:\users\usuario\documents\github\tp-prog2\fecha.cpp
 	<iostream>
+	<limits>
 	"Fecha.h"
 
 1750117236 c:\users\usuario\documents\github\tp-prog2\fecha.h
