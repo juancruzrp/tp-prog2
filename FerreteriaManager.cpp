@@ -1136,8 +1136,32 @@ void FerreteriaManager::productosBajoStock(){
 
 /// ------------------------------------------------------------------------------------------------------------------------
 
-
 void FerreteriaManager::productosNoVendidos(){
+    DetalleVenta detalleVenta;
+    DetalleVentaArchivo detalleVentaArchivo;
+    Producto producto;
+    ProductoArchivo productoArchivo;
+    int cantidadVentas = detalleVentaArchivo.getCantidadRegistros();
+    int cantidadProductos = productoArchivo.getCantidadRegistros();
+    bool *vendido = new bool [cantidadProductos]{};
 
 
+    for(int x=0; x<cantidadVentas;x++){
+        detalleVenta = detalleVentaArchivo.leer(x);
+
+        vendido[detalleVenta.getCodProducto()-1] = 1;
+    }
+
+    for(int i=0; i<cantidadProductos;i++){
+        producto = productoArchivo.leer(i);
+        if(vendido[producto.getCodProducto()-1] == 0 ){
+            cout << "Codigo Producto: " << producto.getCodProducto() << " | " ;
+            cout << "Nombre de producto: " << producto.getNombreProducto() << " | ";
+            cout << "Tipo producto: " << producto.getTipoProducto() << " | " ;
+            cout << "Marca: " << producto.getMarca() << " | ";
+            cout << "Precio unitario: " << producto.getPrecioUnitario() << " | " << endl;
+        }
+    }
+
+    delete[]vendido;
 }
