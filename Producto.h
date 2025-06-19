@@ -31,6 +31,6 @@ public:
     float getPrecioUnitario();
     int getStock();
 
-    std::string toCSV();
+    std::string toMismoRenglon();
 
 };

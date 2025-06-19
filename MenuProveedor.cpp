@@ -44,8 +44,8 @@ void MenuProveedor::mostrar(){
                 cout << "          LISTAR PROVEEDORES          "   << endl ;
                 cout << "======================================" << endl;
                 manager.listarProveedores();
-                ///system("pause");
-                ///system("cls");
+                system("pause");
+                system("cls");
                 break;
             case 3:
                 system("cls");
@@ -53,8 +53,8 @@ void MenuProveedor::mostrar(){
                 cout << "        BUSCAR PROVEEDOR POR ID       " << endl ;
                 cout << "======================================" << endl;
                 manager.buscarProveedorPorID();
-                ///system("pause");
-                ///system("cls");
+                system("pause");
+                system("cls");
                 break;
             case 4:
                 system("cls");
