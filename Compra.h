@@ -8,7 +8,7 @@ private:
     int _idCompra;
     int _idProveedor;
     Fecha _fechaCompra;
-    char _tipoFactura[4];  // Ej: "A", "B", "C" + '\0'
+    char _tipoFactura[4];
     int _numeroFactura;
     float _importeTotal;
     bool _pagado;
@@ -17,8 +17,7 @@ private:
 public:
     // Constructores
     Compra();
-    Compra(int idCompra, int idProveedor, Fecha fechaCompra, std::string tipoFactura,
-           int numeroFactura, float importeTotal, bool pagado, bool estado);
+    Compra(int idCompra, int idProveedor, Fecha fechaCompra, std::string tipoFactura,int numeroFactura, float importeTotal, bool pagado, bool estado);
 
     // Setters
     void setIdCompra(int idCompra);
@@ -39,7 +38,7 @@ public:
     bool getPagado();
     bool getEstado() const;
 
-    // Métodos auxiliares para acceder a la fecha
+    // Métodos auxiliares para fecha
     int getDia();
     int getMes();
     int getAnio();
