@@ -27,23 +27,28 @@ void FerreteriaManager::cargarProducto(){
     Producto producto;
     ProductoArchivo productoArchivo;
     Producto registro;
-
+    bool encontrado=0;
     ///se pide un codigo de producto,si se ingresa algo que no sea un entero,valores negativos o cero
     ///se vuelve a pedir el ingreso hasta que sea correcto.
     ///cin.clear() limpia el estado del error
     ///cin.ignore() ignora hasta 15 caracteres o hasta un espacio('\n')
-    int cantidadProductos =productoArchivo.getCantidadRegistros();
+
 
     cout << "Ingrese codigo del producto: " ;
     cin >>codProducto;
-    while(registro.getCodProducto()==codProducto){
+    for(int i;i<30;i++){
+        registro =productoArchivo.leer(i);
+        if(registro.getCodProducto()== codProducto && encontrado==0){
+            encontrado=1;
+            cout<<"ingrese otro numero"<<endl;
+        }
+    }
     while(cin.fail() || codProducto<=0){
     cin.clear();
     cin.ignore(15,'\n');
     cout <<"(recuerde que solo puede ingresar numeros mayores a cero)"<<endl;
     cout << "Ingrese nuevamente el codigo del producto: " ;
     cin >>codProducto;
-    }
     }
     cout << "Ingrese nombre del producto: " ;
     cin.ignore();
@@ -1142,7 +1147,7 @@ void FerreteriaManager::productosBajoStock(){
 
     for(int i=0 ; i<cantidadProductos ; i++ ){
         registro = productoArchivo.leer(i);
-        if(registro.getStock()<=0)
+        if(registro.getStock()<=15)
         cout<< registro.toMismoRenglon() << endl;
     }
 
