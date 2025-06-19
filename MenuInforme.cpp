@@ -14,8 +14,8 @@ void MenuInforme::mostrar(){
     cout << "           MENU INFORMES" << endl;
     cout << "======================================"<< endl;
     cout << "1. Productos con bajo stock disponible" << endl;
-    cout << "2. Cantidad total de compras" << endl;
-    cout << "3. Cantidad total de ventas" << endl;
+    cout << "2. Monto total de compras anuales" << endl;
+    cout << "3. Compras pendientes de pago" << endl;
     cout << "4. Productos no vendidos" << endl;
     cout << "5. Productos con stock bajo" << endl;
     cout << "0. Salir al menu principal" << endl;
@@ -37,18 +37,18 @@ void MenuInforme::mostrar(){
                 system("pause");
                 system("cls");
                 cout << "======================================" << endl;
-                cout << "      CANTIDAD TOTAL DE COMPRAS" << endl ;
+                cout << "     MONTO TOTAL DE COMPRAS ANULES" << endl ;
                 cout << "======================================" << endl;
-                manager.cantidadCompras();
+                manager.totalGastadoPorAnioMes();
                 system("pause");
                 system("cls");
                 break;
             case 3:
                 system("cls");
                 cout << "======================================" << endl;
-                cout << "       CANTIDAD TOTAL DE VENTAS" << endl ;
+                cout << "      COMPRAS PENDIENTES DE PAGO" << endl ;
                 cout << "======================================" << endl;
-                manager.cantidadVentas();
+                manager.listarComprasPendientes();
                 system("pause");
                 system("cls");
                 break;
