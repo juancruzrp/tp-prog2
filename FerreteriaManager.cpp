@@ -1159,7 +1159,49 @@ void FerreteriaManager::productosBajoStock(){
 /// ------------------------------------------------------------------------------------------------------------------------
 
 
-void FerreteriaManager::productosNoVendidos(){
+void FerreteriaManager::mostrarProductosNoVendidos() {
+    ProductoArchivo productoArchivo;
+    DetalleVentaArchivo detalleVentaArchivo;
 
+    int cantProductos = productoArchivo.getCantidadRegistros();
+    int cantDetalles = detalleVentaArchivo.getCantidadRegistros();
 
+    if (cantProductos == 0) {
+        cout << "No hay productos cargados." << endl;
+        return;
+    }
+
+    bool encontrado = false;
+
+    for (int i = 0; i < cantProductos; i++) {
+        Producto prod = productoArchivo.leer(i);
+        int codProducto = prod.getCodProducto();
+        bool fueVendido = false;
+
+        // Buscar si ese producto aparece en algún detalle de venta
+        for (int j = 0; j < cantDetalles; j++) {
+            DetalleVenta det = detalleVentaArchivo.leer(j);
+            if (det.getCodProducto() == codProducto) {
+                fueVendido = true;
+                break;
+            }
+        }
+
+        if (!fueVendido) {
+            encontrado = true;
+            cout << "Codigo: " << prod.getCodProducto();
+            cout << " | " ;
+            cout << "nombre: " << prod.getNombreProducto();
+            cout << " | " ;
+            cout << "Stock: " << prod.getStock();
+            cout << " | " ;
+
+        }
+    }
+
+    if (!encontrado) {
+        cout << "Todos los productos fueron vendidos al menos una vez." << endl;
+    }
 }
+
+
