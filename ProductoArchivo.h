@@ -17,4 +17,5 @@ public:
     int getCantidadRegistros();
     Producto leer(int pos);
     int buscarProducto(int posicion);
+
 };

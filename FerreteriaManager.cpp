@@ -101,7 +101,7 @@ void FerreteriaManager::listarProductos() {
     for(int i=0 ; i<cantidadProductos ; i++ ){
 
         registro = productoArchivo.leer(i);
-        cout<< registro.toCSV() << endl;
+        cout<< registro.toMismoRenglon() << endl;
     }
 
 
@@ -117,6 +117,8 @@ void FerreteriaManager::listarProductos() {
 void FerreteriaManager::buscarProductoPorCodigo() {
     ProductoArchivo productoArchivo;
     Producto registro;
+    //cortar busqueda serviria por si se cargan 2 productos con el mismo id
+    //bool cortarBusqueda=0;
     int buscarCodigo;
     int cantidadProductos = productoArchivo.getCantidadRegistros();
 
@@ -126,11 +128,13 @@ void FerreteriaManager::buscarProductoPorCodigo() {
     for(int i=0; i<cantidadProductos ; i++){
 
         registro = productoArchivo.leer(i);
-        if(registro.getCodProducto()== buscarCodigo){
-
+        if(registro.getCodProducto()== buscarCodigo /*&& cortarBusqueda ==0*/){
+            ///cortarBusqueda=1;
         cout <<"Nombre del producto: " << registro.getNombreProducto() << endl;
         cout <<"Tipo de producto: " << registro.getTipoProducto() << endl;
         cout <<"Marca del producto: " << registro.getMarca() << endl;
+        cout <<"Precio del producto: " << registro.getPrecioUnitario() << endl;
+        cout<<endl;
     }
 
 }
@@ -139,21 +143,26 @@ return;
 
 void FerreteriaManager::buscarProductoPorNombre(){
     ProductoArchivo productoArchivo;
+    FerreteriaManager manager;
     Producto registro;
-    std::string buscarNombre;
+    std::string buscarNombre,nombre;
     int cantidadProductos = productoArchivo.getCantidadRegistros();
 
     cout<<"Ingrese el nombre de producto que desea buscar:";
-    cin >> buscarNombre;
+    cin.ignore();
+    getline(cin,buscarNombre);
+    nombre = manager.convertirAMinusculas(buscarNombre);
 
     for(int i=0; i<cantidadProductos ; i++){
 
         registro = productoArchivo.leer(i);
-        if(registro.getNombreProducto()== buscarNombre){
+        if(registro.getNombreProducto()== nombre){
 
         cout <<"codigo del producto: " << registro.getCodProducto() << endl;
         cout <<"Tipo de producto: " << registro.getTipoProducto() << endl;
         cout <<"Marca del producto: " << registro.getMarca() << endl;
+        cout <<"Precio del producto: " << registro.getPrecioUnitario() << endl;
+        cout<<endl;
     }
 
 }
@@ -163,20 +172,24 @@ return;
 void FerreteriaManager::buscarProductoPorTipo(){
     ProductoArchivo productoArchivo;
     Producto registro;
-    std::string buscarTipo;
+    FerreteriaManager manager;
+    std::string buscarTipo,tipo;
     int cantidadProductos = productoArchivo.getCantidadRegistros();
 
     cout<<"Ingrese el nombre de producto que desea buscar: ";
-    cin >> buscarTipo;
-
+    cin.ignore();
+    getline(cin,buscarTipo);
+    tipo = manager.convertirAMinusculas(buscarTipo);
     for(int i=0; i<cantidadProductos ; i++){
 
         registro = productoArchivo.leer(i);
-        if(registro.getTipoProducto()== buscarTipo){
+        if(registro.getTipoProducto()== tipo){
 
         cout <<"codigo del producto: " << registro.getCodProducto() << endl;
         cout <<"Nombre de producto: " << registro.getNombreProducto() << endl;
         cout <<"Marca del producto: " << registro.getMarca() << endl;
+        cout <<"Precio del producto: " << registro.getPrecioUnitario() << endl;
+        cout<<endl;
     }
 
     }
@@ -260,11 +273,11 @@ void FerreteriaManager::listarProveedores() {
     ProveedorArchivo proveedorArchivo;
     Proveedor registro;
     int cantidadProveedores =proveedorArchivo.getCantidadRegistros();
-
+    //cout <<"cod |nombre|  telefono  |  email      |  direccion "<<endl;
     for(int i=0 ; i<cantidadProveedores ; i++ ){
 
         registro = proveedorArchivo.leer(i);
-        cout<< registro.toCSV() << endl;
+        cout<< registro.toMismoRenglon() << endl;
     }
 
 
@@ -294,6 +307,8 @@ void FerreteriaManager::buscarProveedorPorID() {
         cout <<"Nombre del proveedor: " << registro.getNombreProveedor() << endl;
         cout <<"Tel de contacto: " << registro.getTelefono() << endl;
         cout <<"Direccion del proveedor: " << registro.getDireccion()<< endl;
+        cout <<"Mail del proveedor: " << registro.getEmail() << endl;
+        cout<<endl;
     }
 
 }
@@ -443,7 +458,7 @@ void FerreteriaManager::cargarVenta(){
 
     cout << "Ingrese codigo del producto: " ;
     cin >> codProducto;
-        while(codProducto<=0 || codProducto>40){
+        while(codProducto<=0 || codProducto>cantidadProductos){
             cout << "CODIGO INVALIDO. VUELVA A INGRESAR CODIGO DEL PRODUCTO." << endl ;
             system("pause");
             system("cls");
@@ -741,6 +756,7 @@ std::string FerreteriaManager::convertirAMinusculas(std::string texto) {
     return texto;
 }
 
+
                                          ///FUNCIONES PARA COMPRAS///
 
     void FerreteriaManager::cargarCompra() {
@@ -752,6 +768,8 @@ std::string FerreteriaManager::convertirAMinusculas(std::string texto) {
     Fecha f; // Fecha de la compra
     CompraArchivo archivoCompra;
     DetalleCompraArchivo archivoDetalles;
+    ProductoArchivo archivoProducto;
+    Producto producto, prod;
 
     // INGRESO DE DATOS
     cout << "Ingrese ID de la compra: ";
@@ -845,6 +863,24 @@ pagado = entrada;
             cout << "Cantidad invalida. Debe ser mayor que cero." << endl;
             continue;
         }
+   int pos = archivoProducto.buscarProducto(codProducto);
+
+if (pos >= 0) {
+    producto = archivoProducto.leer(pos);
+    int nuevoStock = producto.getStock() + cantidad;
+    producto.setStock(nuevoStock);
+
+    if (archivoProducto.guardarProducto(producto, pos)) {
+        cout << "Stock actualizado correctamente. Se agregaron " << cantidad << " unidades al producto con código " << codProducto << "." << endl;
+
+    } else {
+        cout << "Error al actualizar el stock del producto con código " << codProducto << "." << endl;
+    }
+
+
+} else {
+    cout << "Producto con código " << codProducto << " no encontrado. No se pudo actualizar el stock." << endl;
+}
 
         subtotal = precioUnitario * cantidad;
 
@@ -856,8 +892,11 @@ pagado = entrada;
             cout << "Detalle guardado correctamente." << endl;
         } else {
             cout << "Error al guardar el detalle." << endl;
-        }
+      }
+
     }
+
+
 
     // Crear objeto compra con fecha
     Compra compra(idCompra, idProveedor, f, tipoFactura, numeroFactura, importeTotal, pagado, 1);
