@@ -858,6 +858,24 @@ pagado = entrada;
             cout << "Cantidad invalida. Debe ser mayor que cero." << endl;
             continue;
         }
+   int pos = archivoProducto.buscarProducto(codProducto);
+
+if (pos >= 0) {
+    producto = archivoProducto.leer(pos);
+    int nuevoStock = producto.getStock() + cantidad;
+    producto.setStock(nuevoStock);
+
+    if (archivoProducto.guardarProducto(producto, pos)) {
+        cout << "Stock actualizado correctamente. Se agregaron " << cantidad << " unidades al producto con código " << codProducto << "." << endl;
+
+    } else {
+        cout << "Error al actualizar el stock del producto con código " << codProducto << "." << endl;
+    }
+
+
+} else {
+    cout << "Producto con código " << codProducto << " no encontrado. No se pudo actualizar el stock." << endl;
+}
 
         subtotal = precioUnitario * cantidad;
 
@@ -870,15 +888,6 @@ pagado = entrada;
         } else {
             cout << "Error al guardar el detalle." << endl;
       }
-
-
-    /*  if (archivoProducto.sumarStock(_codProducto, cantidad)) {
-            cout << "Stock actualizado correctamente." << endl;
-        } else {
-            cout << "Error al actualizar el stock (producto no encontrado)." << endl;
-        }
-    }
-*/
 
     }
 
