@@ -755,11 +755,12 @@ std::string FerreteriaManager::convertirAMinusculas(std::string texto) {
                                          ///FUNCIONES PARA COMPRAS///
 
     void FerreteriaManager::cargarCompra() {
-    int idCompra, idProveedor, numeroFactura, cantidadDetalles;
+    int idCompra, idProveedor, numeroFactura, cantidadDetalles,codProducto;
     string tipoFactura;
     float importeTotal = 0, subtotal;
     bool pagado;
     int entrada;
+    int cantidad;
     Fecha f; // Fecha de la compra
     CompraArchivo archivoCompra;
     DetalleCompraArchivo archivoDetalles;
@@ -840,8 +841,18 @@ pagado = entrada;
 
         cout << "----- Producto " << (i + 1) << " -----" << endl;
 
-        cout << "Ingrese codigo del producto: ";
+        cout << "Ingrese codigo del producto (entre 1 y 30): ";
         cin >> codProducto;
+
+        // Validar que sea número, mayor que 0 y menor o igual a 30
+    while (cin.fail() || codProducto < 1 || codProducto > 30) {
+        cin.clear();
+        cin.ignore(15, '\n');
+        cout << "ERROR: Debe ingresar un numero entre 1 y 30." << endl;
+        cout << "Ingrese nuevamente el codigo del producto: ";
+        cin >> codProducto;
+    }
+
 
         cout << "Ingrese precio unitario: ";
         cin >> precioUnitario;
@@ -858,24 +869,7 @@ pagado = entrada;
             cout << "Cantidad invalida. Debe ser mayor que cero." << endl;
             continue;
         }
-   int pos = archivoProducto.buscarProducto(codProducto);
 
-if (pos >= 0) {
-    producto = archivoProducto.leer(pos);
-    int nuevoStock = producto.getStock() + cantidad;
-    producto.setStock(nuevoStock);
-
-    if (archivoProducto.guardarProducto(producto, pos)) {
-        cout << "Stock actualizado correctamente. Se agregaron " << cantidad << " unidades al producto con código " << codProducto << "." << endl;
-
-    } else {
-        cout << "Error al actualizar el stock del producto con código " << codProducto << "." << endl;
-    }
-
-
-} else {
-    cout << "Producto con código " << codProducto << " no encontrado. No se pudo actualizar el stock." << endl;
-}
 
         subtotal = precioUnitario * cantidad;
 
@@ -891,6 +885,26 @@ if (pos >= 0) {
 
     }
 
+
+   // int pos = archivoProducto.buscarProducto(codProducto);
+
+/*if (pos >= 0) {
+    producto = archivoProducto.leer(pos);
+    int nuevoStock = producto.getStock() + cantidad;
+    producto.setStock(nuevoStock);
+
+    if (archivoProducto.guardarProducto(producto, pos)) {
+        cout << "Stock actualizado correctamente. Se agregaron " << cantidad << " unidades al producto con código " << codProducto << "." << endl;
+
+    } else {
+        cout << "Error al actualizar el stock del producto con código " << codProducto << "." << endl;
+    }
+
+
+} else {
+    cout << "Producto con código " << codProducto << " no encontrado. No se pudo actualizar el stock." << endl;
+}
+*/
 
 
     // Crear objeto compra con fecha
