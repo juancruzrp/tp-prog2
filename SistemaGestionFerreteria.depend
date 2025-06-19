@@ -460,7 +460,7 @@
 	"FerreteriaManager.h"
 	"MenuVenta.h"
 
-1750341660 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\producto.cpp
+1750368764 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\producto.cpp
 	<iostream>
 	"Producto.h"
 	<cstring>
@@ -508,7 +508,7 @@
 	"Proveedor.h"
 	<string>
 
-1750367527 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ferreteriamanager.cpp
+1750369902 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ferreteriamanager.cpp
 	<iostream>
 	<cctype>
 	<algorithm>

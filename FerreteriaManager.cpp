@@ -1115,9 +1115,10 @@ void FerreteriaManager::totalGastadoPorAnioMes() {
         Compra compra = archivo.leer(i);
         if (compra.getEstado()) {
             if (compra.getAnio() == anio && (conMes == 0 || compra.getMes() == mes)) {
-                total += compra.getImporteTotal();
+                //total += compra.getImporteTotal();
             }
         }
+        total += compra.getImporteTotal();
     }
 
     cout << "Total gastado en compras en ";

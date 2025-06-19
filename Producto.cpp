@@ -87,7 +87,7 @@ std::string Producto::toMismoRenglon(){
     str += string(_nombreProducto) + " | ";
     str += string(_tipoProducto) + " | ";
     str += string(_marca) + " | ";
-    str += string(_unidadMedida) + " | ";
+    str += string(_unidadMedida) + " | $";
     str += to_string(_precioUnitario) + " | ";
     str += to_string(_stock);
 
