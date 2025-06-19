@@ -617,6 +617,7 @@ void FerreteriaManager::buscarVentaPorFecha(){
     VentaArchivo ventaArchivo;
     Venta venta;
     int cantidadVentas = ventaArchivo.getCantidadRegistros();
+    bool bf=0;
 
     fecha.cargar();
 
@@ -632,9 +633,13 @@ void FerreteriaManager::buscarVentaPorFecha(){
             cout << " | ";
             cout << "Importe Total: " <<venta.getImporteTotal();
             cout << " | " << endl;
+            bf = 1;
         }
     }
 
+    if (bf==0){
+        cout << "No hay ventas registradas en esa fecha." << endl;
+    }
 
 }
 
