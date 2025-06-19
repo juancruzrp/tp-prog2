@@ -1066,6 +1066,10 @@ void FerreteriaManager::eliminarCompra() {
 }
 
 
+
+
+                                            ///FUNCIONES PARA INFORMES///
+
 void FerreteriaManager::totalGastadoPorAnioMes() {
     CompraArchivo archivo;
     int anio, mes;
@@ -1098,6 +1102,7 @@ void FerreteriaManager::totalGastadoPorAnioMes() {
     cout << anio << ": $" << total << endl;
 }
 
+/// ------------------------------------------------------------------------------------------------------------------------
 
 void FerreteriaManager::listarComprasPendientes() {
     CompraArchivo archivo;
@@ -1123,21 +1128,16 @@ void FerreteriaManager::listarComprasPendientes() {
     }
 }
 
-
-                                            ///FUNCIONES PARA INFORMES///
+/// ------------------------------------------------------------------------------------------------------------------------
 
 void FerreteriaManager::productosBajoStock(){
 
 }
 
-void FerreteriaManager::cantidadCompras(){
+/// ------------------------------------------------------------------------------------------------------------------------
 
-}
-
-void FerreteriaManager::cantidadVentas(){
-
-}
 
 void FerreteriaManager::productosNoVendidos(){
+
 
 }
