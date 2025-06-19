@@ -817,7 +817,7 @@ do {
 
 } while (true);
 
-    cout << "Ingrese número de factura: ";
+    cout << "Ingrese numero de factura: ";
     cin >> numeroFactura;
 
     if (numeroFactura <= 0) {
@@ -885,7 +885,7 @@ if (pos >= 0) {
 
 
 } else {
-    cout << "Producto con código " << codProducto << " no encontrado. No se pudo actualizar el stock." << endl;
+    cout << "Producto con codigo " << codProducto << " no encontrado. No se pudo actualizar el stock." << endl;
 }
 
         subtotal = precioUnitario * cantidad;
@@ -970,7 +970,7 @@ void FerreteriaManager::buscarCompraPorFecha() {
             compra.getFechaCompra().mostrar();
             cout << std::endl;
             cout << "Tipo Factura: " << compra.getTipoFactura() << endl;
-            cout << "Numero Factura: " << compra.getNumeroFactura() << endl;
+            cout << "Nro Factura: " << compra.getNumeroFactura() << endl;
             cout << "Importe Total: $" << compra.getImporteTotal() << endl;
             cout << "Pagado: " << (compra.getPagado() ? "SI" : "NO") << endl;
             encontrado = true;
@@ -1036,7 +1036,7 @@ void FerreteriaManager::eliminarCompra() {
     cin >> idCompra;
 
     while (idCompra <= 0) {
-        cout << "ID inválido. Ingrese nuevamente: ";
+        cout << "ID invalido. Ingrese nuevamente: ";
         cin >> idCompra;
     }
 
@@ -1046,7 +1046,7 @@ void FerreteriaManager::eliminarCompra() {
 
     int posCompra = archivoCompra.buscar(idCompra);
     if (posCompra == -1) {
-        cout << "No se encontró una compra con ese ID." << endl;
+        cout << "No se encontro una compra con ese ID." << endl;
         return;
     }
 
@@ -1190,14 +1190,18 @@ void FerreteriaManager::mostrarProductosNoVendidos() {
         if (!fueVendido) {
             encontrado = true;
             cout << "Producto NO vendido:" << endl;
-            cout << "  Código: " << prod.getCodProducto() << endl;
-            cout << "  Nombre: " << prod.getNombreProducto() << endl;
-            cout << "  Stock: " << prod.getStock() << endl;
-            cout << "------------------------" << endl;
+            cout << "Codigo: " << prod.getCodProducto();
+            cout << " | " ;
+            cout << "Nombre: " << prod.getNombreProducto();
+            cout << " | " ;
+            cout << "stock: " << prod.getStock();
+            cout << " | " ;
+            cout << endl;
+
         }
     }
 
     if (!encontrado) {
-        cout << "Todos los productos fueron vendidos al menos una vez." << endl;
+        cout << "Todos los productos se vendieron al menos una vez." << endl;
     }
 }
