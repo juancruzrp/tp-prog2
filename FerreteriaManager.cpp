@@ -458,7 +458,7 @@ void FerreteriaManager::cargarVenta(){
 
     cout << "Ingrese codigo del producto: " ;
     cin >> codProducto;
-        while(codProducto<=0 || codProducto>40){
+        while(codProducto<=0 || codProducto>cantidadProductos-1){
             cout << "CODIGO INVALIDO. VUELVA A INGRESAR CODIGO DEL PRODUCTO." << endl ;
             system("pause");
             system("cls");
@@ -632,6 +632,7 @@ void FerreteriaManager::buscarVentaPorFecha(){
     VentaArchivo ventaArchivo;
     Venta venta;
     int cantidadVentas = ventaArchivo.getCantidadRegistros();
+    bool bf=0;
 
     fecha.cargar();
 
@@ -647,9 +648,13 @@ void FerreteriaManager::buscarVentaPorFecha(){
             cout << " | ";
             cout << "Importe Total: " <<venta.getImporteTotal();
             cout << " | " << endl;
+            bf = 1;
         }
     }
 
+    if (bf==0){
+        cout << "No hay ventas registradas en esa fecha." << endl;
+    }
 
 }
 
@@ -763,6 +768,8 @@ std::string FerreteriaManager::convertirAMinusculas(std::string texto) {
     Fecha f; // Fecha de la compra
     CompraArchivo archivoCompra;
     DetalleCompraArchivo archivoDetalles;
+    ProductoArchivo archivoProducto;
+    Producto producto, prod;
 
     // INGRESO DE DATOS
     cout << "Ingrese ID de la compra: ";
@@ -856,6 +863,24 @@ pagado = entrada;
             cout << "Cantidad invalida. Debe ser mayor que cero." << endl;
             continue;
         }
+   int pos = archivoProducto.buscarProducto(codProducto);
+
+if (pos >= 0) {
+    producto = archivoProducto.leer(pos);
+    int nuevoStock = producto.getStock() + cantidad;
+    producto.setStock(nuevoStock);
+
+    if (archivoProducto.guardarProducto(producto, pos)) {
+        cout << "Stock actualizado correctamente. Se agregaron " << cantidad << " unidades al producto con código " << codProducto << "." << endl;
+
+    } else {
+        cout << "Error al actualizar el stock del producto con código " << codProducto << "." << endl;
+    }
+
+
+} else {
+    cout << "Producto con código " << codProducto << " no encontrado. No se pudo actualizar el stock." << endl;
+}
 
         subtotal = precioUnitario * cantidad;
 
@@ -867,8 +892,11 @@ pagado = entrada;
             cout << "Detalle guardado correctamente." << endl;
         } else {
             cout << "Error al guardar el detalle." << endl;
-        }
+      }
+
     }
+
+
 
     // Crear objeto compra con fecha
     Compra compra(idCompra, idProveedor, f, tipoFactura, numeroFactura, importeTotal, pagado, 1);
@@ -1037,7 +1065,6 @@ void FerreteriaManager::eliminarCompra() {
     }
 }
 
-///--------------------------------FUNCIONES INFORMES-------------------------///
 
 void FerreteriaManager::totalGastadoPorAnioMes() {
     CompraArchivo archivo;
@@ -1097,35 +1124,20 @@ void FerreteriaManager::listarComprasPendientes() {
 }
 
 
-void FerreteriaManager::listarProductoMenosVendido() {
-    ProductoArchivo productoArchivo;
-    Producto registro;
-    int cantidadProductos =productoArchivo.getCantidadRegistros();
-    std::string tipoProducto;
-    cout <<"ingrese el tipo de producto"<<endl;
-    cout<<"del cual quiera saber el articulo menos vendido";
-    cin >>tipoProducto;
-    cout <<"tipos de producto: herramientas, pegamentos, sanitarios, electricidad,pintura"<<endl;
-    for(int i=0 ; i<cantidadProductos ; i++ ){
+                                            ///FUNCIONES PARA INFORMES///
 
-        registro = productoArchivo.leer(i);
-        if(registro.getTipoProducto()== tipoProducto && registro.getStock()>=50){
-        cout<<"codigo del producto:" <<registro.getCodProducto() << endl;
-        cout<<"nombre del producto:" <<registro.getNombreProducto() << endl;
-        cout<<endl;
-        }
-    }
-
-
-    FILE* archivo = fopen("productos.dat", "rb");
-    if (archivo == NULL) {
-        cout << "No se pudo abrir el archivo." << endl;
-        return;
-    }
-
+void FerreteriaManager::productosBajoStock(){
 
 }
-void FerreteriaManager::productosConStockBajo(){
 
+void FerreteriaManager::cantidadCompras(){
+
+}
+
+void FerreteriaManager::cantidadVentas(){
+
+}
+
+void FerreteriaManager::productosNoVendidos(){
 
 }

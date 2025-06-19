@@ -1,6 +1,6 @@
 #pragma once
-#include "Venta.h"
 #include <string>
+#include "Venta.h"
 
 class VentaArchivo{
 private:

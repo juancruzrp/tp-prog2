@@ -35,9 +35,9 @@ public:
     void bajaDeVenta();
     std::string convertirAMinusculas(std::string medioPago);
 
-    ///COMPRAS
 
-///COMPRAS
+
+    ///COMPRAS
     void cargarCompra();
     void mostrarCompras();
     void listarCantidadCompras();
@@ -45,10 +45,13 @@ public:
     void buscarCompraPorFecha();
     void buscarCompraPorProveedor();
     void eliminarCompra();
-
-    ///INFORMES
     void totalGastadoPorAnioMes();
     void listarComprasPendientes();
-    void productosConStockBajo();
-    void listarProductoMenosVendido();
+
+    ///INFORMES
+    void productosBajoStock();
+    void cantidadCompras();
+    void cantidadVentas();
+    void productosNoVendidos();
+
 };

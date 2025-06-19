@@ -107,3 +107,4 @@ bool ProductoArchivo::guardarProducto(Producto registro,int posicion){
     fclose(pFile);
     return result;
     }
+
