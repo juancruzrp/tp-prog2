@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 #include "Fecha.h"
 using namespace std;
 
@@ -18,7 +19,10 @@ Fecha::Fecha(int dia, int mes, int anio){
 void Fecha::cargar(){
     cout << "Ingrese dia: " ;
     cin >> _dia;
-        while(_dia<=0 || _dia>31){
+        while(cin.fail() || _dia<=0 || _dia>31){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
             cout << "DIA INVALIDO. VUELVA A INGRESAR DIA." << endl ;
             system("pause");
             system("cls");
@@ -28,7 +32,10 @@ void Fecha::cargar(){
 
     cout << "Ingrese mes: ";
     cin >> _mes;
-        while(_mes<=0 || _mes>12 || (_dia>28 && _mes==2) || (_dia>30 && _mes ==4) || (_dia>30 && _mes==6) || (_dia>30 && _mes==9) || (_dia>30 && _mes==11)){
+        while(cin.fail() || _mes<=0 || _mes>12 || (_dia>28 && _mes==2) || (_dia>30 && _mes ==4) || (_dia>30 && _mes==6) || (_dia>30 && _mes==9) || (_dia>30 && _mes==11)){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
             cout << "MES INVALIDO. VUELVA A INGRESAR MES." << endl ;
             system("pause");
             system("cls");
@@ -38,7 +45,9 @@ void Fecha::cargar(){
 
     cout << "Ingrese anio: ";
     cin >> _anio;
-        while(_anio !=2025 ){
+        while(cin.fail() || _anio !=2025 ){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "AÑO INVALIDO. VUELVA A INGRESAR ANIO." << endl ;
             system("pause");
             system("cls");

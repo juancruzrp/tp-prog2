@@ -420,7 +420,10 @@ void FerreteriaManager::cargarVenta(){
     cout << "Ingrese ID de venta: " ;
     cin >> idVenta;
 
-    while(idVenta<=0 || idVenta>40){
+    while(cin.fail() || idVenta<=0 || idVenta>40){
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
         cout << "ID DE VENTA INVALIDA. VUELVA A INGRESAR ID DE VENTA. " << endl ;
         system("pause");
         system("cls");
@@ -464,7 +467,10 @@ void FerreteriaManager::cargarVenta(){
 
     cout << "Ingrese codigo del producto: " ;
     cin >> codProducto;
-        while(codProducto<=0 || codProducto>cantidadProductos-1){
+        while(cin.fail() || codProducto<=0 || codProducto>cantidadProductos-1){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
             cout << "CODIGO INVALIDO. VUELVA A INGRESAR CODIGO DEL PRODUCTO." << endl ;
             system("pause");
             system("cls");
@@ -474,7 +480,10 @@ void FerreteriaManager::cargarVenta(){
 
     cout << "Ingrese cantidad: " ;
     cin >> cantidad;
-        while(cantidad<=0){
+        while(cin.fail() || cantidad<=0){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
             cout << "CANTIDAD INVALIDA. VUELVA A INGRESAR LA CANTIDAD." << endl ;
             system("pause");
             system("cls");
@@ -761,6 +770,9 @@ std::string FerreteriaManager::convertirAMinusculas(std::string texto) {
                    [](unsigned char c){ return std::tolower(c); });
     return texto;
 }
+
+/// ------------------------------------------------------------------------------------------------------------------------
+
 
 
                                          ///FUNCIONES PARA COMPRAS///
