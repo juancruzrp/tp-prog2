@@ -107,3 +107,13 @@ bool ProductoArchivo::guardarProducto(Producto registro,int posicion){
     fclose(pFile);
     return result;
     }
+
+    bool ProductoArchivo::sumarStock(int codProducto, int cantidad) {
+    int pos = buscarProducto(codProducto);
+    if (pos == -1) return false;
+
+    Producto prod = leer(pos);
+    prod.setStock(prod.getStock() + cantidad);
+
+    return guardarProducto(prod, pos);
+}

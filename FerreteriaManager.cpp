@@ -701,6 +701,8 @@ std::string FerreteriaManager::convertirAMinusculas(std::string texto) {
     Fecha f; // Fecha de la compra
     CompraArchivo archivoCompra;
     DetalleCompraArchivo archivoDetalles;
+    ProductoArchivo archivoProducto;
+    Producto producto, prod;
 
     // INGRESO DE DATOS
     cout << "Ingrese ID de la compra: ";
@@ -805,8 +807,20 @@ pagado = entrada;
             cout << "Detalle guardado correctamente." << endl;
         } else {
             cout << "Error al guardar el detalle." << endl;
+      }
+
+
+    /*  if (archivoProducto.sumarStock(_codProducto, cantidad)) {
+            cout << "Stock actualizado correctamente." << endl;
+        } else {
+            cout << "Error al actualizar el stock (producto no encontrado)." << endl;
         }
     }
+*/
+
+    }
+
+
 
     // Crear objeto compra con fecha
     Compra compra(idCompra, idProveedor, f, tipoFactura, numeroFactura, importeTotal, pagado, 1);
