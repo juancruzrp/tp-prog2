@@ -404,8 +404,9 @@
 	"VentaArchivo.h"
 	<string>
 
-1750276958 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\fecha.cpp
+1750367527 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\fecha.cpp
 	<iostream>
+	<limits>
 	"Fecha.h"
 
 1750099797 c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\fecha.h
@@ -506,7 +507,7 @@
 	"Proveedor.h"
 	<string>
 
-1750363547 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ferreteriamanager.cpp
+1750367527 source:c:\users\gonzalo\desktop\programacion\programacion 2\proyectoprog2ferreteria\tp-prog2\tp-prog2\ferreteriamanager.cpp
 	<iostream>
 	<cctype>
 	<algorithm>
