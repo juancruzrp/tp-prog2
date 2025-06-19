@@ -18,6 +18,7 @@ void MenuInforme::mostrar(){
     cout << "3. Cantidad total de ventas mensuales" << endl;
     cout << "4. Cantidad total de ventas anuales" << endl;
     cout << "5. Productos mas vendidos" << endl;
+    cout << "6. Productos menos vendidos" << endl;
     cout << "0. Salir al menu principal" << endl;
     cout << "======================================"<< endl;
     cout << "Ingrese una opcion: ";
@@ -67,6 +68,15 @@ void MenuInforme::mostrar(){
                 cout << "         PRODUCTO MAS VENDIDO" << endl ;
                 cout << "======================================" << endl;
                 ///
+                system("pause");
+                system("cls");
+               break;
+               case 6:
+                system("cls");
+                cout << "======================================" << endl;
+                cout << "         PRODUCTOS MENOS VENDIDOS " << endl ;
+                cout << "======================================" << endl;
+                manager.listarProductoMenosVendido();
                 system("pause");
                 system("cls");
                break;

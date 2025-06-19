@@ -1037,6 +1037,7 @@ void FerreteriaManager::eliminarCompra() {
     }
 }
 
+///--------------------------------FUNCIONES INFORMES-------------------------///
 
 void FerreteriaManager::totalGastadoPorAnioMes() {
     CompraArchivo archivo;
@@ -1096,3 +1097,35 @@ void FerreteriaManager::listarComprasPendientes() {
 }
 
 
+void FerreteriaManager::listarProductoMenosVendido() {
+    ProductoArchivo productoArchivo;
+    Producto registro;
+    int cantidadProductos =productoArchivo.getCantidadRegistros();
+    std::string tipoProducto;
+    cout <<"ingrese el tipo de producto"<<endl;
+    cout<<"del cual quiera saber el articulo menos vendido";
+    cin >>tipoProducto;
+    cout <<"tipos de producto: herramientas, pegamentos, sanitarios, electricidad,pintura"<<endl;
+    for(int i=0 ; i<cantidadProductos ; i++ ){
+
+        registro = productoArchivo.leer(i);
+        if(registro.getTipoProducto()== tipoProducto && registro.getStock()>=50){
+        cout<<"codigo del producto:" <<registro.getCodProducto() << endl;
+        cout<<"nombre del producto:" <<registro.getNombreProducto() << endl;
+        cout<<endl;
+        }
+    }
+
+
+    FILE* archivo = fopen("productos.dat", "rb");
+    if (archivo == NULL) {
+        cout << "No se pudo abrir el archivo." << endl;
+        return;
+    }
+
+
+}
+void FerreteriaManager::productosConStockBajo(){
+
+
+}
