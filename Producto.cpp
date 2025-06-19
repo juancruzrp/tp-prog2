@@ -81,14 +81,14 @@ int Producto::getStock(){
 }
 
 
-std::string Producto::toCSV(){
+std::string Producto::toMismoRenglon(){
     std::string str = "";
-    str = to_string(_codProducto) + ",";
-    str += string(_nombreProducto) + ",";
-    str += string(_tipoProducto) + ",";
-    str += string(_marca) + ",";
-    str += string(_unidadMedida) + ",";
-    str += to_string(_precioUnitario) + ",";
+    str = to_string(_codProducto) + " | ";
+    str += string(_nombreProducto) + " | ";
+    str += string(_tipoProducto) + " | ";
+    str += string(_marca) + " | ";
+    str += string(_unidadMedida) + " | ";
+    str += to_string(_precioUnitario) + " | ";
     str += to_string(_stock);
 
         return str;
