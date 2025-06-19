@@ -474,7 +474,7 @@ void FerreteriaManager::cargarVenta(){
 
     cout << "Ingrese codigo del producto: " ;
     cin >> codProducto;
-        while(cin.fail() || codProducto<=0 || codProducto>cantidadProductos-1){
+        while(cin.fail() || codProducto<=0 || codProducto>cantidadProductos){
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
@@ -1064,14 +1064,14 @@ void FerreteriaManager::eliminarCompra() {
     DetalleCompraArchivo archivoDetalle;
 
     int posCompra = archivoCompra.buscar(idCompra);
-    if (posCompra == -1) {
+    /*if (posCompra == 1) {
         cout << "No se encontro una compra con ese ID." << endl;
         return;
-    }
+    }*/
 
 
     Compra compra = archivoCompra.leer(posCompra);
-    if (!compra.getEstado()) {
+    if (compra.getEstado() == 0 ) {
         cout << "La compra ya fue eliminada anteriormente." << endl;
         return;
     }
@@ -1105,28 +1105,14 @@ void FerreteriaManager::totalGastadoPorAnioMes() {
     cout << "Ingrese el anio (ej. 2024): ";
     cin >> anio;
 
-    cout << "Desea filtrar por mes tambien? (1=SI, 0=NO): ";
-    int conMes;
-    cin >> conMes;
-
-    if (conMes == 1) {
-        cout << "Ingrese el mes (1-12): ";
-        cin >> mes;
-    }
-
-
     for (int i = 0; i < cantidad; i++) {
         Compra compra = archivo.leer(i);
-        if (compra.getEstado()) {
-            if (compra.getAnio() == anio && (conMes == 0 || compra.getMes() == mes)) {
-            }
+        if ( compra.getAnio() == anio) {
+            total += compra.getImporteTotal();
         }
-                total += compra.getImporteTotal();
     }
 
-    cout << "Total gastado en compras en ";
-    if (conMes == 1) cout << mes << "/";
-    cout << anio << ": $" << total << endl;
+    cout << "Total gastado en compras en " << anio << ": $" << total << endl;
 }
 
 /// ------------------------------------------------------------------------------------------------------------------------

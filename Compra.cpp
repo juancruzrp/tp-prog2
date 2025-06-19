@@ -24,7 +24,7 @@ Compra::Compra(int idCompra, int idProveedor, Fecha fecha,std::string tipoFactur
     _numeroFactura = numeroFactura;
     _importeTotal = importeTotal;
     _pagado = pagado;
-    estado = estado;
+    _estado = estado;
 }
 
 void Compra::setIdCompra(int idCompra) {
@@ -95,7 +95,7 @@ int Compra::getAnio() {
     return _fechaCompra.getAnio();
     }
 
-bool Compra::getEstado() const {
+bool Compra::getEstado() {
     return _estado;
 }
 

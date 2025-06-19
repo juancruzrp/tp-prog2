@@ -36,7 +36,7 @@ public:
     int getNumeroFactura();
     float getImporteTotal();
     bool getPagado();
-    bool getEstado() const;
+    bool getEstado();
 
     // Métodos auxiliares para fecha
     int getDia();

@@ -36,8 +36,6 @@ public:
     void bajaDeVenta();
     std::string convertirAMinusculas(std::string medioPago);
 
-
-
     ///COMPRAS
     void cargarCompra();
     void mostrarCompras();

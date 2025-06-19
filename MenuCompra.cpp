@@ -84,7 +84,7 @@ void MenuCompra::mostrar(){
                 cout << "======================================" << endl;
                 cout << "            ELIMINAR COMPRA " << endl ;
                 cout << "======================================" << endl;
-             //  manager.eliminarCompra();
+                manager.eliminarCompra();
                 system("pause");
                 system("cls");
 

@@ -72,7 +72,7 @@ int DetalleCompra::getCantidad() {
 float DetalleCompra::getSubtotal() {
     return _subtotal;
 }
-bool DetalleCompra::getEstado() const {
+bool DetalleCompra::getEstado(){
     return _estado;
 }
 

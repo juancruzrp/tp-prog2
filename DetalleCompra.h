@@ -30,7 +30,7 @@ public:
     float getPrecioUnitario();
     int getCantidad();
     float getSubtotal();
-    bool getEstado() const;
+    bool getEstado();
 
 
 
