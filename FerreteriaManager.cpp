@@ -613,9 +613,28 @@ void FerreteriaManager::listarDetalleVenta(){
 /// ------------------------------------------------------------------------------------------------------------------------
 
 void FerreteriaManager::buscarVentaPorFecha(){
-    Fecha fechaVenta;
+    Fecha fecha;
+    VentaArchivo ventaArchivo;
+    Venta venta;
+    int cantidadVentas = ventaArchivo.getCantidadRegistros();
 
-    fechaVenta.cargar();
+    fecha.cargar();
+
+    for (int x=0; x<cantidadVentas;x++){
+        venta = ventaArchivo.leer(x);
+
+        if(venta.getFechaVenta().getDia() == fecha.getDia() && venta.getFechaVenta().getMes() == fecha.getMes() && venta.getFechaVenta().getAnio() == fecha.getAnio()){
+            cout << "Numero de venta: " << venta.getIdVenta();
+            cout << " | " ;
+            cout << "Medio de pago: " << venta.getMedioPago() << " | " ;
+            cout << "Fecha: " ;
+            venta.getFechaVenta().mostrar();
+            cout << " | ";
+            cout << "Importe Total: " <<venta.getImporteTotal();
+            cout << " | " << endl;
+        }
+    }
+
 
 }
 
@@ -630,7 +649,8 @@ void FerreteriaManager::buscarVentaPorProducto(){
     Producto producto;
     ProductoArchivo productoArchivo;
     int cantidadVentas = detalleVentaArchivo.getCantidadRegistros();
-    int cantidad[40]{};
+    int cantidadProductos = productoArchivo.getCantidadRegistros();
+    int cantidadVendidos=0;
 
     cout << "Ingrese Codigo del producto: ";
     cin >> codProducto;
@@ -643,25 +663,24 @@ void FerreteriaManager::buscarVentaPorProducto(){
             cin >> codProducto;
     }
 
-    int pos = productoArchivo.buscarProducto(codProducto);
-    if(pos >=0){
-        producto = productoArchivo.leer(pos);
-        cout << "Nombre del producto: " << producto.getNombreProducto() << endl;
-        cout << "Tipo producto: " << producto.getTipoProducto() << endl;
-        cout << "Marca del producto: " << producto.getMarca();
-        cout << "Precio unitario: " << producto.getPrecioUnitario() << endl;
+    for (int x=0; x<cantidadProductos;x++){
+        producto = productoArchivo.leer(x);
+        if (producto.getCodProducto() == codProducto){
+            cout << "Nombre del producto: " << producto.getNombreProducto() << endl;
+            cout << "Tipo producto: " << producto.getTipoProducto() << endl;
+            cout << "Marca del producto: " << producto.getMarca() << endl;
+            cout << "Precio unitario: " << producto.getPrecioUnitario() << endl;
+        }
     }
 
-    int poss = detalleVentaArchivo.buscar(codProducto);
-    if(poss >=0){
-        detalleVenta = detalleVentaArchivo.leer(poss);
-            if (detalleVenta.getCodProducto() == codProducto){
-                for(int x=0; x<cantidadVentas ; x++){
-                cantidad[x] += detalleVenta.getCantidad();
-                }
-                cout << "Cantidad vendida: " << cantidad[codProducto-1] << endl;
-            }
+    for (int i=0;i<cantidadVentas;i++){
+        detalleVenta = detalleVentaArchivo.leer(i);
+        if (detalleVenta.getCodProducto() == codProducto){
+            cantidadVendidos += detalleVenta.getCantidad();
+        }
     }
+    cout << "Cantidad Vendida: " << cantidadVendidos << endl;
+
 }
 /// ------------------------------------------------------------------------------------------------------------------------
 

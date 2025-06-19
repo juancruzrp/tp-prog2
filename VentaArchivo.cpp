@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Fecha.h"
 #include "VentaArchivo.h"
 using namespace std;
 
@@ -90,6 +91,7 @@ int VentaArchivo::buscar(int idVenta){
 }
 
 /// ------------------------------------------------------------------------------------------------------------------------
+
 
 int VentaArchivo::getCantidadRegistros(){
     FILE *pFile;
