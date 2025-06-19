@@ -1120,8 +1120,26 @@ void FerreteriaManager::listarComprasPendientes() {
 
     if (!hayPendientes) {
         cout << "No hay compras pendientes de pago." << endl;
+
     }
 }
+
+void FerreteriaManager::mostrarStockBajoPorTipo(string tipoFiltrado) {
+    ProductoArchivo productoArchivo;
+    Producto producto;
+    int cantidadProductos = productoArchivo.getCantidadRegistros();
+
+
+    for (int i = 0; i < cantidadProductos; i++) {
+        producto = productoArchivo.leer(i);
+        string tipo = convertirAMinusculas(producto.getTipoProducto());
+        if (producto.getStock() < 10 && tipo == convertirAMinusculas(tipoFiltrado))
+            cout << "Codigo: " << producto.getCodProducto() << endl;
+            cout << "Nombre: " << producto.getNombreProducto() << endl;
+            cout << "Marca: " << producto.getMarca() << endl;
+            cout << "Precio Unitario: $" << producto.getPrecioUnitario() << endl;
+            cout << "Stock Disponible: " << producto.getStock() << endl;
+        }
 
 
                                             ///FUNCIONES PARA INFORMES///
