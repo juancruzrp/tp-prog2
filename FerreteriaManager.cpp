@@ -15,12 +15,14 @@
 #include "DetalleCompra.h"
 #include "DetalleCompraArchivo.h"
 #include "Fecha.h"
+#include <iomanip>
 using namespace std;
 
 
-    /// PENSAR SI AGREGAR VALIDACIONES
+
                                          ///FUNCIONES PARA PRODUCTOS///
 void FerreteriaManager::cargarProducto(){
+
     int codProducto, stock;
     string nombreProducto, tipoProducto, marca, unidadMedida;
     float precioUnitario;
@@ -1093,6 +1095,7 @@ void FerreteriaManager::eliminarCompra() {
 
                                             ///FUNCIONES PARA INFORMES///
 
+
 void FerreteriaManager::totalGastadoPorAnioMes() {
     CompraArchivo archivo;
     int anio, mes;
@@ -1111,14 +1114,14 @@ void FerreteriaManager::totalGastadoPorAnioMes() {
         cin >> mes;
     }
 
+
     for (int i = 0; i < cantidad; i++) {
         Compra compra = archivo.leer(i);
         if (compra.getEstado()) {
             if (compra.getAnio() == anio && (conMes == 0 || compra.getMes() == mes)) {
-                //total += compra.getImporteTotal();
             }
         }
-        total += compra.getImporteTotal();
+                total += compra.getImporteTotal();
     }
 
     cout << "Total gastado en compras en ";
