@@ -433,6 +433,7 @@ void FerreteriaManager::cargarVenta(){
         cin >> idVenta;
     }
 
+
     int posV = ventaArchivo.buscar(idVenta);
         if (posV >=0){
             Venta venV = ventaArchivo.leer(posV);
@@ -1163,32 +1164,45 @@ void FerreteriaManager::productosBajoStock(){
 
 /// ------------------------------------------------------------------------------------------------------------------------
 
-void FerreteriaManager::productosNoVendidos(){
-    DetalleVenta detalleVenta;
-    DetalleVentaArchivo detalleVentaArchivo;
-    Producto producto;
+void FerreteriaManager::mostrarProductosNoVendidos() {
     ProductoArchivo productoArchivo;
-    int cantidadVentas = detalleVentaArchivo.getCantidadRegistros();
-    int cantidadProductos = productoArchivo.getCantidadRegistros();
-    bool *vendido = new bool [cantidadProductos]{};
+    DetalleVentaArchivo detalleVentaArchivo;
 
+    int cantProductos = productoArchivo.getCantidadRegistros();
+    int cantDetalles = detalleVentaArchivo.getCantidadRegistros();
 
-    for(int x=0; x<cantidadVentas;x++){
-        detalleVenta = detalleVentaArchivo.leer(x);
-
-        vendido[detalleVenta.getCodProducto()-1] = 1;
+    if (cantProductos == 0) {
+        cout << "No hay productos cargados." << endl;
+        return;
     }
 
-    for(int i=0; i<cantidadProductos;i++){
-        producto = productoArchivo.leer(i);
-        if(vendido[producto.getCodProducto()-1] == 0 ){
-            cout << "Codigo Producto: " << producto.getCodProducto() << " | " ;
-            cout << "Nombre de producto: " << producto.getNombreProducto() << " | ";
-            cout << "Tipo producto: " << producto.getTipoProducto() << " | " ;
-            cout << "Marca: " << producto.getMarca() << " | ";
-            cout << "Precio unitario: " << producto.getPrecioUnitario() << " | " << endl;
+    bool encontrado = false;
+
+    for (int i = 0; i < cantProductos; i++) {
+        Producto prod = productoArchivo.leer(i);
+        int codProducto = prod.getCodProducto();
+        bool fueVendido = false;
+
+        // Buscar si ese producto aparece en algún detalle de venta
+        for (int j = 0; j < cantDetalles; j++) {
+            DetalleVenta det = detalleVentaArchivo.leer(j);
+            if (det.getCodProducto() == codProducto) {
+                fueVendido = true;
+                break;
+            }
+        }
+
+        if (!fueVendido) {
+            encontrado = true;
+            cout << "Producto NO vendido:" << endl;
+            cout << "  Código: " << prod.getCodProducto() << endl;
+            cout << "  Nombre: " << prod.getNombreProducto() << endl;
+            cout << "  Stock: " << prod.getStock() << endl;
+            cout << "------------------------" << endl;
         }
     }
 
-    delete[]vendido;
+    if (!encontrado) {
+        cout << "Todos los productos fueron vendidos al menos una vez." << endl;
+    }
 }

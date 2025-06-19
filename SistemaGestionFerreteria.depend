@@ -85,7 +85,7 @@
 	<iostream>
 	"Fecha.h"
 
-1750360938 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ferreteriamanager.cpp
+1750362471 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ferreteriamanager.cpp
 	<iostream>
 	<cctype>
 	<algorithm>
@@ -104,7 +104,7 @@
 	"DetalleCompraArchivo.h"
 	"Fecha.h"
 
-1750360967 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ferreteriamanager.h
+1750361337 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\ferreteriamanager.h
 	<string>
 
 1750357723 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menucompra.cpp
@@ -200,10 +200,10 @@
 1750117236 c:\users\usuario\documents\github\tp-prog2\menuventa.h
 	<string>
 
-1750357996 c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.h
+1750363438 c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.h
 	<string>
 
-1750265624 source:c:\users\usuario\documents\github\tp-prog2\menucompra.cpp
+1750361127 source:c:\users\usuario\documents\github\tp-prog2\menucompra.cpp
 	<iostream>
 	"MenuCompra.h"
 	"FerreteriaManager.h"
@@ -236,7 +236,7 @@
 	"Venta.h"
 	<cstring>
 
-1750357807 source:c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.cpp
+1750362483 source:c:\users\usuario\documents\github\tp-prog2\ferreteriamanager.cpp
 	<iostream>
 	<cctype>
 	<algorithm>
@@ -352,7 +352,7 @@
 1748832116 c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menuinforme.h
 	<string>
 
-1750357710 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menuinforme.cpp
+1750361337 source:c:\users\juan cruz\desktop\utn\codeblocks\programacion2\sistemagestionferreteria\tp-prog2\menuinforme.cpp
 	<iostream>
 	"MenuInforme.h"
 	"FerreteriaManager.h"
@@ -567,9 +567,9 @@
 	"VentaArchivo.h"
 	<string>
 
-1750192386 c:\users\usuario\documents\github\tp-prog2\ventaarchivo.h
-	"Venta.h"
+1750361127 c:\users\usuario\documents\github\tp-prog2\ventaarchivo.h
 	<string>
+	"Venta.h"
 
 1750117236 c:\users\usuario\documents\github\tp-prog2\venta.h
 	"Fecha.h"
@@ -578,7 +578,7 @@
 1750117236 c:\users\usuario\documents\github\tp-prog2\menuinforme.h
 	<string>
 
-1750277838 source:c:\users\usuario\documents\github\tp-prog2\menuinforme.cpp
+1750363148 source:c:\users\usuario\documents\github\tp-prog2\menuinforme.cpp
 	<iostream>
 	"MenuInforme.h"
 	"FerreteriaManager.h"
