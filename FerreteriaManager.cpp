@@ -15,12 +15,14 @@
 #include "DetalleCompra.h"
 #include "DetalleCompraArchivo.h"
 #include "Fecha.h"
+#include <iomanip>
 using namespace std;
 
 
-    /// PENSAR SI AGREGAR VALIDACIONES
+
                                          ///FUNCIONES PARA PRODUCTOS///
 void FerreteriaManager::cargarProducto(){
+
     int codProducto, stock;
     string nombreProducto, tipoProducto, marca, unidadMedida;
     float precioUnitario;
@@ -1093,6 +1095,7 @@ void FerreteriaManager::eliminarCompra() {
 
                                             ///FUNCIONES PARA INFORMES///
 
+
 void FerreteriaManager::totalGastadoPorAnioMes() {
     CompraArchivo archivo;
     int anio, mes;
@@ -1102,7 +1105,7 @@ void FerreteriaManager::totalGastadoPorAnioMes() {
     cout << "Ingrese el anio (ej. 2024): ";
     cin >> anio;
 
-    cout << "Desea filtrar por mes tambien? (1=SI, 0=NO): ";
+    /*cout << "Desea filtrar por mes tambien? (1=SI, 0=NO): ";
     int conMes;
     cin >> conMes;
 
@@ -1110,18 +1113,19 @@ void FerreteriaManager::totalGastadoPorAnioMes() {
         cout << "Ingrese el mes (1-12): ";
         cin >> mes;
     }
+    */
 
     for (int i = 0; i < cantidad; i++) {
         Compra compra = archivo.leer(i);
         if (compra.getEstado()) {
-            if (compra.getAnio() == anio && (conMes == 0 || compra.getMes() == mes)) {
+            if (compra.getAnio() == anio) /*&& (conMes == 0 || compra.getMes() == mes))*/ {
                 total += compra.getImporteTotal();
             }
         }
     }
 
     cout << "Total gastado en compras en ";
-    if (conMes == 1) cout << mes << "/";
+    ///if (conMes == 1) cout << mes << "/";
     cout << anio << ": $" << total << endl;
 }
 
